@@ -96,7 +96,7 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
     }
 
     $item_output = $args->before;
-    $item_output .= '<a'. $attributes .'>';
+    $item_output .= '<a' . $class_names . $attributes .'>';
     /** This filter is documented in wp-includes/post-template.php */
     $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
     $item_output .= '</a>';
