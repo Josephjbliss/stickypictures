@@ -5,13 +5,42 @@ define('THEME_URL', get_bloginfo('stylesheet_directory').'/');
 
 function client_scripts($hook) {
 
+    wp_enqueue_script(
+      THEME_PREFIX .'-modernizr',
+      THEME_URL . 'js/modernizr.js'
+    );
+
+    wp_enqueue_script(
+      THEME_PREFIX .'-jquery',
+      THEME_URL . 'js/jquery-1.11.3.min.js'
+    );
+
+    wp_enqueue_script(
+      THEME_PREFIX .'-masonry',
+      THEME_URL . 'js/masonry.pkgd.min.js'
+    );
+
+    wp_enqueue_script(
+      THEME_PREFIX .'-imagesloaded',
+      THEME_URL . 'js/imagesloaded.pkgd.min.js'
+    );
+
+    wp_enqueue_script(
+      THEME_PREFIX .'-fitvids',
+      THEME_URL . 'js/jquery.fitvids.js'
+    );
+
+    wp_enqueue_script(
+      THEME_PREFIX .'-froogaloop',
+      THEME_URL . 'js/froogaloop.min.js'
+    );
+
     // Main Client Script
     wp_enqueue_script(
       THEME_PREFIX .'-main-js',
-      THEME_URL . 'assets/js/main.min.js',
-      array('jquery','underscore')
+      THEME_URL . 'js/project.js'
     );
-    
+
 }
 add_action( 'wp_enqueue_scripts', 'client_scripts' );
 
@@ -20,11 +49,15 @@ function client_styles() {
 
     global $wp_styles;
 
+    // Reset Stylesheet
+    wp_register_style( THEME_PREFIX . '-reset', THEME_URL . 'css/reset.css' );
+    wp_enqueue_style( THEME_PREFIX . '-reset' );
+    
     // Main Stylesheet
-    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'assets/css/main.min.css' );
+    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'css/main.css' );
     wp_enqueue_style( THEME_PREFIX . '-theme' );
 
-    wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "assets/css/ie.css", array( THEME_PREFIX . '-theme' )  );
+    wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "css/ieonly.css", array( THEME_PREFIX . '-theme' )  );
     $wp_styles->add_data( THEME_PREFIX . '-ie', 'conditional', 'IE' );    
 
 }
