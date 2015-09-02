@@ -12,7 +12,7 @@ module.exports = (grunt) ->
   grunt.registerTask "default", ["watch"]
   grunt.registerTask "minify", ["uglify:build", "cssmin"]
   grunt.registerTask "deploy", ["build", "push_theme"]
-  grunt.registerTask "build", ["minify", "clean:build", "copy:build", "compress:build"]
+  grunt.registerTask "build", ["less", "minify", "clean:build", "copy:build", "compress:build"]
 
   return
 

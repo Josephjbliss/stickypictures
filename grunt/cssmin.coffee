@@ -7,4 +7,5 @@ module.exports =
       'assets/css/stickypictures.min.css' : [
         'assets/css/reset.css'
         'assets/css/main.css'
+        'assets/css/caliper.css'
       ]
