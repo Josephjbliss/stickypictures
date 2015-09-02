@@ -20,7 +20,7 @@ get_header();
             <h4>Tags</h4>
 
             <div class="tags">
-              <?php the_tags( $before = '', $sep = ' ', $after = ''); ?>
+              <?php project_tags(); ?>
             </div>
 
             <h4 class="credits-title">Credits</h4>
