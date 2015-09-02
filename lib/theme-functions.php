@@ -11,7 +11,7 @@ function project_tags() {
 
 function project_bg_style() {
   global $post;
-  return 'background-color: ' . get_field('bg_color') . ';';
+  echo 'background-color: ' . get_field('bg_color') . ';';
 } // END project_bg_style()
 
 ?>
