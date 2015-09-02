@@ -47,5 +47,6 @@ module.exports =
       "!*.map"
       # Add excludes for this project..
       "!static/**"      
+      "!assets/css/*.map"      
     ]
     dest: "build/"
