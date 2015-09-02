@@ -13,7 +13,17 @@
 
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<?php 
+
+// Set classes to match static stickypictures
+if( is_singular( THEME_PREFIX . '_project') ) {
+  $classes[] = 'project-page';
+} elseif ( is_front_page() ) {
+  $classes[] = 'home-page';
+}
+
+?>
+<body <?php body_class( $classes ); ?>>
   <div class="wrap container" role="document">
     <?php get_template_part('templates/nav'); ?>
     <div class="content row">
