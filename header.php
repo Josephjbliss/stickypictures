@@ -16,6 +16,7 @@
 <?php 
 
 // Set classes to match static stickypictures
+$classes = array();
 if( is_singular( THEME_PREFIX . '_project') ) {
   $classes[] = 'project-page';
 } elseif ( is_front_page() ) {
