@@ -130,100 +130,42 @@ get_header();
         </div>
     </div>
 </section>
-<section class="project-photos">
+
+<?php
+$stills = get_field('stills');
+if( $stills ) : ?>
+  <section class="project-photos">
     <h3>Stills</h3>
     <div class="project-masonry">
+      <?php foreach ( $stills as $still ): ?>      
         <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample1.png">
+          <img src="<?php echo $still['url']; ?>">
         </div>
-        <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample2.png">
-        </div>
-        <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample3.png">
-        </div>
-        <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample4.png">
-        </div>
-        <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample5.png">
-        </div>
-        <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample1.png">
-        </div>
-        <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample2.png">
-        </div>
-        <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample3.png">
-        </div>
-        <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample4.png">
-        </div>
-        <div class="project-masonry-element">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample5.png">
-        </div>
-    </div>
-</section>
-<section class="related-projects">
+      <?php endforeach; ?>
+    </div> <!-- .project-masonry -->
+  </section>
+<?php endif; ?>
+
+<?php
+$related_projects = get_field('related_projects');
+if( $related_projects ) : ?>
+  <section class="related-projects">
     <h3>Related Projects</h3>
     <div class="related-project-thumbnails">
+      <?php foreach ( $related_projects as $post ): setup_postdata($post); ?>      
         <div class="related-project">
-            <a href="project.html">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-                <div class="related-project-hover antialiased">
-                    <h5 class="client">Thornberg &amp; Forester</h5>
-                    <h5 class="project">Retirement</h5>
-                </div>
-            </a>
+          <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>">
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
+            <div class="related-project-hover antialiased">
+              <h5 class="client"><?php the_field('client'); ?></h5>
+              <h5 class="project"><?php the_field('project_name'); ?></h5>
+            </div>
+          </a>
         </div>
-        <div class="related-project">
-            <a href="project.html">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-                <div class="related-project-hover antialiased">
-                    <h5 class="client">Thornberg &amp; Forester</h5>
-                    <h5 class="project">Retirement</h5>
-                </div>
-            </a>
-        </div>
-        <div class="related-project">
-            <a href="project.html">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-                <div class="related-project-hover antialiased">
-                    <h5 class="client">Thornberg &amp; Forester</h5>
-                    <h5 class="project">Retirement</h5>
-                </div>
-            </a>
-        </div>
-        <div class="related-project">
-            <a href="project.html">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-                <div class="related-project-hover antialiased">
-                    <h5 class="client">Thornberg &amp; Forester</h5>
-                    <h5 class="project">Retirement</h5>
-                </div>
-            </a>
-        </div>
-        <div class="related-project">
-            <a href="project.html">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-                <div class="related-project-hover antialiased">
-                    <h5 class="client">Thornberg &amp; Forester</h5>
-                    <h5 class="project">Retirement</h5>
-                </div>
-            </a>
-        </div>
-        <div class="related-project">
-            <a href="project.html">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-                <div class="related-project-hover antialiased">
-                    <h5 class="client">Thornberg &amp; Forester</h5>
-                    <h5 class="project">Retirement</h5>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
+      <?php endforeach; wp_reset_postdata(); ?>
+    </div> <!-- .related-project-thumbnails -->
+  </section>
+<?php endif; ?>
 
 <?php
 get_footer();
