@@ -7,13 +7,13 @@ function client_scripts($hook) {
 
     wp_enqueue_script(
       THEME_PREFIX .'-modernizr',
-      THEME_URL . 'js/modernizr.js'
+      THEME_URL . 'assets/js/modernizr.js'
     );
 
     // Main Client Script
     wp_enqueue_script(
       THEME_PREFIX .'-main-js',
-      THEME_URL . 'js/stickypictures.min.js'
+      THEME_URL . 'assets/js/stickypictures.min.js'
     );
 
 }
@@ -24,10 +24,10 @@ function client_styles() {
 
     global $wp_styles;
     // Main Stylesheet
-    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'css/stickypictures.min.css' );
+    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'assets/css/stickypictures.min.css' );
     wp_enqueue_style( THEME_PREFIX . '-theme' );
 
-    wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "css/ieonly.css", array( THEME_PREFIX . '-theme' )  );
+    wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "assets/css/ieonly.css", array( THEME_PREFIX . '-theme' )  );
     $wp_styles->add_data( THEME_PREFIX . '-ie', 'conditional', 'IE' );    
 
 }

@@ -74,7 +74,7 @@ h1 a {
     width: 159px;
 
     text-transform: none;
-    background-image: url("../img/logo.png");
+    background-image: url("../images/logo.png");
     background-size: 159px;
     text-indent: 100%;
     white-space: nowrap;
@@ -100,7 +100,7 @@ nav a {
 
 /* Selected States for Nav */
 nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .project-page nav a.work, .about-page nav a.about, .reel-page nav a.reel, .contact-page nav a.contact {
-    background: transparent url("../img/underline.png") bottom left repeat-x;
+    background: transparent url("../images/underline.png") bottom left repeat-x;
 }
 
 /* Slideshow Styles */
@@ -318,7 +318,7 @@ footer {
     margin: 0 12px;
     font-size: 15px;
     line-height: 19px;
-    background: transparent url("../img/dotted-border.png") bottom left repeat-x;
+    background: transparent url("../images/dotted-border.png") bottom left repeat-x;
 }
 
 .project-blurb h2 {
@@ -431,11 +431,11 @@ footer {
     left: 50%;
     margin-left: -29px;
     margin-top: -29px;
-    background: transparent url("../img/play.png") top left no-repeat;
+    background: transparent url("../images/play.png") top left no-repeat;
 }
 
 .video-thumb:hover .video-thumb-hover {
-    background-image: url("../img/play-hover.png");
+    background-image: url("../images/play-hover.png");
 }
 
 .video-thumb .vimeo-iframe {
@@ -507,7 +507,7 @@ footer {
     font-size: 20px;
     line-height: 60px;
     height: 60px;
-    background: transparent url("../img/dotted-border.png") bottom left repeat-x;
+    background: transparent url("../images/dotted-border.png") bottom left repeat-x;
 }
 
 .contact-map iframe {
@@ -524,7 +524,7 @@ footer {
     margin: 0 12px;
     font-size: 15px;
     line-height: 19px;
-    background: transparent url("../img/dotted-border.png") bottom left repeat-x;
+    background: transparent url("../images/dotted-border.png") bottom left repeat-x;
 }
 
 .contact-info .company-name {

@@ -4,7 +4,7 @@ module.exports =
     roundingPrecision: -1
   target:
     files:
-      'css/stickypictures.min.css' : [
-        'css/reset.css'
-        'css/main.css'
+      'assets/css/stickypictures.min.css' : [
+        'assets/css/reset.css'
+        'assets/css/main.css'
       ]
