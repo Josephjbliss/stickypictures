@@ -7,7 +7,7 @@ add_action( 'init', 'bolt_custom_post_types' );
 function bolt_custom_post_types() {
   
   $cpts = array(
-    'cpt_name' => array(
+    'project' => array(
       'singular' => 'Project',
       'plural' => 'Projects',
       'show_in_menu' => true,
@@ -21,7 +21,7 @@ function bolt_custom_post_types() {
 
 
   foreach ( $cpts as $key => $cpt ) {
-    $db_cpt_name = THEME_PREFIX . $key;
+    $db_cpt_name = THEME_PREFIX . '_' . $key;
     $singular = $cpt['singular'];
     $plural = $cpt['plural'];
     $show_in_menu = $cpt['show_in_menu'];   
