@@ -13,7 +13,7 @@ function client_scripts($hook) {
     // Main Client Script
     wp_enqueue_script(
       THEME_PREFIX .'-main-js',
-      THEME_URL . 'js/stickypictures.js'
+      THEME_URL . 'js/stickypictures.min.js'
     );
 
 }
