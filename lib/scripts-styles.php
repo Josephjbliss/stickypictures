@@ -23,13 +23,8 @@ add_action( 'wp_enqueue_scripts', 'client_scripts' );
 function client_styles() {
 
     global $wp_styles;
-
-    // Reset Stylesheet
-    wp_register_style( THEME_PREFIX . '-reset', THEME_URL . 'css/reset.css' );
-    wp_enqueue_style( THEME_PREFIX . '-reset' );
-    
     // Main Stylesheet
-    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'css/main.css' );
+    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'css/stickypictures.min.css' );
     wp_enqueue_style( THEME_PREFIX . '-theme' );
 
     wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "css/ieonly.css", array( THEME_PREFIX . '-theme' )  );

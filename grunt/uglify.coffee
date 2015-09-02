@@ -9,7 +9,3 @@ module.exports =
         "js/froogaloop.min.js"
         "js/project.js"
       ]
-    # options:
-    #   separator: ';\n\n'
-    #   banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-    #     '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
