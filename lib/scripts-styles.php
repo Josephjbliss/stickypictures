@@ -10,35 +10,10 @@ function client_scripts($hook) {
       THEME_URL . 'js/modernizr.js'
     );
 
-    wp_enqueue_script(
-      THEME_PREFIX .'-jquery',
-      THEME_URL . 'js/jquery-1.11.3.min.js'
-    );
-
-    wp_enqueue_script(
-      THEME_PREFIX .'-masonry',
-      THEME_URL . 'js/masonry.pkgd.min.js'
-    );
-
-    wp_enqueue_script(
-      THEME_PREFIX .'-imagesloaded',
-      THEME_URL . 'js/imagesloaded.pkgd.min.js'
-    );
-
-    wp_enqueue_script(
-      THEME_PREFIX .'-fitvids',
-      THEME_URL . 'js/jquery.fitvids.js'
-    );
-
-    wp_enqueue_script(
-      THEME_PREFIX .'-froogaloop',
-      THEME_URL . 'js/froogaloop.min.js'
-    );
-
     // Main Client Script
     wp_enqueue_script(
       THEME_PREFIX .'-main-js',
-      THEME_URL . 'js/project.js'
+      THEME_URL . 'js/stickypictures.js'
     );
 
 }

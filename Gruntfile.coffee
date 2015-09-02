@@ -11,7 +11,7 @@ module.exports = (grunt) ->
   # Register tasks
   grunt.registerTask "default", ["watch"]
   grunt.registerTask "deploy", ["build", "push_theme"]
-  grunt.registerTask "build", ["clean:build", "copy:build", "compress:build"]
+  grunt.registerTask "build", ["concat:build", "clean:build", "copy:build", "compress:build"]
 
   return
 
