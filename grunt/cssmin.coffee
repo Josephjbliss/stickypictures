@@ -6,8 +6,8 @@ module.exports =
       sourceMap : true
     files:
       'assets/css/stickypictures.min.css' : [
-        'assets/css/reset.css'
-        'assets/css/main.css'
+        'static/css/reset.css'
+        'static/css/main.css'
         'assets/css/caliper.css'
       ]
   dist:
@@ -16,7 +16,7 @@ module.exports =
       roundingPrecision: -1
     files:
       'assets/css/stickypictures.min.css' : [
-        'assets/css/reset.css'
-        'assets/css/main.css'
+        'static/css/reset.css'
+        'static/css/main.css'
         'assets/css/caliper.css'
       ]
