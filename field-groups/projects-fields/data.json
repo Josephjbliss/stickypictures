@@ -182,7 +182,7 @@
                 "id": ""
             },
             "post_type": [
-                "spcpt_name"
+                "sp_project"
             ],
             "taxonomy": [],
             "filters": [

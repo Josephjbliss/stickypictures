@@ -204,7 +204,7 @@ $group = array (
       ),
       'post_type' => 
       array (
-        0 => 'spcpt_name',
+        0 => 'sp_project',
       ),
       'taxonomy' => 
       array (
