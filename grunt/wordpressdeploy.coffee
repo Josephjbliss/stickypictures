@@ -61,8 +61,9 @@ module.exports =
     host: "localhost"
     url: "//localhost:8888/stickypictures.com"
     path:
-      theme: "/Applications/MAMP/htdocs/stickypictures.com/wp-content/themes/sticky-pictures/"
+      theme: "/Applications/MAMP/htdocs/stickypictures.com/wp-content/themes/sticky-pictures/build/"
       uploads: "/Applications/MAMP/htdocs/stickypictures.com/wp-content/uploads/"
+      plugins: "/Applications/MAMP/htdocs/stickypictures.com/wp-content/plugins/"
 
 
   # ==========  Start Environment Definitions  ==========
@@ -83,18 +84,20 @@ module.exports =
       uploads: "/home/client_name/client-site.com/wp-content/uploads/"
     ssh_host: "client_name@my.live.com"
 
-  dev:
-    title: "Dev Server"
-    database: "wordpress"
-    table_prefix: "client_name_wp_"
+  mt:
+    title: "Media Temple"
+    database: "db209892_wp"
+    table_prefix: "sticky_wp_"
     table_exclusions : [
-      "_wf" # Will exclude with " NOT LIKE '%_wf%' " statement
+      # "_wf" # Will exclude with " NOT LIKE '%_wf%' " statement
     ]        
-    user: "<%= grunt.config.data.deployconfig.dev.db_user %>"
-    pass: "<%= grunt.config.data.deployconfig.dev.db_pass %>"
-    host: "127.0.0.1"
-    url: "//my-portfolio-site.com/client/client_name"
+    port: 3306
+    user: "<%= grunt.config.data.deployconfig.mt.db_user %>"
+    pass: "<%= grunt.config.data.deployconfig.mt.db_pass %>"
+    host: "internal-db.s209892.gridserver.com"
+    url: "//s209892.gridserver.com"
     path:
-      theme: "/home/wordpress/public_html/client/client_name/wp-content/themes/client_name-theme/"
-      uploads: "/home/wordpress/public_html/client/client_name/wp-content/uploads/"
-    ssh_host: "wordpress@ssh.my-portfolio-site.com"
+      theme: "/nfs/c09/h01/mnt/209892/users/.home/domains/stickypictures.com/html/wp-content/themes/sticky-pictures/"
+      uploads: "/nfs/c09/h01/mnt/209892/users/.home/domains/stickypictures.com/html/wp-content/uploads/"
+      plugins: "/nfs/c09/h01/mnt/209892/users/.home/domains/stickypictures.com/html/wp-content/plugins/"
+    ssh_host: "stickypictures.com@s209892.gridserver.com"
