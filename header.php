@@ -20,8 +20,12 @@
 $classes = array();
 if( is_singular( THEME_PREFIX . '_project') ) {
   $classes[] = 'project-page';
+} elseif ( is_post_type_archive( THEME_PREFIX . '_project') ) {
+  $classes[] = 'projects-archive-page';
 } elseif ( is_front_page() ) {
   $classes[] = 'home-page';
+} else {
+  $classes[] = sanitize_title( get_the_title() ) . '-page';
 }
 
 ?>

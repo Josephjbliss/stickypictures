@@ -3,8 +3,19 @@ get_header();
 
 if ( have_posts() ) :
   while (have_posts()) : the_post(); ?>
-    <?php get_template_part('templates/page', 'header'); ?>
-    <?php get_template_part('templates/content', 'page'); ?>
+    <?php get_template_part('templates/slider'); ?>
+    <?php
+    // Get content-specific template or use default page
+    $slug = sanitize_title( get_the_title() );
+    $tpl = "templates/content-page-$slug.php";
+    $tpl_exists = locate_template( $tpl );
+    if( $tpl_exists ) :
+      get_template_part('templates/content-page', $slug);
+    else:
+      get_template_part('templates/content-page', 'default');
+    endif;
+
+    ?>
   <?php
   endwhile;
 endif;

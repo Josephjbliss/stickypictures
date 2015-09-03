@@ -148,24 +148,8 @@ if( $stills ) : ?>
 
 <?php
 $related_projects = get_field('related_projects');
-if( $related_projects ) : ?>
-  <section class="related-projects">
-    <h3>Related Projects</h3>
-    <div class="related-project-thumbnails">
-      <?php foreach ( $related_projects as $post ): setup_postdata($post); ?>      
-        <div class="related-project">
-          <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-            <div class="related-project-hover antialiased">
-              <h5 class="client"><?php the_field('client'); ?></h5>
-              <h5 class="project"><?php the_field('project_name'); ?></h5>
-            </div>
-          </a>
-        </div>
-      <?php endforeach; wp_reset_postdata(); ?>
-    </div> <!-- .related-project-thumbnails -->
-  </section>
-<?php endif; ?>
+related_projects( $related_projects );
+?>
 
 <?php
 get_footer();
