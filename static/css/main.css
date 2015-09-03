@@ -555,6 +555,91 @@ footer {
     margin-top: 20px;
 }
 
+/* About Styles */
+
+.about-page h3 {
+    font-family: "FranklinGothic-Condensed";
+    text-transform: uppercase;
+    font-size: 20px; 
+    line-height: 22px;
+}
+
+.about-page section p, .about-page section li {
+    font-size: 15px;
+    line-height: 19px;
+}
+
+.rule {
+    clear: both;
+    height: 1px;
+    width: 100%;
+    background: transparent url("../images/dotted-border.png") bottom left repeat-x;
+}
+
+.about-sections {
+    padding: 12px 12px 0 12px;
+}
+
+.about-sections section {
+    padding: 20px 0;
+}  
+
+.about-sections section.about-blurb {
+    padding-top: 0;
+}
+
+.about-sections section h3 {
+    margin-bottom: 16px;
+}
+
+.about-sections section p {
+    margin-bottom: 16px;
+}
+
+.about-sections section p:last-of-type {
+    margin-bottom: 0;
+}
+
+.about-page .clients-list {
+    text-align: justify;
+    -moz-text-align-last: justify; /* Code for Firefox */
+    text-align-last: justify;
+    margin-bottom: -36px;
+}
+
+.about-page .clients-list:after {
+   content: "";
+   display: inline-block;
+   width: 100%;
+   height: 0;
+   line-height: 0;
+   visibility: hidden;
+   font-size: 0;
+}
+
+.about-page .clients-list img {
+    width: 124px;
+    margin: 18px 0;
+    display: inline-block;
+}
+
+.about-page .related-projects h3 {
+    padding-left: 12px;
+    margin: 12px 0;
+}
+
+/*
+.about-page .clients-list img {
+    display: block;
+    width: 42.5%;
+    margin-right: 15%;
+    margin-bottom: 10%;
+    float: left;
+}
+.about-page .clients-list img:nth-child(2n) {
+    margin-right: 0;
+}*/
+
 @media only screen and (min-width: 414px){
     nav {
         width: auto;
@@ -577,6 +662,16 @@ footer {
         float: left;
         width: 49%;
         margin: .5%;
+    }
+
+    /* About Page Styles */
+    section.capabilities, section.methods {
+        float: left;
+        width: 50%;
+        margin: 0;
+    }
+    .rule.capabilities {
+        display: none;
     }
 }
 
@@ -634,13 +729,12 @@ footer {
     }
     .video-thumb, .related-project {
         width: 32.333%;
-    }   
+    }
     .contact-info .option-1 {
-         -webkit-column-count: 2; /* Chrome, Safari, Opera */
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
         -moz-column-count: 2; /* Firefox */
         column-count: 2;        
     }
-
     .contact-info .option-2 p {
         width: 50%;
         float: left;
@@ -726,14 +820,11 @@ footer {
         width: 49.5%;
         margin: .25%;
     }
-
-
     .contact-info .option-1 {
          -webkit-column-count: 3; /* Chrome, Safari, Opera */
         -moz-column-count: 3; /* Firefox */
         column-count: 3;        
     }
-
     .contact-info .option-2 p {
         width: 33.3333%;
     }
@@ -742,6 +833,27 @@ footer {
     }
     .contact-info .option-2 p:nth-child(3n+1) {
         clear: both;
+    }
+
+    /* About Page Styles */
+    section.about-blurb {
+        width: 48%;
+        float: left;
+        margin-right: 2%;
+    }
+    section.capabilities, section.methods {
+        padding: 0;
+        width: 25%;
+    }
+    .rule.about-blurb {
+        display: none;
+    }
+    section.clients .clients-blurb {
+        width: 50%;
+        float: left;
+    }
+    section.clients .clients-list {
+        margin-top: 20px;
     }
 }
 
@@ -809,6 +921,30 @@ footer {
     }
     .project-masonry-element {
         width: 32.833%;
+    }
+
+    /* About Page Styles */
+    section.about-blurb {
+        width: 32.3333%;
+        margin-right: 1%;
+    }
+    section.capabilities, section.methods {
+        width: 16.6666%;
+    }
+    .rule.methods {
+        display: none;
+    }
+    section.clients {
+        width: 33.3333%;
+        float: left;
+        padding-top:0;
+    }
+    section.clients .clients-blurb {
+        width: auto;
+        float: none;
+    }
+    section.clients .clients-list {
+        margin-top: 0;
     }
 }
 
