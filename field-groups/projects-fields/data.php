@@ -93,6 +93,32 @@ $group = array (
     ),
     4 => 
     array (
+      'key' => 'field_55e9f06cfc2cc',
+      'label' => 'Showcase Image',
+      'name' => 'showcase_image',
+      'type' => 'image',
+      'instructions' => 'This is the image that will show up on the homepage slideshow.',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'return_format' => 'array',
+      'preview_size' => 'sow-carousel-default',
+      'library' => 'all',
+      'min_width' => '',
+      'min_height' => '',
+      'min_size' => '',
+      'max_width' => '',
+      'max_height' => '',
+      'max_size' => '',
+      'mime_types' => '',
+    ),
+    5 => 
+    array (
       'key' => 'field_55e72399710bd',
       'label' => 'Related Project Thumbnail',
       'name' => 'related_thumb',
@@ -117,7 +143,7 @@ $group = array (
       'max_size' => '',
       'mime_types' => '',
     ),
-    5 => 
+    6 => 
     array (
       'key' => 'field_55e7234223a5a',
       'label' => 'Background Color',
@@ -134,7 +160,7 @@ $group = array (
       ),
       'default_value' => '#9d9fa2',
     ),
-    6 => 
+    7 => 
     array (
       'key' => 'field_55e9e85fb3dc7',
       'label' => 'Credits',
@@ -152,7 +178,7 @@ $group = array (
       'placement' => 'top',
       'endpoint' => 0,
     ),
-    7 => 
+    8 => 
     array (
       'key' => 'field_55e7248b98201',
       'label' => 'Credits',
@@ -221,7 +247,7 @@ $group = array (
         ),
       ),
     ),
-    8 => 
+    9 => 
     array (
       'key' => 'field_55e9e80c55006',
       'label' => 'Videos',
@@ -239,7 +265,7 @@ $group = array (
       'placement' => 'top',
       'endpoint' => 0,
     ),
-    9 => 
+    10 => 
     array (
       'key' => 'field_55e62358c80e0',
       'label' => 'Videos',
@@ -361,7 +387,7 @@ $group = array (
         ),
       ),
     ),
-    10 => 
+    11 => 
     array (
       'key' => 'field_55e9e81b55007',
       'label' => 'Stills',
@@ -379,7 +405,7 @@ $group = array (
       'placement' => 'top',
       'endpoint' => 0,
     ),
-    11 => 
+    12 => 
     array (
       'key' => 'field_55e724a38ab2f',
       'label' => 'Stills',
@@ -406,7 +432,7 @@ $group = array (
       'max_size' => '',
       'mime_types' => '',
     ),
-    12 => 
+    13 => 
     array (
       'key' => 'field_55e9e83555008',
       'label' => 'Related Projects',
@@ -424,7 +450,7 @@ $group = array (
       'placement' => 'top',
       'endpoint' => 0,
     ),
-    13 => 
+    14 => 
     array (
       'key' => 'field_55e721625d18a',
       'label' => 'Related Projects',
