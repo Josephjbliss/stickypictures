@@ -4,7 +4,17 @@ get_header();
 
 <section class="project-hero">
     <div class="vimeo-iframe">
-        <iframe src="https://player.vimeo.com/video/134346408?api=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <?php
+        $videos = get_field('videos');
+        $first_vid = 0;
+        if( $videos )
+            $first_vid = $videos[0];
+
+        if( $first_vid ) : ?>
+            <!-- <iframe src="https://player.vimeo.com/video/<?php echo $first_vid['vimeo_id'] ?>?api=1" width="<?php echo $first_vid['video_w'] ?>" height="<?php echo $first_vid['video_h'] ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+        <?php
+        endif;
+        ?>
     </div>
 </section>
 <section>
@@ -23,112 +33,12 @@ get_header();
               <?php project_tags(); ?>
             </div>
 
-            <h4 class="credits-title">Credits</h4>
-            
-            <div class="credits">
-                <div class="credit">
-                    <h5>Network:</h5>
-                    <p>USA Network</p>
-                </div>
-
-                <div class="credit">
-                    <h5>Production Company:</h5>
-                    <p>Sticky Pictures</p>
-                </div>
-
-                <div class="credit">
-                    <h5>Creative Director:</h5>
-                    <p>Michael Darmanin</p>
-                </div>
-
-                <div class="credit">
-                    <h5>Producer:</h5>
-                    <p>Michael Darmanin</p>
-                </div>
-
-                <div class="credit">
-                    <h5>Design:</h5>
-                    <p>I-Ting Lee</p>
-                </div>
-
-                <div class="credit">
-                    <h5>Animation:</h5>
-                    <p>Joe Vac</p>
-                    <p>Ben Thing</p>
-                </div>
-
-                <div class="credit">
-                    <h5>Design:</h5>
-                    <p>I-Ting Lee</p>
-                </div>
-
-                <div class="credit">
-                    <h5>Animation:</h5>
-                    <p>Joe Vac</p>
-                    <p>Ben Thing</p>
-                </div>
-            </div>
+            <?php project_credits(); ?>
         </div>
     </div>
 </section>
 <section class="videos">
-    <h3>Videos</h3>
-    <div class="video-thumbnails">
-        <div class="video-thumb">
-            <a href="#">
-                <div class="video-thumb-hover"></div>
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-            </a>
-            <div class="vimeo-iframe">
-                <iframe src="https://player.vimeo.com/video/134346408?api=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="video-thumb">
-            <a href="#">
-                <div class="video-thumb-hover"></div>
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-            </a>
-            <div class="vimeo-iframe">
-                <iframe src="https://player.vimeo.com/video/134334486?api=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>                    
-        </div>
-        <div class="video-thumb">
-            <a href="#">
-                <div class="video-thumb-hover"></div>
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-            </a>
-            <div class="vimeo-iframe">
-                <iframe src="https://player.vimeo.com/video/134348474?api=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="video-thumb">
-            <a href="#">
-                <div class="video-thumb-hover"></div>
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-            </a>
-            <div class="vimeo-iframe">
-                <iframe src="https://player.vimeo.com/video/134665433?api=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="video-thumb">
-            <a href="#">
-                <div class="video-thumb-hover"></div>
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-            </a>
-            <div class="vimeo-iframe">
-                <iframe src="https://player.vimeo.com/video/135912980?api=1" width="500" height="250" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-        </div>                
-        <div class="video-thumb">
-            <a href="#">
-                <div class="video-thumb-hover"></div>
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/project/video-thumb.png">
-            </a>
-            <div class="vimeo-iframe">
-                <iframe src="https://player.vimeo.com/video/134983018?api=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+    <?php project_videos(); ?>
 </section>
 
 <?php
