@@ -11,7 +11,7 @@ get_header();
             $first_vid = $videos[0];
 
         if( $first_vid ) : ?>
-            <!-- <iframe src="https://player.vimeo.com/video/<?php echo $first_vid['vimeo_id'] ?>?api=1" width="<?php echo $first_vid['video_w'] ?>" height="<?php echo $first_vid['video_h'] ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+            <iframe src="https://player.vimeo.com/video/<?php echo $first_vid['vimeo_id'] ?>?api=1" width="<?php echo $first_vid['video_w'] ?>" height="<?php echo $first_vid['video_h'] ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         <?php
         endif;
         ?>
