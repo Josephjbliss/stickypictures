@@ -30,8 +30,23 @@ function bolt_setup() {
 
   // Tell the TinyMCE editor to use a custom stylesheet
   // add_editor_style('/assets/css/editor-style.css');
+
+  if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page(array(
+      'page_title'  => __('Site Options'),
+      'menu_title'  => __('Site Options'),
+      'menu_slug'   => 'site-options',
+      'capability'  => 'edit_posts',
+      'redirect'    => false
+    ));
+
+  }
+
 }
 add_action('after_setup_theme', 'bolt_setup');
+
+
 
 /**
  * Register sidebars

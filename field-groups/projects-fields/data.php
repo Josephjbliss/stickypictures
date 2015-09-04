@@ -6,6 +6,24 @@ $group = array (
   array (
     0 => 
     array (
+      'key' => 'field_55e9e7fa55005',
+      'label' => 'General Info',
+      'name' => '',
+      'type' => 'tab',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'placement' => 'top',
+      'endpoint' => 0,
+    ),
+    1 => 
+    array (
       'key' => 'field_55e622d206885',
       'label' => 'Client',
       'name' => 'client',
@@ -27,7 +45,7 @@ $group = array (
       'readonly' => 0,
       'disabled' => 0,
     ),
-    1 => 
+    2 => 
     array (
       'key' => 'field_55e622d906886',
       'label' => 'Project Name',
@@ -50,7 +68,7 @@ $group = array (
       'readonly' => 0,
       'disabled' => 0,
     ),
-    2 => 
+    3 => 
     array (
       'key' => 'field_55e622e406887',
       'label' => 'Project Information',
@@ -73,12 +91,38 @@ $group = array (
       'readonly' => 0,
       'disabled' => 0,
     ),
-    3 => 
+    4 => 
     array (
-      'key' => 'field_55e7248b98201',
-      'label' => 'Credits',
-      'name' => 'credits',
-      'type' => 'wysiwyg',
+      'key' => 'field_55e72399710bd',
+      'label' => 'Related Project Thumbnail',
+      'name' => 'related_thumb',
+      'type' => 'image',
+      'instructions' => 'This is the thumbnail image that will show up if this project is in the "Related Projects" section. If no image is provided, the Featured Image will be used.',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'return_format' => 'array',
+      'preview_size' => 'thumbnail',
+      'library' => 'all',
+      'min_width' => '',
+      'min_height' => '',
+      'min_size' => '',
+      'max_width' => '',
+      'max_height' => '',
+      'max_size' => '',
+      'mime_types' => '',
+    ),
+    5 => 
+    array (
+      'key' => 'field_55e7234223a5a',
+      'label' => 'Background Color',
+      'name' => 'bg_color',
+      'type' => 'color_picker',
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
@@ -88,16 +132,31 @@ $group = array (
         'class' => '',
         'id' => '',
       ),
-      'default_value' => '',
-      'tabs' => 'all',
-      'toolbar' => 'full',
-      'media_upload' => 1,
+      'default_value' => '#9d9fa2',
     ),
-    4 => 
+    6 => 
     array (
-      'key' => 'field_55e62358c80e0',
-      'label' => 'Videos',
-      'name' => 'videos',
+      'key' => 'field_55e9e85fb3dc7',
+      'label' => 'Credits',
+      'name' => '',
+      'type' => 'tab',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'placement' => 'top',
+      'endpoint' => 0,
+    ),
+    7 => 
+    array (
+      'key' => 'field_55e7248b98201',
+      'label' => 'Credits',
+      'name' => 'credits',
       'type' => 'repeater',
       'instructions' => '',
       'required' => 0,
@@ -109,6 +168,93 @@ $group = array (
         'id' => '',
       ),
       'min' => '',
+      'max' => '',
+      'layout' => 'table',
+      'button_label' => 'Add Credit Category',
+      'sub_fields' => 
+      array (
+        0 => 
+        array (
+          'key' => 'field_55e9c367b38dc',
+          'label' => 'Credit Category',
+          'name' => 'credit_category',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        1 => 
+        array (
+          'key' => 'field_55e9c38bb38dd',
+          'label' => 'Credit Names',
+          'name' => 'credit_names',
+          'type' => 'textarea',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+          'maxlength' => '',
+          'rows' => 2,
+          'new_lines' => 'wpautop',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+      ),
+    ),
+    8 => 
+    array (
+      'key' => 'field_55e9e80c55006',
+      'label' => 'Videos',
+      'name' => '',
+      'type' => 'tab',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'placement' => 'top',
+      'endpoint' => 0,
+    ),
+    9 => 
+    array (
+      'key' => 'field_55e62358c80e0',
+      'label' => 'Videos',
+      'name' => 'videos',
+      'type' => 'repeater',
+      'instructions' => 'The first video in this list will be auto-played as the main video for this project.',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'min' => 0,
       'max' => '',
       'layout' => 'table',
       'button_label' => 'Add Video',
@@ -143,9 +289,9 @@ $group = array (
         1 => 
         array (
           'key' => 'field_55e623a1f1ea8',
-          'label' => 'Video URL',
-          'name' => 'url',
-          'type' => 'url',
+          'label' => 'Vimeo ID',
+          'name' => 'vimeo_id',
+          'type' => 'text',
           'instructions' => '',
           'required' => 0,
           'conditional_logic' => 0,
@@ -157,10 +303,83 @@ $group = array (
           ),
           'default_value' => '',
           'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        2 => 
+        array (
+          'key' => 'field_55e9c30fc09df',
+          'label' => 'Video Width',
+          'name' => 'video_w',
+          'type' => 'number',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'min' => '',
+          'max' => '',
+          'step' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        3 => 
+        array (
+          'key' => 'field_55e9c2f1c09de',
+          'label' => 'Video Height',
+          'name' => 'video_h',
+          'type' => 'number',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'min' => '',
+          'max' => '',
+          'step' => '',
+          'readonly' => 0,
+          'disabled' => 0,
         ),
       ),
     ),
-    5 => 
+    10 => 
+    array (
+      'key' => 'field_55e9e81b55007',
+      'label' => 'Stills',
+      'name' => '',
+      'type' => 'tab',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'placement' => 'top',
+      'endpoint' => 0,
+    ),
+    11 => 
     array (
       'key' => 'field_55e724a38ab2f',
       'label' => 'Stills',
@@ -187,7 +406,25 @@ $group = array (
       'max_size' => '',
       'mime_types' => '',
     ),
-    6 => 
+    12 => 
+    array (
+      'key' => 'field_55e9e83555008',
+      'label' => 'Related Projects',
+      'name' => '',
+      'type' => 'tab',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'placement' => 'top',
+      'endpoint' => 0,
+    ),
+    13 => 
     array (
       'key' => 'field_55e721625d18a',
       'label' => 'Related Projects',
@@ -217,49 +454,6 @@ $group = array (
       'min' => '',
       'max' => '',
       'return_format' => 'object',
-    ),
-    7 => 
-    array (
-      'key' => 'field_55e72399710bd',
-      'label' => 'Related Project Thumbnail',
-      'name' => 'related_thumb',
-      'type' => 'image',
-      'instructions' => 'This is the thumbnail image that will show up if this project is in the "Related Projects" section. If no image is provided, the Featured Image will be used.',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'return_format' => 'array',
-      'preview_size' => 'thumbnail',
-      'library' => 'all',
-      'min_width' => '',
-      'min_height' => '',
-      'min_size' => '',
-      'max_width' => '',
-      'max_height' => '',
-      'max_size' => '',
-      'mime_types' => '',
-    ),
-    8 => 
-    array (
-      'key' => 'field_55e7234223a5a',
-      'label' => 'Background Color',
-      'name' => 'bg_color',
-      'type' => 'color_picker',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'default_value' => '#9d9fa2',
     ),
   ),
   'location' => 
