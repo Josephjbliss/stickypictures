@@ -135,6 +135,16 @@ $(document).ready(function(){
     updateMasonry();
 
     $(window).resize(function(){
+        ///////////////////////////////////////
+        //About Page 
+            // var halfthewidthofthecontainer = $(".clients-list .client-image").width()/2;
+            // var halfthewidthoftheimage = $(".clients-list .client-image img").width()/2;
+            // var margintotakeaway = halfthewidthofthecontainer - halfthewidthoftheimage;
+            // $(".clients-list").width($(".clients").width() + 2*margintotakeaway)
+            // $(".clients-list").css("left", -margintotakeaway);
+        ///////////////////////////////////////
+
+
         if(isActive) {
             $(".project-masonry").masonry("layout");
         }
@@ -147,7 +157,7 @@ $(document).ready(function(){
         });
 
         //Resize contact map
-    $(".contact-map iframe").width($(".contact-map").width()).height(($(".contact-map").width()*9)/16);
+        $(".contact-map iframe").width($(".contact-map").width()).height(($(".contact-map").width()*9)/16);
 
         //Keep slideshow on current slide
         $(".slides").stop().css({left: -$(".dot.current").index()*$("body").width()});
@@ -191,6 +201,15 @@ $(document).ready(function(){
     ///////////////////////////////////////
 
     $(window).load(function(){
+        ///////////////////////////////////////
+        //About Page 
+            // var halfthewidthofthecontainer = $(".clients-list .client-image").width()/2;
+            // var halfthewidthoftheimage = $(".clients-list .client-image img").width()/2;
+            // var margintotakeaway = halfthewidthofthecontainer - halfthewidthoftheimage;
+            // $(".clients-list").width($(".clients").width() + 2*margintotakeaway)
+            // $(".clients-list").css("left", -margintotakeaway);
+        ///////////////////////////////////////
+
         //Prevent FOUC 
         $("html.opacity .masonry").animate({opacity: 1}, 300, function(){
             if(isActive) {

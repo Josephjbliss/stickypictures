@@ -600,35 +600,35 @@ footer {
     margin-bottom: 0;
 }
 
-/*
-.about-page .clients-list {
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  columns: 2;
-  -webkit-column-gap: 2em;
-  -moz-column-gap: 2em;
-  column-gap: 2em;
-}
-.about-page .clients-list img {
-    width: 100%;
-    margin: 18px 0;
-    display: inline-block;
-}*/
 .about-page .related-projects h3 {
     padding-left: 12px;
     margin: 12px 0;
 }
 
-.about-page .clients-list img {
+.about-page .clients-list .client-image img {
+    width: 124px;
     display: block;
-    width: 42.5%;
-    margin: 18px 15% 18px 0;
+    margin: 0 auto;
+}
+.about-page .clients-list .client-image {
+    width: 50%;
+    margin: 18px 0;
     float: left;
 }
-.about-page .clients-list img:nth-child(2n) {
-    margin-right: 0;
+.about-page .clients-list {
+    position: relative;
+    overflow: hidden;
 }
-
+/*
+@media only screen and (max-width: 413px) {
+    .about-page .clients-list .client-image:nth-child(2n) {
+        text-align: right;
+    }
+    .about-page .clients-list .client-image:nth-child(2n+1) {
+        text-align: left;
+    }
+}
+*/
 @media only screen and (min-width: 414px){
     nav {
         width: auto;
@@ -662,19 +662,19 @@ footer {
     .rule.capabilities {
         display: none;
     }
-
-    .about-page .clients-list img {
-        width: 31.3333%;
-        margin-right: 3%;
-        float: left;
-    }
-    .about-page .clients-list img:nth-child(2n) {
-        margin-right: 3%;
-    }    
-    .about-page .clients-list img:nth-child(3n) {
-        margin-right: 0;
+    .about-page .clients-list .client-image {
+        width: 33.3333%;
     }
 }
+/*
+@media only screen and (min-width: 414px) and (max-width: 599px) {
+    .about-page .clients-list .client-image:nth-child(3n) {
+        text-align: right;
+    }
+    .about-page .clients-list .client-image:nth-child(3n+1) {
+        text-align: left;
+    }
+}*/
 
 @media only screen and (min-width: 600px){
     /* Makes grid slightly larger in order to get rid of side margins */
@@ -743,22 +743,19 @@ footer {
     .contact-info .option-2 p:nth-child(2n+1) {
         clear: both;
     }
-
-
-    .about-page .clients-list img {
-        width: 22%;
-        margin-right: 4%;
-    }
-    .about-page .clients-list img:nth-child(2n) {
-        margin-right: 4%;
-    }    
-    .about-page .clients-list img:nth-child(3n) {
-        margin-right: 4%;
-    }
-    .about-page .clients-list img:nth-child(4n) {
-        margin-right: 0;
+    .about-page .clients-list .client-image {
+        width: 25%;
     }
 }
+
+/*@media only screen and (min-width: 600px) and (max-width: 764px) {
+    .about-page .clients-list .client-image:nth-child(4n) {
+        text-align: right;
+    }    
+    .about-page .clients-list .client-image:nth-child(4n+1) {
+        text-align: left;
+    }
+}*/
 
 @media only screen and (min-width: 765px){
     h1 {
@@ -864,25 +861,20 @@ footer {
     .rule.about-blurb {
         display: none;
     }
-
-    .about-page .clients-list img {
-        width: 18%;
-        margin-right: 2.5%;
-    }
-    .about-page .clients-list img:nth-child(2n) {
-        margin-right: 2.5%;
-    }    
-    .about-page .clients-list img:nth-child(3n) {
-        margin-right: 2.5%;
-    }
-    .about-page .clients-list img:nth-child(4n) {
-        margin-right: 2.5%;
-    }
-    .about-page .clients-list img:nth-child(5n) {
-        margin-right: 0;
+    .about-page .clients-list .client-image {
+        width: 20%;
     }
 }
 
+/*@media only screen and (min-width: 765px) and (max-width: 1023px) {
+    .about-page .clients-list .client-image:nth-child(5n) {
+        text-align: right;
+    }
+    .about-page .clients-list .client-image:nth-child(5n+1) {
+        text-align: left;
+    }
+}
+*/
 @media only screen and (min-width: 1024px){
     .masonry-element {
         width: 24.5%;
@@ -920,25 +912,10 @@ footer {
         width: 1024px;
     }
 
-    .about-page .clients-list img {
-        width: 14.6666%;
-        margin-right: 2.4%;
+    .about-page .clients-list .client-image {
+        width: 16.6666%;
     }
-    .about-page .clients-list img:nth-child(2n) {
-        margin-right: 2.4%;
-    }    
-    .about-page .clients-list img:nth-child(3n) {
-        margin-right: 2.4%;
-    }
-    .about-page .clients-list img:nth-child(4n) {
-        margin-right: 2.4%;
-    }
-    .about-page .clients-list img:nth-child(5n) {
-        margin-right: 2.4%;
-    }
-    .about-page .clients-list img:nth-child(6n) {
-        margin-right: 0;
-    }
+
     section.capabilities, section.methods {
         width: 50%;
         float: right;
@@ -950,6 +927,15 @@ footer {
     }
 }
 
+/*@media only screen and (min-width: 1024px) and (max-width: 1534px) {
+    .about-page .clients-list .client-image:nth-child(6n) {
+        text-align: right;
+    }
+    .about-page .clients-list .client-image:nth-child(6n+1) {
+        text-align: left;
+    }
+}
+*/
 @media only screen and (min-width: 1300px){
     section.capabilities ul, section.methods ul {
          -webkit-column-count: 4; /* Chrome, Safari, Opera */
@@ -1017,25 +1003,19 @@ footer {
         margin-top: 0;
     }
 
-    .about-page .clients-list img {
-        width: 24%;
-        margin-right: 1.333%;
+    .about-page .clients-list .client-image {
+        width: 25%;
     }
-    .about-page .clients-list img:nth-child(2n) {
-        margin-right: 1.333%;
-    }    
-    .about-page .clients-list img:nth-child(3n) {
-        margin-right: 1.333%;
+/*    .about-page .clients-list .client-image:nth-child(4n) {
+        text-align: right;
     }
-    .about-page .clients-list img:nth-child(4n) {
-        margin-right: 0;
-    }
-    .about-page .clients-list img:nth-child(5n) {
-        margin-right: 1.333%;
-    }
-/*    .about-page .clients-list img:nth-child(6n) {
-        margin-right: 1.333%;
+    .about-page .clients-list .client-image:nth-child(4n+1) {
+        text-align: left;
     }*/
+}
+
+@media only screen and (min-width: 1535px) and (max-width: 1919px) {
+
 }
 
 @media only screen and (min-width: 1920px){
