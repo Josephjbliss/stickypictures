@@ -99,7 +99,7 @@ nav a {
 }
 
 /* Selected States for Nav */
-nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .project-page nav a.work, .about-page nav a.about, .reel-page nav a.reel, .contact-page nav a.contact {
+nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .project-page nav a.work, .about-page nav a.about, .reel-page nav a.reel, .contact-page nav a.contact, .capabilities-page nav a.about {
     background: transparent url("../images/underline.png") bottom left repeat-x;
 }
 
@@ -556,7 +556,6 @@ footer {
 }
 
 /* About Styles */
-
 .about-page h3 {
     font-family: "FranklinGothic-Condensed";
     text-transform: uppercase;
@@ -604,31 +603,20 @@ footer {
     padding-left: 12px;
     margin: 12px 0;
 }
-
-.about-page .clients-list .client-image img {
-    width: 124px;
-    display: block;
-    margin: 0 auto;
-}
 .about-page .clients-list .client-image {
     width: 50%;
     margin: 18px 0;
     float: left;
 }
+.about-page .clients-list .client-image img {
+    width: 124px;
+    display: block;
+    margin: 0 auto;
+}
 .about-page .clients-list {
     position: relative;
     overflow: hidden;
 }
-/*
-@media only screen and (max-width: 413px) {
-    .about-page .clients-list .client-image:nth-child(2n) {
-        text-align: right;
-    }
-    .about-page .clients-list .client-image:nth-child(2n+1) {
-        text-align: left;
-    }
-}
-*/
 @media only screen and (min-width: 414px){
     nav {
         width: auto;
@@ -666,15 +654,6 @@ footer {
         width: 33.3333%;
     }
 }
-/*
-@media only screen and (min-width: 414px) and (max-width: 599px) {
-    .about-page .clients-list .client-image:nth-child(3n) {
-        text-align: right;
-    }
-    .about-page .clients-list .client-image:nth-child(3n+1) {
-        text-align: left;
-    }
-}*/
 
 @media only screen and (min-width: 600px){
     /* Makes grid slightly larger in order to get rid of side margins */
@@ -747,15 +726,6 @@ footer {
         width: 25%;
     }
 }
-
-/*@media only screen and (min-width: 600px) and (max-width: 764px) {
-    .about-page .clients-list .client-image:nth-child(4n) {
-        text-align: right;
-    }    
-    .about-page .clients-list .client-image:nth-child(4n+1) {
-        text-align: left;
-    }
-}*/
 
 @media only screen and (min-width: 765px){
     h1 {
@@ -866,15 +836,6 @@ footer {
     }
 }
 
-/*@media only screen and (min-width: 765px) and (max-width: 1023px) {
-    .about-page .clients-list .client-image:nth-child(5n) {
-        text-align: right;
-    }
-    .about-page .clients-list .client-image:nth-child(5n+1) {
-        text-align: left;
-    }
-}
-*/
 @media only screen and (min-width: 1024px){
     .masonry-element {
         width: 24.5%;
@@ -927,15 +888,6 @@ footer {
     }
 }
 
-/*@media only screen and (min-width: 1024px) and (max-width: 1534px) {
-    .about-page .clients-list .client-image:nth-child(6n) {
-        text-align: right;
-    }
-    .about-page .clients-list .client-image:nth-child(6n+1) {
-        text-align: left;
-    }
-}
-*/
 @media only screen and (min-width: 1300px){
     section.capabilities ul, section.methods ul {
          -webkit-column-count: 4; /* Chrome, Safari, Opera */
@@ -1006,12 +958,6 @@ footer {
     .about-page .clients-list .client-image {
         width: 25%;
     }
-/*    .about-page .clients-list .client-image:nth-child(4n) {
-        text-align: right;
-    }
-    .about-page .clients-list .client-image:nth-child(4n+1) {
-        text-align: left;
-    }*/
 }
 
 @media only screen and (min-width: 1535px) and (max-width: 1919px) {
