@@ -112,6 +112,14 @@ $(document).ready(function(){
     ///////////////////////////////////////
 
     ///////////////////////////////////////
+    //Capabilities Page
+    $(".bio-toggle").click(function(){
+        $(this).prev().slideToggle();
+        $(this).toggleClass("open");
+    });
+    ///////////////////////////////////////
+
+    ///////////////////////////////////////
     //Masonry Layouts
     var masonryOptions = {
         itemSelector: ".masonry-element",

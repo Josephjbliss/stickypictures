@@ -605,6 +605,49 @@ footer {
     position: relative;
     overflow: hidden;
 }
+
+
+/* Capabilities Styles */
+.capabilities-page h3 {
+    font-family: "FranklinGothic-Condensed";
+    text-transform: uppercase;
+    font-size: 20px; 
+    line-height: 22px;
+}
+
+.bio-toggle {
+    cursor: pointer;
+}
+.bio-toggle:hover {
+    color: #4578bc;
+}
+.biography {
+    display: none;
+}
+.biography a {
+    color: #4578bc;
+    text-decoration: none;
+}
+.bio-toggle:after {
+    font-size: 19px;
+    float: right;
+    content: "+";
+    cursor: pointer;
+}
+.open.bio-toggle:after {
+    content: "\2013";/* ndash */
+}
+
+.the-studio-pic1, .the-studio-pic2 {
+    display: block;
+    width: 100%;
+}
+
+.team-member img {
+    display: block;
+    width: 100%;
+}
+
 @media only screen and (min-width: 414px){
     nav {
         width: auto;
