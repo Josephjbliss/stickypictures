@@ -39,7 +39,9 @@
     <?php if ( $client_logos ): ?>
       <div class="clients-list">
         <?php foreach ( $client_logos as $image ): ?>
-          <img src="<?php echo $image['url']; ?>" alt="Sticky Pictures Client Logo">
+          <div class="client-image">
+            <img src="<?php echo $image['url']; ?>" alt="Sticky Pictures Client Logo">
+          </div>
         <?php endforeach ?>
       </div>
     <?php endif; ?>
