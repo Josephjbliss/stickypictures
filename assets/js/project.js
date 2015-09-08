@@ -135,16 +135,6 @@ $(document).ready(function(){
     updateMasonry();
 
     $(window).resize(function(){
-        ///////////////////////////////////////
-        //About Page 
-            // var halfthewidthofthecontainer = $(".clients-list .client-image").width()/2;
-            // var halfthewidthoftheimage = $(".clients-list .client-image img").width()/2;
-            // var margintotakeaway = halfthewidthofthecontainer - halfthewidthoftheimage;
-            // $(".clients-list").width($(".clients").width() + 2*margintotakeaway)
-            // $(".clients-list").css("left", -margintotakeaway);
-        ///////////////////////////////////////
-
-
         if(isActive) {
             $(".project-masonry").masonry("layout");
         }
@@ -158,6 +148,11 @@ $(document).ready(function(){
 
         //Resize contact map
         $(".contact-map iframe").width($(".contact-map").width()).height(($(".contact-map").width()*9)/16);
+
+        //Reload contact map
+        if($(window).width() < 1024) { 
+            $(".contact-map iframe").attr("src", $(".contact-map iframe").attr("src")); 
+        }
 
         //Keep slideshow on current slide
         $(".slides").stop().css({left: -$(".dot.current").index()*$("body").width()});

@@ -540,19 +540,8 @@ footer {
     margin-bottom: 19px;
 }
 
-
-.contact-info p:first-child a {
+.contact-info h3 {
     text-transform: uppercase;
-}
-
-.option-1, .option-2 {
-    clear: both;
-    overflow: hidden;
-    width: 100%;
-}
-
-.option-2 {
-    margin-top: 20px;
 }
 
 /* About Styles */
@@ -609,9 +598,8 @@ footer {
     float: left;
 }
 .about-page .clients-list .client-image img {
-    width: 124px;
+    width: 100%;
     display: block;
-    margin: 0 auto;
 }
 .about-page .clients-list {
     position: relative;
@@ -710,18 +698,12 @@ footer {
     .video-thumb, .related-project {
         width: 32.333%;
     }
-    .contact-info .option-1 {
+    .contact-info {
         -webkit-column-count: 2; /* Chrome, Safari, Opera */
         -moz-column-count: 2; /* Firefox */
         column-count: 2;        
     }
-    .contact-info .option-2 p {
-        width: 50%;
-        float: left;
-    }
-    .contact-info .option-2 p:nth-child(2n+1) {
-        clear: both;
-    }
+
     .about-page .clients-list .client-image {
         width: 25%;
     }
@@ -803,19 +785,10 @@ footer {
         width: 49.5%;
         margin: .25%;
     }
-    .contact-info .option-1 {
+    .contact-info {
          -webkit-column-count: 3; /* Chrome, Safari, Opera */
         -moz-column-count: 3; /* Firefox */
         column-count: 3;        
-    }
-    .contact-info .option-2 p {
-        width: 33.3333%;
-    }
-    .contact-info .option-2 p:nth-child(2n+1) {
-        clear: none;
-    }
-    .contact-info .option-2 p:nth-child(3n+1) {
-        clear: both;
     }
 
     /* About Page Styles */
@@ -849,23 +822,15 @@ footer {
         width: 33.3333%;
     }
 
-    .contact-info .option-1 {
-         -webkit-column-count: 4; /* Chrome, Safari, Opera */
-        -moz-column-count: 4; /* Firefox */
-        column-count: 4;
+    .contact-info { 
+         -webkit-column-count: 1; /* Chrome, Safari, Opera */
+        -moz-column-count: 1; /* Firefox */
+        column-count: 1;
     }
 
-    .contact-info .option-2 p {
+    .contact-info-content {
         width: 25%;
-    }
-    .contact-info .option-2 p:nth-child(2n+1) {
-        clear: none;
-    }
-    .contact-info .option-2 p:nth-child(3n+1) {
-        clear: none;
-    }
-    .contact-info .option-2 p:nth-child(4n+1) {
-        clear: both;
+        float: left;
     }
 
     .contact-info, .contact-map {
