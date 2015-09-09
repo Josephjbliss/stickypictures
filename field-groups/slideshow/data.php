@@ -46,6 +46,12 @@ $group = array (
         'operator' => '==',
         'value' => 'page',
       ),
+      1 => 
+      array (
+        'param' => 'page_template',
+        'operator' => '!=',
+        'value' => 'templates/tmpl-contact.php',
+      ),
     ),
   ),
   'menu_order' => 0,
