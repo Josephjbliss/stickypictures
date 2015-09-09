@@ -162,8 +162,8 @@ $group = array (
     3 => 
     array (
       'key' => 'field_55ef711e8864a',
-      'label' => 'The Studio',
-      'name' => 'the_studio',
+      'label' => 'The Studio Blurb 1',
+      'name' => 'studio_blurb_1',
       'type' => 'wysiwyg',
       'instructions' => '',
       'required' => 0,
@@ -180,6 +180,78 @@ $group = array (
       'media_upload' => 1,
     ),
     4 => 
+    array (
+      'key' => 'field_55f05aa3f6626',
+      'label' => 'Studio Image 1',
+      'name' => 'studio_image_1',
+      'type' => 'image',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'return_format' => 'url',
+      'preview_size' => 'thumbnail',
+      'library' => 'all',
+      'min_width' => '',
+      'min_height' => '',
+      'min_size' => '',
+      'max_width' => '',
+      'max_height' => '',
+      'max_size' => '',
+      'mime_types' => '',
+    ),
+    5 => 
+    array (
+      'key' => 'field_55f05a98f6625',
+      'label' => 'The Studio Blurb 2',
+      'name' => 'studio_blurb_2',
+      'type' => 'wysiwyg',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'tabs' => 'all',
+      'toolbar' => 'full',
+      'media_upload' => 1,
+    ),
+    6 => 
+    array (
+      'key' => 'field_55f05ab2f6627',
+      'label' => 'Studio Image 2',
+      'name' => 'studio_image_2',
+      'type' => 'image',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'return_format' => 'url',
+      'preview_size' => 'thumbnail',
+      'library' => 'all',
+      'min_width' => '',
+      'min_height' => '',
+      'min_size' => '',
+      'max_width' => '',
+      'max_height' => '',
+      'max_size' => '',
+      'mime_types' => '',
+    ),
+    7 => 
     array (
       'key' => 'field_55ef116d33f05',
       'label' => 'Case Studies',
