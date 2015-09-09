@@ -1,8 +1,9 @@
+<?php global $post; ?>
 <div class="masonry-element home-project">
  <?php if ( has_post_thumbnail() ): ?>
   <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="<?php the_title(); ?>">
  <?php else: ?>
-  <img src="<?php bloginfo('template_url'); ?>/assets/images/homesample<?php echo rand(1,5); ?>.png">
+  <img src="http://placehold.it/600x400/<?php echo str_replace('#', '', get_field('bg_color') );  ?>/FFFFFF/?text=<?php the_title(); ?>">
  <?php endif; ?>
   <div class="home-project-text antialiased" style="<?php project_bg_style(); ?>">
     <h3 class="client"><?php the_field('client'); ?></h3>
