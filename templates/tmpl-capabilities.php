@@ -49,7 +49,7 @@ get_template_part('templates/slider'); ?>
     <img src="<?php the_field('studio_image_1'); ?>" class="the-studio-pic1">
 
     <div class="the-studio-blurb2">
-        <?php the_field('studio_blurb_1'); ?>
+        <?php the_field('studio_blurb_2'); ?>
     </div>
 
     <img src="<?php the_field('studio_image_2'); ?>" class="the-studio-pic2">
