@@ -34,8 +34,8 @@ function bolt_setup() {
   if( function_exists('acf_add_options_page') ) {
     
     acf_add_options_page(array(
-      'page_title'  => __('Site Options'),
-      'menu_title'  => __('Site Options'),
+      'page_title'  => __('Sticky Info'),
+      'menu_title'  => __('Sticky Info + Contact'),
       'menu_slug'   => 'site-options',
       'capability'  => 'edit_posts',
       'redirect'    => false
