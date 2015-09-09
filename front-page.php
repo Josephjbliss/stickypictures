@@ -19,8 +19,6 @@ if ( have_posts() ) {
         foreach ( $projects->posts as $i => $post ):
           setup_postdata( $post );
           get_template_part('templates/content', 'project' );
-          get_template_part('templates/content', 'project' );
-          get_template_part('templates/content', 'project' );
         endforeach; wp_reset_postdata();
       ?>
     </section>
