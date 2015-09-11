@@ -5,8 +5,8 @@ if ( have_posts() ) :
   ?>
   <section class="tag-filters-wrap">
     <ul class="tag-filters">
-      <li class="tag-list-el is-checked">
-        <a href="#all" class="filter-link" data-filter="*">All</a>
+      <li class="tag-list-el">
+        <a href="#all" class="filter-link is-checked" data-filter="*">All</a>
       </li>
       <?php 
         $tags = get_tags();

@@ -13,11 +13,11 @@ nav a.active {
 .tag-filters-wrap .tag-list-el {
   display: inline-block;
 }
-.tag-filters-wrap .tag-list-el.is-checked a {
-  color: black;
-}
 .tag-filters-wrap a {
   color: white;
   text-decoration: none;
   margin: 0 16px;
+}
+.tag-filters-wrap a.is-checked {
+  color: black;
 }

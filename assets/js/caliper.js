@@ -14,7 +14,7 @@ $(document).ready(function(){
     });
 
     // change is-checked class on buttons
-    $('.tag-filters .tag-list-el').on('click', function(e) {
+    $('.tag-filters .filter-link').on('click', function(e) {
         $('.tag-filters .is-checked').removeClass('is-checked');
         $( this ).addClass('is-checked');
     });    
