@@ -1,3 +1,23 @@
 nav a.active {
   border-bottom: 1px solid black;
 }
+.tag-filters-wrap {
+  position: relative;
+  background-color: #a7a9ac;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 0;
+  margin: 0 auto;
+  line-height: 27px;
+}
+.tag-filters-wrap .tag-list-el {
+  display: inline-block;
+}
+.tag-filters-wrap .tag-list-el.is-checked a {
+  color: black;
+}
+.tag-filters-wrap a {
+  color: white;
+  text-decoration: none;
+  margin: 0 16px;
+}

@@ -16,6 +16,12 @@ function client_scripts($hook) {
       THEME_URL . 'assets/js/stickypictures.min.js'
     );
 
+    // Caliepr Script
+    wp_enqueue_script(
+      'caliper-main-js',
+      THEME_URL . 'assets/js/caliper.js'
+    );
+
 }
 add_action( 'wp_enqueue_scripts', 'client_scripts' );
 
