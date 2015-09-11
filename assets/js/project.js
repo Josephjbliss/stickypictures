@@ -204,15 +204,6 @@ $(document).ready(function(){
     ///////////////////////////////////////
 
     $(window).load(function(){
-        ///////////////////////////////////////
-        //About Page 
-            // var halfthewidthofthecontainer = $(".clients-list .client-image").width()/2;
-            // var halfthewidthoftheimage = $(".clients-list .client-image img").width()/2;
-            // var margintotakeaway = halfthewidthofthecontainer - halfthewidthoftheimage;
-            // $(".clients-list").width($(".clients").width() + 2*margintotakeaway)
-            // $(".clients-list").css("left", -margintotakeaway);
-        ///////////////////////////////////////
-
         //Prevent FOUC 
         $("html.opacity .masonry").animate({opacity: 1}, 300, function(){
             if(isActive) {
@@ -224,3 +215,9 @@ $(document).ready(function(){
         $f($(".project-hero iframe")[0]).api("play");
     });
 });
+
+//when ipad orientation changes
+window.onorientationchange = function(){
+    // location.reload();
+    $(window).trigger("resize");
+}
