@@ -4,36 +4,51 @@ nav {
 nav a {
     margin: 0 12px;
 }
-.home-blurb p:nth-of-type(1) {
-    font-size: 23px;
-    line-height: 27px;
+/* Project Page Styles */
+.credits .credit {
+    width: 50%;
+    float: left;
 }
-header {
-    position: static;
-    top: auto;
-    left: auto;
-    width: auto;
+.video-thumbnails, .related-project-thumbnails {
+    width: 101%;
+    left: -.5%;
+    position: relative;
 }
+.video-thumb, .related-project {
+    float: left;
+    width: 49%;
+    margin: .5%;
+}
+/* About Page Styles */
+section.capabilities, section.methods {
+    float: left;
+    width: 50%;
+    margin: 0;
+}
+.rule.capabilities {
+    display: none;
+}
+.about-page .clients-list .client-image {
+    width: 33.3333%;
+}
+
+/* Makes grid slightly larger in order to get rid of side margins */
 .masonry {
-    width: 1200px;
+    width: 100.55%;
+    left: -.25%;
 }
 .slideshow {
-    margin-bottom: .25%;
+    /*margin-bottom: .25%;*/
 }
 .slideshow .caption {
-    width: 100%;
-    position: absolute;
-    bottom:0;
-    left:0;
-    font-size: 23px;
+    font-size: 20px;
     height: 48px;
-    line-height: 48px;
-    display: none;
+    line-height: 48px;        
 }
 .masonry-element {
     width: 49.5%;
     float: left;
-    margin: .25%;
+    margin: .5% .25%;
 }
 .home-blurb {
     width: 99.5%;
@@ -43,44 +58,97 @@ header {
 .home-blurb p {
     margin-bottom: 11px;
 }
-.home-blurb p:nth-of-type(1) {
+.home-blurb p.home-blurb-1 {
     float: left;
     width: 48%;
 }
-.home-blurb p:nth-of-type(2) {
-    font-size: 16px;
-    line-height: 20px;
+.home-blurb p.home-blurb-2 {
     float: right;
     width: 49.5%;
 }
-.home-project .home-project-text {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.home-project {
+    margin-bottom: 0;
+}
+.reel h2 {
+    font-size: 25px;
+    line-height: 60px;
+    height: 60px;
+}
+
+/* Project Styles */
+.project-blurb h2 {
+    font-size: 25px;
+    line-height: 26px;
+}
+.credits .credit {
+    width: 33.333%;
+}
+.video-thumb, .related-project {
+    width: 32.333%;
+}
+.contact-info {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;        
+}
+
+.about-page .clients-list .client-image {
+    width: 25%;
+}
+
+/* Capabilities Page Styles */
+.capabilities-page .capabilties-section h3 {
+    font-size: 25px;
+    line-height: 26px;
+}
+.team-member {
+    width: 49.5%;
+    margin-right: 1%;
+    float: left;
+}
+.team-member:nth-of-type(2n){
+    margin-right: 0;
+}
+.team-member:nth-of-type(2n+1){
+    clear: both;
+}
+.team-member:nth-of-type(2n) h4 {
+    padding-left: 0;
+}    
+.team-member:nth-of-type(2n) .bio-toggle {
+    padding-left: 0;
+}    
+.team-member:nth-of-type(2n) .biography {
+    padding-left: 0;
+}
+section.the-studio {
+    padding-top: 20px;
+}
+.the-studio-blurb1 {
+    float: left;
+    width: 49.5%;
+    margin-right: 1%;
     padding: 0;
 }
-.touch .home-project .home-project-text .tags {
-   padding-bottom: 9px;
-   margin-bottom: 0;
+.the-studio-blurb1 * {
+    padding: 0 12px;
 }
-.home-project .home-project-text .tags {
-   margin-bottom: 9px;
+.the-studio-pic1 {
+    float: right; 
+    width: 49.5%;
 }
-.touch .home-project .home-project-text h3:first-child {
-    padding-top: 9px;
-    margin-top: 0;
-}
-.home-project .home-project-text h3:first-child {
-    margin-top: 9px;
+.the-studio-blurb2 {
+    clear: both;
 }
 
 h1 {
     padding: 10px 0;   
 }
 h1 a {
-    background-image: url("../img/logo-ie-large.png");
     height: 46px;
     width: 215px;
+    background-size: 215px;
+    background-image: url("../images/logo-ie-large.png");
 }
 nav {
     font-size: 17px;
@@ -93,17 +161,394 @@ nav a {
 }
 .home-blurb {
     width: 66.166%;
+    padding: .5% 12px 0 12px;
 }
 .slideshow .dot:hover {
     border: solid 1px #9C9EA1;
     background-color: #ffffff;
     margin: 0 7px;
 }
+
+/* Project Styles */
+.project-blurb {
+    padding-bottom: 0;
+    padding: 12px 12px 0 12px;
+    margin: 0;
+    background: none;
+}
+.project-blurb-col1 {
+    width: 49.75%;
+    float: left;
+}       
+.project-blurb-col2 {
+    width: 49.75%;
+    position: relative;
+    float: right;
+}
+.credits {
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 103%;
+    left: 0;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 12px;
+}
+.credits .credit {
+    width: 50%;
+}
+.video-thumbnails, .related-project-thumbnails {
+    width: 100.5%;
+    left: -.25%;
+}
+.video-thumb, .related-project  {
+    width: 24.5%;
+    margin: .25%;
+}
+.project-masonry {
+    width: 100.5%;
+    left: -.25%;
+    position: relative;
+}
+.project-masonry-element {
+    float: left;
+    width: 49.5%;
+    margin: .25%;
+}
+.contact-info {
+     -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;        
+}
+
+/* About Page Styles */
+section.about-blurb {
+    width: 48%;
+    float: left;
+    margin-right: 2%;
+}
+section.capabilities, section.methods {
+    padding: 0px 0px 20px;
+    width: 25%;
+}
+.rule.about-blurb {
+    display: none;
+}
+.about-page .clients-list .client-image {
+    width: 20%;
+}
+/* Capabilities Page Styles */
+.capabilities-blurb {
+    overflow: hidden;
+}
+.capabilities-blurb h3 {
+    float: left;
+    width: 32.6666%;
+    margin-right: 1%;
+}
+.capabilities-blurb p {
+    float: right;
+    width: 66.1666%;
+}
+.team-members {
+    overflow: hidden;
+    padding: 20px 0 0 12px;
+}
+.team-members-blurb {
+    padding: 0;
+    float: left;
+    width: 32.6666%;
+    margin-right: 1%;
+}
+.team-member-headshots {
+    float: right;
+    width: 66.3333%;
+}
+.team-member h4 {
+    padding-left: 0;
+}    
+.team-member .bio-toggle {
+    padding-left: 0;
+}    
+.team-member .biography {
+    padding-left: 0;
+}
+.the-studio {
+    padding: 20px 0 0 12px;
+}
+.the-studio-blurb1, .the-studio-pic1 {
+    padding: 0;
+    float: left;
+    width: 32.6666%;
+    margin-right: 1%;
+}
+.the-studio-blurb1 * {
+    padding: 0;
+}
+.the-studio-blurb2 {
+    padding: 0;
+    float: left;
+    width: 32.6666%;
+    clear:none;
+}
+.the-studio-pic2 { 
+    width: 66.3333%;
+    float: right;
+    margin: 20px 0;
+}
 .masonry-element {
     width: 24.5%;
 }
 .home-blurb {
     width: 49.5%;
+}
+
+/* Project Styles */
+.credits .credit {
+    width: 33.3333%;
+}
+
+.contact-info { 
+     -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+}
+
+.contact-info-content {
+    width: 25%;
+    float: left;
+}
+
+.contact-info, .contact-map {
+    margin: 0 auto;
+    width: 1024px;
+}
+
+.contact-info {
+    overflow: hidden;
+}
+
+.about-page .clients-list .client-image {
+    width: 16.6666%;
+}
+
+section.capabilities, section.methods {
+    width: 50%;
+    float: right;
+}
+section.capabilities ul, section.methods ul {
+     -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;         
+}
+
+/* Capabilities Page Styles */
+.capabilities-blurb h3 {
+    width: 24.25%;
+}
+.capabilities-blurb p {
+    float: right;
+    width: 74.75%;
+}
+.team-members-blurb {
+    width: 24.25%;
+}
+.team-member-headshots {
+    width: 74.75%;
+}
+.team-member {
+    width: 32.6666%;
+    margin-right: 1%;
+}
+.team-member:nth-of-type(2n){
+    margin-right: 1%;
+}
+.team-member:nth-of-type(2n+1){
+    clear: none;
+}
+.team-member:nth-of-type(3n){
+    margin-right: 0;
+}
+.team-member:nth-of-type(3n+1){
+    clear: both;
+}
+.the-studio {
+    padding: 20px 12px 0px 12px;
+}    
+.the-studio-blurb1, .the-studio-pic1 {
+    width: 24.25%;
+}
+.the-studio-blurb2 {
+    float: right;
+    width: 49.5%;
+}
+.the-studio-pic2 { 
+    float: right;
+    width: 49.5%;
+}
+.about-page .clients-list .client-image {
+    width: 15%;
+    margin-right: 2%;
+}
+.about-page .clients-list .client-image:nth-of-type(6n) {
+    margin-right: 0;
+}
+
+section.capabilities ul, section.methods ul {
+     -webkit-column-count: 4; /* Chrome, Safari, Opera */
+    -moz-column-count: 4; /* Firefox */
+    column-count: 4;
+}
+
+.masonry-element {
+    width: 19.5%;
+}
+.home-blurb {
+    width: 39.5%;
+}
+
+/* Project Styles */
+.video-thumb, .related-project  {
+    width: 16.166%;
+}
+.project-blurb-col1 {
+    width: 32.833%;
+}       
+.project-blurb-col2 {
+    width: 33.333%;
+    margin-left: .5%;
+    float: left;
+}
+.credits {
+    width: 101%;
+    left: -.5%;
+}
+.project-masonry-element {
+    width: 32.833%;
+}
+
+/* About Page Styles */
+section.about-blurb {
+    width: 32.3333%;
+    margin-right: 1%;
+}
+section.capabilities, section.methods {
+    width: 16.6666%;
+    padding: 0px 0px 20px;
+    float: left;
+}
+section.capabilities ul, section.methods ul {
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+}
+.rule.methods {
+    display: none;
+}
+section.clients {
+    width: 33.3333%;
+    float: left;
+    padding-top:0;
+}
+section.clients .clients-blurb {
+    width: auto;
+    float: none;
+}
+section.clients .clients-list {
+    margin-top: 0;
+}
+
+.about-page .clients-list .client-image {
+    width: 25%;
+}
+
+.rule.clients {
+    display: block;
+}
+
+/* Capabilities Page Styles */
+.capabilities-blurb {
+    width: 39.7%;
+    margin-right: .5%;
+    float: left;
+    padding: 10px 0 0 0;
+}
+.capabilities-blurb h3, .capabilities-blurb p {
+    float: none;
+    width: auto;
+    margin-left: 12px;
+}
+.capabilities-blurb p:last-of-type {
+    padding-bottom: 20px;
+    background: transparent url("../images/dotted-border.png") left bottom repeat-x;
+}
+section.the-studio {
+    padding: 16px 0 0 0;
+    width: 39.7%;
+    margin-right: .5%;
+    float: left;
+}
+.the-studio-blurb1 {
+    float: left;
+    width: 49.5%;
+    margin-right: 1%;
+    padding: 0;
+}
+.the-studio-blurb1 h3 {
+    padding-left: 12px;
+}
+.the-studio-blurb1 p {
+    padding-left: 12px;
+}
+.the-studio-pic1 {
+    float: right; 
+    width: 49.5%;
+    margin-right: 0;
+}
+.the-studio-blurb2 {
+    clear: both;
+    width: auto;
+    float: none;
+}
+.the-studio-blurb2 p {
+    padding: 20px 12px 0;
+}
+.the-studio-pic2 {
+    width: 100%;
+    float: none;    
+}
+.team-members {
+    float: right;
+    width: 59.8%;
+    padding: 10px 0 0 0;
+}
+.team-members-blurb {
+    float: none;
+    width: auto;
+    margin-bottom: 20px;
+}
+.team-member-headshots {
+    width: auto;
+    float: none;
+}
+.rule {
+    display: none;
+}
+.the-studio.rule {
+    display: block;
+}
+.capabilities-page .related-project-thumbnails {
+    position: static;
+    width: auto;
+}
+.capabilities-page .related-project {
+    width: 19.6%;
+    margin: 0 .5% .5% 0;
+}
+.capabilities-page .related-project:nth-of-type(5n){
+    margin-right: 0;
 }
 body {
     width: 1200px;

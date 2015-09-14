@@ -100,7 +100,7 @@ nav a {
 }
 
 /* Selected States for Nav */
-nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .project-page nav a.work, .about-page nav a.about, .reel-page nav a.reel, .contact-page nav a.contact, .capabilities-page nav a.about {
+nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .project-page nav a.work, .about-page nav a.about, .reel-page nav a.reel, .contact-page nav a.contact {
     background: transparent url("../images/underline.png") bottom left repeat-x;
 }
 
@@ -287,7 +287,7 @@ nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .proj
 
 /* Footer Styles */
 footer {
-    padding: 0 12px;
+    margin: 0 12px;
     overflow: hidden;
     height: 54px;
     line-height: 54px;
@@ -607,6 +607,10 @@ footer {
     overflow: hidden;
 }
 
+.home-page footer, .work-page footer, .about-page footer, .project-page footer, .capabilities-page footer {
+    background: transparent url("../images/dotted-border.png") left top repeat-x;
+    margin-top: 20px;
+}
 
 /* Capabilities Page Styles */
 .capabilities-page h3 {
@@ -621,6 +625,7 @@ footer {
 }
 
 .capabilities-page section p {
+    font-size: 15px;
     line-height: 19px;
     margin-bottom: 16px;
 }
@@ -1095,7 +1100,7 @@ footer {
         clear: both;
     }
     .the-studio {
-        padding: 20px 12px 0px 12px;
+        padding: 20px 0px 0px 12px;
     }    
     .the-studio-blurb1, .the-studio-pic1 {
         width: 24.25%;
@@ -1107,6 +1112,16 @@ footer {
     .the-studio-pic2 { 
         float: right;
         width: 49.5%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1534px){
+    .about-page .clients-list .client-image {
+        width: 15%;
+        margin-right: 2%;
+    }
+    .about-page .clients-list .client-image:nth-of-type(6n) {
+        margin-right: 0;
     }
 }
 
@@ -1179,6 +1194,10 @@ footer {
 
     .about-page .clients-list .client-image {
         width: 25%;
+    }
+
+    .rule.clients {
+        display: block;
     }
 
     /* Capabilities Page Styles */
