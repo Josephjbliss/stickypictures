@@ -6,7 +6,19 @@ function project_cpt_name() {
 
 function project_tags() {
   global $post;
-  the_tags( $before = '', $sep = ' ', $after = '');
+  // the_tags( $before = '', $sep = ' ', $after = '');
+
+  $work_page = get_post_type_archive_link( project_cpt_name() );
+  $tags = get_tags();
+  $html = '';
+  foreach ( $tags as $tag ) {
+    $tag_link = get_tag_link( $tag->term_id );
+        
+    $html .= "<a href='{$work_page}#{$tag->slug}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+    $html .= "{$tag->name}</a>";
+  }
+  echo $html;  
+
 } // END project_tags()
 
 function project_bg_style() {

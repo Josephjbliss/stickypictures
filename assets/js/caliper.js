@@ -7,8 +7,9 @@ $(document).ready(function(){
       layoutMode: 'fitRows'
     });
 
+    go_to_filter_from_url( $grid );
+
     $('.tag-filters').on( 'click', '.filter-link', function(e) {
-        e.preventDefault();
         var filterValue = $( this ).attr('data-filter');
         $grid.isotope({ filter: filterValue });
     });
@@ -17,8 +18,27 @@ $(document).ready(function(){
     $('.tag-filters .filter-link').on('click', function(e) {
         $('.tag-filters .is-checked').removeClass('is-checked');
         $( this ).addClass('is-checked');
-    });    
+    });
   
   } // if archives
 
 });
+
+
+function go_to_filter_from_url( $grid ) {
+  var hash = window.location.hash,
+      hash_parts = hash.split("/"),
+      filter = hash_parts[0].slice(1),
+      link_attr = '.tag-' + filter;
+
+  if( filter == 'all' ) {
+    link_attr = '*';
+  }
+
+  if( filter.length > 0 ) {
+    $grid.isotope({ filter: link_attr });
+    $('.tag-filters .is-checked').removeClass('is-checked');
+    $('.filter-link[data-filter="' + link_attr + '"]').addClass('is-checked');
+  }
+
+} // go_to_filter_from_url()
