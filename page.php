@@ -3,7 +3,13 @@ get_header();
 
 if ( have_posts() ) :
   while (have_posts()) : the_post(); ?>
-    <?php get_template_part('templates/slider'); ?>
+    <?php
+    if( get_field('slides') ) :
+      get_template_part('templates/slider','posts');
+    elseif( get_field('slides_repeater') ) :
+      get_template_part('templates/slider','repeater');
+    endif;
+    ?>
     <?php
     // Get content-specific template or use default page
     $slug = sanitize_title( get_the_title() );

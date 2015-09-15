@@ -4,7 +4,7 @@ Template Name: Capabilities
 */
 get_header();
 
-get_template_part('templates/slider'); ?>
+get_template_part('templates/slider', 'repeater'); ?>
 
 <section class="capabilities-blurb capabilties-section">
   <?php the_field('intro_blurb'); ?>
