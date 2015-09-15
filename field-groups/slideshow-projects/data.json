@@ -1,6 +1,6 @@
 {
     "key": "group_55e865d2689e0",
-    "title": "Slideshow",
+    "title": "Slideshow (Projects)",
     "fields": [
         {
             "key": "field_55e7677ac4334",
@@ -31,14 +31,16 @@
     "location": [
         [
             {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ],
+        [
+            {
                 "param": "post_type",
                 "operator": "==",
-                "value": "page"
-            },
-            {
-                "param": "page_template",
-                "operator": "!=",
-                "value": "templates\/tmpl-contact.php"
+                "value": "sp_project"
             }
         ]
     ],

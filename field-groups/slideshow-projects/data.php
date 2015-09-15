@@ -1,7 +1,7 @@
 <?php 
 $group = array (
   'key' => 'group_55e865d2689e0',
-  'title' => 'Slideshow',
+  'title' => 'Slideshow (Projects)',
   'fields' => 
   array (
     0 => 
@@ -42,15 +42,18 @@ $group = array (
     array (
       0 => 
       array (
+        'param' => 'page_type',
+        'operator' => '==',
+        'value' => 'front_page',
+      ),
+    ),
+    1 => 
+    array (
+      0 => 
+      array (
         'param' => 'post_type',
         'operator' => '==',
-        'value' => 'page',
-      ),
-      1 => 
-      array (
-        'param' => 'page_template',
-        'operator' => '!=',
-        'value' => 'templates/tmpl-contact.php',
+        'value' => 'sp_project',
       ),
     ),
   ),
