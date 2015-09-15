@@ -48,7 +48,7 @@ function related_projects( $projects = 0, $title = 'Related Projects' ) {
             <?php else:?>
               <img src="http://placehold.it/350x197?text=Project Image" alt="View <?php the_title(); ?> Project Page">
             <?php endif; ?>
-            <div class="related-project-hover antialiased">
+            <div class="related-project-hover antialiased" style="<?php project_bg_style(); ?>">
               <h5 class="client"><?php the_field('client'); ?></h5>
               <h5 class="project"><?php the_field('project_name'); ?></h5>
             </div>

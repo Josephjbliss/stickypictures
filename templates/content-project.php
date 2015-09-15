@@ -1,7 +1,7 @@
 <?php
 global $post;
 $classes = array('masonry-element home-project');
-$is_work_page = is_post_type_archive( THEME_PREFIX . '_project');
+$is_work_page = is_post_type_archive( project_cpt_name() );
 $classes[] = $is_work_page ? 'work-project' : '';
 ?>
 <div <?php post_class( $classes ); ?> >
