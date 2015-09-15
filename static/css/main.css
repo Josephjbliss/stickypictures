@@ -607,7 +607,7 @@ footer {
     overflow: hidden;
 }
 
-.home-page footer, .work-page footer, .about-page footer, .project-page footer, .capabilities-page footer {
+.home-page footer, .work-page footer, .projects-archive-page footer, .about-page footer, .project-page footer, .capabilities-page footer {
     background: transparent url("../images/dotted-border.png") left top repeat-x;
     margin-top: 20px;
 }
