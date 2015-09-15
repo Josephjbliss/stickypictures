@@ -5,7 +5,7 @@ if ( have_posts() ) {
   while ( have_posts() ) {
     the_post();
 
-    get_template_part('templates/slider');
+    get_template_part('templates/slider','posts');
     ?>
     <section class="masonry">
       <div class="masonry-stamp home-blurb">
