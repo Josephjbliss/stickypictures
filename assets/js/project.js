@@ -187,14 +187,18 @@ $(document).ready(function(){
         else {
             if($(window).width() < 600) {
                 if(isActive) {
-                    $(".masonry").masonry("destroy"); // destroy
+                    // $(".masonry").masonry("destroy"); // destroy
+                    $(".masonry").isotope('destroy');
                     isActive = false;
                 }
             }
             else {
                 if(!isActive){
                     $(".masonry").imagesLoaded(function(){
-                        $(".masonry").masonry(masonryOptions);
+                        // $(".masonry").masonry(masonryOptions);
+                        $(".masonry").isotope({
+                          itemSelector: '.work-project'
+                        });
                     });
                     isActive = true;
                 }

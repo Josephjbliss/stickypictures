@@ -3,8 +3,7 @@ $(document).ready(function(){
   if( $('.projects-archive-page').length > 0 ) {
     
     $grid = $('.masonry').isotope({
-      itemSelector: '.work-project',
-      layoutMode: 'fitRows'
+      itemSelector: '.work-project'
     });
 
     go_to_filter_from_url( $grid );
