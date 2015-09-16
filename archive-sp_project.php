@@ -3,7 +3,7 @@ get_header();
 
 if ( have_posts() ) :
   ?>
-  <section class="tag-filters-wrap">
+  <section class="tag-filters-wrap open">
     <ul class="tag-filters">
       <li class="tag-list-el">
         <a href="#all" class="filter-link is-checked" data-filter="*">All</a>

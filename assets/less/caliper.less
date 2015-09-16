@@ -1,24 +1,37 @@
 @dark-gray:color('#a7a9ac');
 
 nav {
+  position: relative;
   a {
     &.active {
       border-bottom: 1px solid black;
     }
   }
+  .tags-toggle-btn {
+    position: absolute;
+    right:0;
+    color: @dark-gray;
+    &:hover,
+    &:focus {
+      color:black;
+      text-decoration: none;
+      border-bottom: 0;
+      background:none;
+    }
+  }
 }
 
-.tag-filters-wrap {
-    position: relative;
-    background-color: @dark-gray;
-    text-align: center;
-    font-size: 16px;
-    padding: 8px 0;
-    margin: 0 auto;
-    line-height: 27px;
-}
 
 .tag-filters-wrap {
+  display:none;
+  position: relative;
+  background-color: @dark-gray;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 0;
+  margin: 0 auto;
+  line-height: 27px;
+
   .tag-list-el {
     display:inline-block;
   }
@@ -32,3 +45,5 @@ nav {
     }
   }
 }
+
+

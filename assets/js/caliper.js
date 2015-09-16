@@ -19,7 +19,13 @@ $(document).ready(function(){
         $('.tag-filters .is-checked').removeClass('is-checked');
         $( this ).addClass('is-checked');
     });
-  
+
+    $('.tags-toggle-btn').unbind('click');
+    $('.tags-toggle-btn').bind('click', function (e) {
+      e.preventDefault();
+      $('.tag-filters-wrap').slideToggle();
+    });
+
   } // if archives
 
 });
