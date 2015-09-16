@@ -27,7 +27,7 @@ if ( have_posts() ) :
     </ul>
   </section>
 
-  <section class="masonry">
+  <section class="work-page-masonry">
     <?php
     while ( have_posts() ) :
       the_post();

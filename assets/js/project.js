@@ -187,16 +187,18 @@ $(document).ready(function(){
         else {
             if($(window).width() < 600) {
                 if(isActive) {
-                    // $(".masonry").masonry("destroy"); // destroy
-                    $(".masonry").isotope('destroy');
+                    $(".masonry").masonry("destroy"); // destroy
+                    $(".work-page-masonry").isotope('destroy');
                     isActive = false;
                 }
             }
             else {
                 if(!isActive){
                     $(".masonry").imagesLoaded(function(){
-                        // $(".masonry").masonry(masonryOptions);
-                        $(".masonry").isotope({
+                        $(".masonry").masonry(masonryOptions);
+                    });
+                    $(".work-page-masonry").imagesLoaded(function(){
+                        $(".work-page-masonry").isotope({
                           itemSelector: '.work-project'
                         });
                     });
@@ -210,6 +212,11 @@ $(document).ready(function(){
     $(window).load(function(){
         //Prevent FOUC 
         $("html.opacity .masonry").animate({opacity: 1}, 300, function(){
+            if(isActive) {
+                $(".project-masonry").masonry("layout");
+            }       
+        });
+        $("html.opacity .work-page-masonry").animate({opacity: 1}, 300, function(){
             if(isActive) {
                 $(".project-masonry").masonry("layout");
             }       
