@@ -1,12 +1,23 @@
 nav {
   position: relative;
 }
+nav .inner {
+  width: 240px;
+  margin: 0 auto;
+}
+@media (min-width: 414px) {
+  nav .inner {
+    width: auto;
+  }
+}
 nav a.active {
   border-bottom: 1px solid black;
 }
 nav .tags-toggle-btn {
   position: absolute;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   color: #a7a9ac;
 }
 nav .tags-toggle-btn:hover,
