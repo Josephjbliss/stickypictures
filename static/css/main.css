@@ -90,6 +90,7 @@ nav {
     padding: 8px 0;
     margin: 0 auto;
     line-height: 27px;
+    background-color: red;
 }
 
 nav a {
