@@ -83,6 +83,7 @@ h1 a {
 }
 
 nav {
+    background-color: red;
     position: relative;
     background-color: #fff;
     text-align: center;
