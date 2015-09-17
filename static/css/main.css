@@ -446,6 +446,11 @@ footer {
     display: block;
 }
 
+.project-photos {
+    padding-bottom: 20px;
+    background: transparent url("../images/dotted-border.png") left bottom repeat-x;
+}
+
 .project-masonry-element img {
     display: block;
     width: 100%;
