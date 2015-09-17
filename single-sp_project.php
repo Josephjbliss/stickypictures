@@ -41,19 +41,21 @@ get_header();
     <?php project_videos(); ?>
 </section>
 
-<?php
-$stills = get_field('stills');
-if( $stills ) : ?>
-  <section class="project-photos">
-    <h3>Stills</h3>
-    <div class="project-masonry">
-      <?php foreach ( $stills as $still ): ?>      
-        <div class="project-masonry-element">
-          <img src="<?php echo $still['url']; ?>">
-        </div>
-      <?php endforeach; ?>
-    </div> <!-- .project-masonry -->
-  </section>
+<?php if( have_rows('sections') ): ?>
+    <?php while( have_rows('sections') ): the_row(); ?>
+      <section class="project-photos">        
+        <h3><?php the_sub_field('title'); ?></h3>
+        <div class="project-masonry">        
+          <?php 
+          $images = get_sub_field('images'); 
+          foreach ( $images as $image ): ?>      
+            <div class="project-masonry-element">
+              <img src="<?php echo $image['url']; ?>">
+            </div>
+          <?php endforeach; ?>
+        </div> <!-- .project-masonry -->
+    </section>
+    <?php endwhile; ?>
 <?php endif; ?>
 
 <?php
