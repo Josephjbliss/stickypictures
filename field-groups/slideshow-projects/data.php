@@ -7,7 +7,7 @@ $group = array (
     0 => 
     array (
       'key' => 'field_55e7677ac4334',
-      'label' => 'Slideshow',
+      'label' => 'Slideshow (Projects)',
       'name' => 'slides',
       'type' => 'relationship',
       'instructions' => '',
@@ -45,15 +45,6 @@ $group = array (
         'param' => 'page_type',
         'operator' => '==',
         'value' => 'front_page',
-      ),
-    ),
-    1 => 
-    array (
-      0 => 
-      array (
-        'param' => 'post_type',
-        'operator' => '==',
-        'value' => 'sp_project',
       ),
     ),
   ),

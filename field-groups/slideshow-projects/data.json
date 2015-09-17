@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_55e7677ac4334",
-            "label": "Slideshow",
+            "label": "Slideshow (Projects)",
             "name": "slides",
             "type": "relationship",
             "instructions": "",
@@ -34,13 +34,6 @@
                 "param": "page_type",
                 "operator": "==",
                 "value": "front_page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "sp_project"
             }
         ]
     ],
