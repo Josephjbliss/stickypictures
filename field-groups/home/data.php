@@ -50,6 +50,37 @@ $group = array (
       'readonly' => 0,
       'disabled' => 0,
     ),
+    2 => 
+    array (
+      'key' => 'field_55faff031a3b1',
+      'label' => 'Featured Projects',
+      'name' => 'featured_projects',
+      'type' => 'relationship',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'post_type' => 
+      array (
+        0 => 'sp_project',
+      ),
+      'taxonomy' => 
+      array (
+      ),
+      'filters' => 
+      array (
+        0 => 'search',
+      ),
+      'elements' => '',
+      'min' => '',
+      'max' => '',
+      'return_format' => 'object',
+    ),
   ),
   'location' => 
   array (

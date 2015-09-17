@@ -13,10 +13,10 @@ if ( have_posts() ) {
         <p class="home-blurb-2"><?php the_field('home_blurb_2', false, false); ?></p>
       </div>
       <?php
-        $projects = cpt_query( project_cpt_name() );
+        $projects = get_field('featured_projects');
       ?>
       <?php
-        foreach ( $projects->posts as $i => $post ):
+        foreach ( $projects as $post ):
           setup_postdata( $post );
           get_template_part('templates/content', 'project' );
         endforeach; wp_reset_postdata();
