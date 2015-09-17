@@ -20,7 +20,6 @@ $(document).ready(function(){
     });
     ///////////////////////////////////////
 
-
     ///////////////////////////////////////
     // Slideshow
     $(".slideshow .slides").css("width", 100*$(".slideshow img").length+"%");

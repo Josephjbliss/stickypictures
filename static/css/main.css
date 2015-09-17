@@ -753,7 +753,7 @@ footer {
 
 @media only screen and (min-width: 600px){
     /* Makes grid slightly larger in order to get rid of side margins */
-    .masonry {
+    .masonry, .work-page-masonry {
         width: 100.55%;
         left: -.25%;
     }
