@@ -83,7 +83,6 @@ h1 a {
 }
 
 nav {
-    background-color: blue;
     position: relative;
     background-color: #fff;
     text-align: center;
@@ -757,6 +756,12 @@ footer {
     }
 }
 
+@media only screen and (min-width: 414px) and (max-width: 599px){
+    .credits .credit:nth-of-type(2n+1) {
+        clear: both;
+    }
+}
+
 @media only screen and (min-width: 600px){
     /* Makes grid slightly larger in order to get rid of side margins */
     .masonry, .work-page-masonry {
@@ -867,6 +872,13 @@ footer {
         clear: both;
     }
 }
+
+@media only screen and (min-width: 600px) and (max-width: 764px){
+    .credits .credit:nth-of-type(3n+1) {
+        clear: both;
+    }
+}
+
 
 @media only screen and (min-width: 765px){
     h1 {
@@ -1026,6 +1038,12 @@ footer {
     }
 }
 
+@media only screen and (min-width: 765) and (max-width: 1023px){
+    .credits .credit:nth-of-type(2n+1) {
+        clear: both;
+    }
+}
+
 @media only screen and (min-width: 1024px){
     .masonry-element {
         width: 24.5%;
@@ -1038,7 +1056,9 @@ footer {
     .credits .credit {
         width: 33.3333%;
     }
-
+    .credits .credit:nth-of-type(3n+1) {
+        clear: both;
+    }
     .contact-info { 
         -webkit-column-count: 1; /* Chrome, Safari, Opera */
         -moz-column-count: 1; /* Firefox */
