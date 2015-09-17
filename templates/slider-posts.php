@@ -35,7 +35,7 @@ if( !empty( $slides ) ) :
       for ($i=0; $i < count( $projects ); $i++) :
       ?>
         <h2 <?php echo $i == 0 ? 'class="current"' : ''; ?>>
-          <span class="client"><?php echo $projects[ $i ]['client'] ?>.</span>
+          <span class="client"><?php echo $projects[ $i ]['client'] ?></span>
           <a href="<?php echo $projects[ $i ]['link']; ?>" alt="<?php echo $projects[ $i ]['title'] ?>"><?php echo $projects[ $i ]['project_name']; ?></a>
         </h2>
       <?php endfor; wp_reset_postdata(); ?>
