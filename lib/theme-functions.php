@@ -94,7 +94,7 @@ function project_videos() {
   array_shift( $videos );
   if( !empty( $videos ) ) :
   ?>
-    <h4 class="videos-title">videos</h4>
+    <h3 class="videos-title">videos</h3>
     <div class="video-thumbnails">
       <?php foreach ( $videos as $video ) : ?>
         <div class="video-thumb">
