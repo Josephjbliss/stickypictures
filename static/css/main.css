@@ -889,7 +889,6 @@ footer {
         background-color: #ffffff;
         margin: 0 7px;
     }
-
     /* Project Styles */
     .project-blurb {
         padding-bottom: 0;
@@ -939,7 +938,7 @@ footer {
         margin: .25%;
     }
     .contact-info {
-         -webkit-column-count: 3; /* Chrome, Safari, Opera */
+        -webkit-column-count: 3; /* Chrome, Safari, Opera */
         -moz-column-count: 3; /* Firefox */
         column-count: 3;        
     }
@@ -1035,7 +1034,7 @@ footer {
     }
 
     .contact-info { 
-         -webkit-column-count: 1; /* Chrome, Safari, Opera */
+        -webkit-column-count: 1; /* Chrome, Safari, Opera */
         -moz-column-count: 1; /* Firefox */
         column-count: 1;
     }
@@ -1063,7 +1062,7 @@ footer {
         float: right;
     }
     section.capabilities ul, section.methods ul {
-         -webkit-column-count: 3; /* Chrome, Safari, Opera */
+        -webkit-column-count: 3; /* Chrome, Safari, Opera */
         -moz-column-count: 3; /* Firefox */
         column-count: 3;         
     }
@@ -1126,7 +1125,7 @@ footer {
 
 @media only screen and (min-width: 1300px){
     section.capabilities ul, section.methods ul {
-         -webkit-column-count: 4; /* Chrome, Safari, Opera */
+        -webkit-column-count: 4; /* Chrome, Safari, Opera */
         -moz-column-count: 4; /* Firefox */
         column-count: 4;
     }
