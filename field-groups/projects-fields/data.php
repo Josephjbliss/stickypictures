@@ -93,6 +93,32 @@ $group = array (
     ),
     4 => 
     array (
+      'key' => 'field_55fb280d544df',
+      'label' => 'Hero Image',
+      'name' => 'hero_image',
+      'type' => 'image',
+      'instructions' => 'If no video is present, this image will show as a featured banner.',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'return_format' => 'array',
+      'preview_size' => 'sow-carousel-default',
+      'library' => 'all',
+      'min_width' => '',
+      'min_height' => '',
+      'min_size' => '',
+      'max_width' => '',
+      'max_height' => '',
+      'max_size' => '',
+      'mime_types' => '',
+    ),
+    5 => 
+    array (
       'key' => 'field_55e9f06cfc2cc',
       'label' => 'Showcase Image',
       'name' => 'showcase_image',
@@ -117,7 +143,7 @@ $group = array (
       'max_size' => '',
       'mime_types' => '',
     ),
-    5 => 
+    6 => 
     array (
       'key' => 'field_55e72399710bd',
       'label' => 'Related Project Thumbnail',
@@ -143,7 +169,7 @@ $group = array (
       'max_size' => '',
       'mime_types' => '',
     ),
-    6 => 
+    7 => 
     array (
       'key' => 'field_55e7234223a5a',
       'label' => 'Background Color',
@@ -160,7 +186,7 @@ $group = array (
       ),
       'default_value' => '#9d9fa2',
     ),
-    7 => 
+    8 => 
     array (
       'key' => 'field_55e9e85fb3dc7',
       'label' => 'Credits',
@@ -178,7 +204,7 @@ $group = array (
       'placement' => 'top',
       'endpoint' => 0,
     ),
-    8 => 
+    9 => 
     array (
       'key' => 'field_55e7248b98201',
       'label' => 'Credits',
@@ -247,7 +273,7 @@ $group = array (
         ),
       ),
     ),
-    9 => 
+    10 => 
     array (
       'key' => 'field_55e9e80c55006',
       'label' => 'Videos',
@@ -265,7 +291,7 @@ $group = array (
       'placement' => 'top',
       'endpoint' => 0,
     ),
-    10 => 
+    11 => 
     array (
       'key' => 'field_55e62358c80e0',
       'label' => 'Videos',
@@ -387,7 +413,7 @@ $group = array (
         ),
       ),
     ),
-    11 => 
+    12 => 
     array (
       'key' => 'field_55fb059ada588',
       'label' => 'Sections',
@@ -405,7 +431,7 @@ $group = array (
       'placement' => 'top',
       'endpoint' => 0,
     ),
-    12 => 
+    13 => 
     array (
       'key' => 'field_55fb05a6da589',
       'label' => 'Sections',
@@ -478,7 +504,7 @@ $group = array (
         ),
       ),
     ),
-    13 => 
+    14 => 
     array (
       'key' => 'field_55e9e83555008',
       'label' => 'Related Projects',
@@ -496,7 +522,7 @@ $group = array (
       'placement' => 'top',
       'endpoint' => 0,
     ),
-    14 => 
+    15 => 
     array (
       'key' => 'field_55e721625d18a',
       'label' => 'Related Projects',

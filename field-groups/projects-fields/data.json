@@ -82,6 +82,30 @@
             "disabled": 0
         },
         {
+            "key": "field_55fb280d544df",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "If no video is present, this image will show as a featured banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "sow-carousel-default",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_55e9f06cfc2cc",
             "label": "Showcase Image",
             "name": "showcase_image",
