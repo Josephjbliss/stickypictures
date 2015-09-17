@@ -9,7 +9,7 @@ function project_tags() {
   // the_tags( $before = '', $sep = ' ', $after = '');
 
   $work_page = get_post_type_archive_link( project_cpt_name() );
-  $tags = get_tags();
+  $tags = wp_get_post_tags( $post->ID );
   $html = '';
   foreach ( $tags as $tag ) {
     $tag_link = get_tag_link( $tag->term_id );
