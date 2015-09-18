@@ -90,8 +90,11 @@ function project_videos() {
 
   if( !$videos ) return false;
 
-  // Remove first video (will be used for main video)
-  array_shift( $videos );
+  // Only remove first video if there's exactly 1 video
+  // Otherwise that first vid should print in the thumbs section
+  if( count( $videos ) == 1 )
+    array_shift( $videos );
+
   if( !empty( $videos ) ) :
   ?>
     <h3 class="videos-title">videos</h3>
