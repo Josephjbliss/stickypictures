@@ -724,7 +724,7 @@ footer {
 }
 
 .tag-filters-wrap {
-      margin: 0 auto;
+      margin: 0 auto 6px;
 }
 
 @media only screen and (min-width: 414px){
