@@ -212,13 +212,13 @@ $(document).ready(function(){
         //Prevent FOUC 
         $("html.opacity .masonry").animate({opacity: 1}, 300, function(){
             if(isActive) {
-                $(".project-masonry").masonry("layout");
+                $(".masonry").masonry("layout");
             }       
         });
-        $("html.opacity .work-page-masonry").animate({opacity: 1}, 300, function(){
+        $("html.opacity .project-masonry").animate({opacity: 1}, 300, function(){
             if(isActive) {
                 $(".project-masonry").masonry("layout");
-            }       
+            }
         });
 
         //Play project hero video
