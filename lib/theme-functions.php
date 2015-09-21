@@ -134,4 +134,11 @@ function footer_social_links() {
 } // END footer_social_links()
 
 
+function infinite_projects( $query ) {
+    if( is_post_type_archive( project_cpt_name() ) ) {
+        $query->set( 'posts_per_page', '-1' );
+    }
+}
+add_action( 'pre_get_posts', 'infinite_projects' );
+
 ?>
