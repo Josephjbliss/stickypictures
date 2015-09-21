@@ -723,6 +723,10 @@ footer {
     padding-bottom: 24px;
 }
 
+.tag-filters-wrap {
+      margin: 0 auto;
+}
+
 @media only screen and (min-width: 414px){
     nav {
         width: auto;
@@ -810,7 +814,11 @@ footer {
         line-height: 60px;
         height: 60px;
     }
-    
+
+    .tag-filters-wrap {
+          margin: 0 auto .5%;
+    }
+
     .work-page-masonry {
         margin-top: -.5%;
     }
