@@ -811,6 +811,14 @@ footer {
         height: 60px;
     }
 
+    .tag-filters-wrap {
+        margin-bottom: .5%;
+    }
+
+    .work-page-masonry {
+        margin-top: -.5%;
+    }
+
     /* Project Styles */
     .project-blurb h2 {
         font-size: 25px;
@@ -876,6 +884,7 @@ footer {
     .the-studio-blurb2 {
         clear: both;
     }
+
 }
 
 @media only screen and (min-width: 600px) and (max-width: 764px){
