@@ -26,6 +26,11 @@ html.opacity .masonry {
     filter: alpha(opacity=0);
 }
 
+html.opacity .project-masonry {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
 ::-moz-selection {
     background: #3a3a3c;
     text-shadow: none;
