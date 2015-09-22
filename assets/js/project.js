@@ -138,16 +138,7 @@ $(document).ready(function(){
     // If masonry is currently active
     var isActive = false;
 
-    //Set up masonry
-    updateMasonry();
-
     $(window).resize(function(){
-        if(isActive) {
-            $(".work-page-masonry").masonry("layout");
-            $(".masonry").masonry("layout");
-            $(".project-masonry").masonry("layout");
-        }
-
         //Update hovers and Masonry on window resize
         updateMasonry();
         
@@ -169,6 +160,12 @@ $(document).ready(function(){
 
     //If resized, only update masonry once with isActive
     function updateMasonry() {
+        if(isActive) {
+            $(".work-page-masonry").masonry("layout");
+            $(".masonry").masonry("layout");
+            $(".project-masonry").masonry("layout");
+        }
+
         if ($("body").hasClass("project-page"))  {
             if($(window).width() < 765) {
                 if(isActive) {
@@ -209,16 +206,10 @@ $(document).ready(function(){
     ///////////////////////////////////////
 
     $(window).load(function(){
-        updateMasonry();
+        updateMasonry(); //Set up masonry only on window load
 
         //Prevent FOUC 
-        $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").animate({opacity: 1}, 300, function(){
-            if(isActive){
-                $(".work-page-masonry").masonry("layout");
-                $(".masonry").masonry("layout");
-                $(".project-masonry").masonry("layout");
-            }
-        });
+        $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").animate({opacity: 1}, 200);
 
         //Play project hero video
         $f($(".project-hero iframe")[0]).api("play");
