@@ -186,8 +186,8 @@ $(document).ready(function(){
         else {
             if($(window).width() < 600) {
                 if(isActive) {
-                    $(".masonry").masonry("destroy"); // destroy
-                    $(".work-page-masonry").isotope('destroy');
+                    $(".masonry").masonry("destroy");  // destroy
+                    $(".work-page-masonry").masonry("destroy");  // destroy
                     isActive = false;
                 }
             }
@@ -197,9 +197,7 @@ $(document).ready(function(){
                         $(".masonry").masonry(masonryOptions);
                     });
                     $(".work-page-masonry").imagesLoaded(function(){
-                        $(".work-page-masonry").isotope({
-                          itemSelector: '.work-project'
-                        });
+                        $(".work-page-masonry").masonry(masonryOptions);
                     });
                     isActive = true;
                 }
@@ -209,17 +207,14 @@ $(document).ready(function(){
     ///////////////////////////////////////
 
     $(window).load(function(){
+        if(isActive){
+            $(".work-page-masonry").masonry("layout");
+            $(".masonry").masonry("layout");
+            $(".project-masonry").masonry("layout");
+        }
+
         //Prevent FOUC 
-        $("html.opacity .masonry").animate({opacity: 1}, 300, function(){
-            if(isActive) {
-                $(".masonry").masonry("layout");
-            }       
-        });
-        $("html.opacity .project-masonry").animate({opacity: 1}, 300, function(){
-            if(isActive) {
-                $(".project-masonry").masonry("layout");
-            }
-        });
+        $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").animate({opacity: 1}, 300);
 
         //Play project hero video
         $f($(".project-hero iframe")[0]).api("play");

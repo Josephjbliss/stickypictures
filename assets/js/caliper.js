@@ -2,15 +2,15 @@ $(document).ready(function(){
 
   if( $('.projects-archive-page').length > 0 ) {
     
-    $grid = $('.masonry').isotope({
-      itemSelector: '.work-project'
-    });
+    // $grid = $('.masonry').isotope({
+    //   itemSelector: '.work-project'
+    // });
 
-    go_to_filter_from_url( $grid );
+    // go_to_filter_from_url( $grid );
 
     $('.tag-filters').on( 'click', '.filter-link', function(e) {
         var filterValue = $( this ).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
+        // $grid.isotope({ filter: filterValue });
     });
 
     // change is-checked class on buttons
@@ -31,19 +31,19 @@ $(document).ready(function(){
 
 
 function go_to_filter_from_url( $grid ) {
-  var hash = window.location.hash,
-      hash_parts = hash.split("/"),
-      filter = hash_parts[0].slice(1),
-      link_attr = '.tag-' + filter;
+  // var hash = window.location.hash,
+  //     hash_parts = hash.split("/"),
+  //     filter = hash_parts[0].slice(1),
+  //     link_attr = '.tag-' + filter;
 
-  if( filter == 'all' ) {
-    link_attr = '*';
-  }
+  // if( filter == 'all' ) {
+  //   link_attr = '*';
+  // }
 
-  if( filter.length > 0 ) {
-    $grid.isotope({ filter: link_attr });
-    $('.tag-filters .is-checked').removeClass('is-checked');
-    $('.filter-link[data-filter="' + link_attr + '"]').addClass('is-checked');
-  }
+  // if( filter.length > 0 ) {
+  //   $grid.isotope({ filter: link_attr });
+  //   $('.tag-filters .is-checked').removeClass('is-checked');
+  //   $('.filter-link[data-filter="' + link_attr + '"]').addClass('is-checked');
+  // }
 
 } // go_to_filter_from_url()
