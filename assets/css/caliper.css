@@ -16,8 +16,7 @@ nav a.active {
 nav .tags-toggle-btn {
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 8px;
   color: #a7a9ac;
 }
 nav .tags-toggle-btn:hover,
