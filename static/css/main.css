@@ -23,8 +23,7 @@ html {
 /* Prevent FOUC if opacity class is present */
 html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry {
     opacity: 0;
-    filter: alpha(opacity=0);
-    
+    filter: alpha(opacity=0);   
 }
 
 ::-moz-selection {

@@ -118,6 +118,50 @@ $(document).ready(function(){
     });
     ///////////////////////////////////////
 
+
+    ///////////////////////////////////////
+    //Work Page
+    if( $(".projects-archive-page").length > 0 ) {
+        $(".tags-toggle-btn").unbind("click");
+        
+        $(".tags-toggle-btn").bind("click", function (e) {
+            e.preventDefault();
+            $(".tag-filters-wrap").slideToggle();
+        });
+
+        // change is-checked class on buttons
+        $(".tag-filters .filter-link").on("click", function(e) {
+            $(".tag-filters .is-checked").removeClass("is-checked");
+            $(this).addClass("is-checked");
+        });
+
+        $(".tag-filters").on( "click", ".filter-link", function(e) {
+            var filterValue = $( this ).attr("data-filter");
+            $(".work-page-masonry").isotope({ filter: filterValue });
+        });
+        
+        go_to_filter_from_url($(".work-page-masonry"));
+    }
+
+    function go_to_filter_from_url( $grid ) {
+        var hash = window.location.hash,
+            hash_parts = hash.split("/"),
+            filter = hash_parts[0].slice(1),
+            link_attr = ".tag-" + filter;
+
+        if(filter == "all") {
+            link_attr = "*";
+        }
+
+        if(filter.length > 0) {
+            $(".tag-filters-wrap").show();
+            $grid.isotope({ filter: link_attr });
+            $(".tag-filters .is-checked").removeClass("is-checked");
+            $(".filter-link[data-filter=\"" + link_attr + "\"]").addClass("is-checked");
+        }
+    }
+    ///////////////////////////////////////
+
     ///////////////////////////////////////
     //Masonry Layouts
     var masonryOptions = {
@@ -126,6 +170,12 @@ $(document).ready(function(){
         stamp: ".masonry-stamp",
         transitionDuration: 0,
         percentPosition: true
+    };
+
+    var workPageIsotopeOptions = {
+        itemSelector: ".masonry-element",
+        percentPosition: true,
+        masonry: masonryOptions
     };
 
     var projectMasonryOptions = {
@@ -161,9 +211,9 @@ $(document).ready(function(){
     //If resized, only update masonry once with isActive
     function updateMasonry() {
         if(isActive) {
-            $(".work-page-masonry").masonry("layout");
             $(".masonry").masonry("layout");
             $(".project-masonry").masonry("layout");
+            $(".work-page-masonry").isotope("layout");
         }
 
         if ($("body").hasClass("project-page"))  {
@@ -186,7 +236,8 @@ $(document).ready(function(){
             if($(window).width() < 600) {
                 if(isActive) {
                     $(".masonry").masonry("destroy");  // destroy
-                    $(".work-page-masonry").masonry("destroy");  // destroy
+                    $(".work-page-masonry").isotope("destroy");  // destroy
+                    go_to_filter_from_url($(".work-page-masonry"));
                     isActive = false;
                 }
             }
@@ -196,7 +247,7 @@ $(document).ready(function(){
                         $(".masonry").masonry(masonryOptions);
                     });
                     $(".work-page-masonry").imagesLoaded(function(){
-                        $(".work-page-masonry").masonry(masonryOptions);
+                        $(".work-page-masonry").isotope(workPageIsotopeOptions);
                     });
                     isActive = true;
                 }
