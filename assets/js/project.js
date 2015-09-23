@@ -64,6 +64,10 @@ $(document).ready(function(){
     //Project Page
     $(".vimeo-iframe").fitVids();   
 
+    if($(".videos .video-thumb").length == 0) {
+        $(".videos").hide();
+    }
+
     $(".video-thumb a").click(function(evt){
         evt.preventDefault();
         
