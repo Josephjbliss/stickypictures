@@ -380,13 +380,14 @@ footer {
     cursor: pointer;
 }
 
-.credits-title:hover {
+.no-touch .credits-title:hover {
     color: #4578bc;
 }
 
 .credits {
     margin-top: 19px;
     display: none;
+    overflow: hidden;
 }
 
 .credits-title:after {
