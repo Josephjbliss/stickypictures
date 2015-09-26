@@ -162,6 +162,7 @@ $(document).ready(function(){
             $(".tag-filters-wrap").show();
             $grid.isotope({ filter: link_attr });
             $(".tag-filters .is-checked").removeClass("is-checked");
+            $(".tags-toggle-btn").addClass("open");
             $(".filter-link[data-filter=\"" + link_attr + "\"]").addClass("is-checked");
         }
     }

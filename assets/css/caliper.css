@@ -18,6 +18,14 @@ nav .tags-toggle-btn {
   right: 0;
   top: 8px;
   color: #a7a9ac;
+  text-decoration: none;
+  border-bottom: 0;
+  background: none;
+}
+nav .tags-toggle-btn:hover {
+  text-decoration: none;
+  border-bottom: 0;
+  background: none;
 }
 nav .tags-toggle-btn.open {
   color: black;
