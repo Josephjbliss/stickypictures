@@ -131,6 +131,7 @@ $(document).ready(function(){
         $(".tags-toggle-btn").bind("click", function (e) {
             e.preventDefault();
             $(".tag-filters-wrap").slideToggle();
+            $(this).toggleClass("open");
         });
 
         // change is-checked class on buttons

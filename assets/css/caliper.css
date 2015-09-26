@@ -19,8 +19,13 @@ nav .tags-toggle-btn {
   top: 8px;
   color: #a7a9ac;
 }
-nav .tags-toggle-btn:hover,
-nav .tags-toggle-btn:focus {
+nav .tags-toggle-btn.open {
+  color: black;
+  text-decoration: none;
+  border-bottom: 0;
+  background: none;
+}
+.no-touch nav .tags-toggle-btn:hover {
   color: black;
   text-decoration: none;
   border-bottom: 0;
