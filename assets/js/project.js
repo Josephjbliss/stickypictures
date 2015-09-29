@@ -160,6 +160,7 @@ $(document).ready(function(){
 
         if(filter.length > 0) {
             $(".tag-filters-wrap").show();
+            $grid.isotope(workPageIsotopeOptions);
             $grid.isotope({ filter: link_attr });
             $(".tag-filters .is-checked").removeClass("is-checked");
             $(".tags-toggle-btn").addClass("open");
