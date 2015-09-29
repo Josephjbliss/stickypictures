@@ -181,6 +181,10 @@ nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .proj
     float: left;
 }
 
+.slides {
+    cursor: pointer;
+}
+
 /* Main Home Blurb Styles */
 .home-blurb {
     padding: 12px 12px 0 12px;

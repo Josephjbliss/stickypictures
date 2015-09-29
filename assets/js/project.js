@@ -57,6 +57,10 @@ $(document).ready(function(){
         slideshowInterval = setInterval(nextSlide, 5000);
         $(".slideshow .caption").fadeOut(250);
     });
+
+    $(".slides").click(function(){
+        window.location = $(".slideshow .caption h2.current a").attr("href");
+    });
     ///////////////////////////////////////
 
 
