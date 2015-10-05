@@ -147,6 +147,10 @@ $(document).ready(function(){
         $(".tag-filters").on( "click", ".filter-link", function(e) {
             var filterValue = $( this ).attr("data-filter");
             $(".work-page-masonry").isotope({ filter: filterValue });
+
+            $(".no-touch .home-project .home-project-text").each(function(){
+                $(this).css("bottom", -$(this).height());
+            });
         });
         
         go_to_filter_from_url($(".work-page-masonry"));
