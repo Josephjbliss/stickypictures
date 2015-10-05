@@ -181,7 +181,7 @@ nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .proj
     float: left;
 }
 
-.slides {
+body.home .slides {
     cursor: pointer;
 }
 

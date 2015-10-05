@@ -58,7 +58,7 @@ $(document).ready(function(){
         $(".slideshow .caption").fadeOut(250);
     });
 
-    $(".slides").click(function(){
+    $("body.home .slides").click(function(){
         window.location = $(".slideshow .caption h2.current a").attr("href");
     });
     ///////////////////////////////////////
