@@ -30,7 +30,7 @@ function client_styles() {
 
     global $wp_styles;
     // Main Stylesheet
-    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'assets/css/stickypictures.min.css' );
+    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'assets/css/stickypictures.min.css', array(), time() );
     wp_enqueue_style( THEME_PREFIX . '-theme' );
 
     wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "assets/css/ieonly.css", array( THEME_PREFIX . '-theme' )  );
