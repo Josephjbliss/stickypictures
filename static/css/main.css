@@ -627,13 +627,13 @@ footer {
     overflow: hidden;
 }
 
-.home-page footer, .work-page footer, .projects-archive-page footer, .about-page footer, .project-page footer, .capabilities-page footer {
+.home-page footer, .work-page footer, .projects-archive-page footer, .about-page footer, .project-page footer, .page-template-tmpl-capabilities footer {
     background: transparent url("../images/dotted-border.png") left top repeat-x;
     margin-top: 20px;
 }
 
 /* Capabilities Page Styles */
-.capabilities-page h3 {
+.page-template-tmpl-capabilities h3 {
     font-family: "FranklinGothic-Condensed";
     text-transform: uppercase;
     font-size: 20px; 
@@ -644,22 +644,22 @@ footer {
     padding: 20px 12px;
 }
 
-.capabilities-page section p {
+.page-template-tmpl-capabilities section p {
     font-size: 15px;
     line-height: 19px;
     margin-bottom: 16px;
 }
 
-.capabilities-page section p:last-of-type {
+.page-template-tmpl-capabilities section p:last-of-type {
     margin-bottom: 0;
 }
 
-.capabilities-page section.related-projects h3 {
+.page-template-tmpl-capabilities section.related-projects h3 {
     padding-left: 12px;
     margin: 12px 0;
 }
 
-.capabilities-page .rule {
+.page-template-tmpl-capabilities .rule {
     width: auto;
     margin: 0 12px;
     padding: 0;
@@ -730,7 +730,7 @@ footer {
     width: 100%;
 }
 
-.capabilities-page section.the-studio {
+.page-template-tmpl-capabilities section.the-studio {
     padding-bottom: 24px;
 }
 
@@ -856,7 +856,7 @@ footer {
     }
 
     /* Capabilities Page Styles */
-    .capabilities-page .capabilties-section h3 {
+    .page-template-tmpl-capabilities .capabilties-section h3 {
         font-size: 25px;
         line-height: 26px;
     }
@@ -1333,15 +1333,15 @@ footer {
         display: block;
     }
 
-    .capabilities-page .related-project-thumbnails {
+    .page-template-tmpl-capabilities .related-project-thumbnails {
         position: static;
         width: auto;
     }
-    .capabilities-page .related-project {
+    .page-template-tmpl-capabilities .related-project {
         width: 19.6%;
         margin: 0 .5% .5% 0;
     }
-    .capabilities-page .related-project:nth-of-type(5n){
+    .page-template-tmpl-capabilities .related-project:nth-of-type(5n){
         margin-right: 0;
     }
 }

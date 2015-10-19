@@ -35,3 +35,16 @@ if( is_singular( THEME_PREFIX . '_project') ) {
     <div class="content row">
       <main class="main" role="main">
 
+<?php 
+if( post_password_required() ) {
+  ?>
+  <div class="password-form--wrap">
+    <h3>Password Protected Page</h3>
+    <?php echo get_the_password_form(); ?>
+  </div>
+  <?php
+  get_footer();
+  die();
+}
+?>      
+

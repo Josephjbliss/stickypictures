@@ -59,3 +59,8 @@ nav .tags-toggle-btn.open {
 .tag-filters-wrap a.is-checked {
   color: black;
 }
+.password-form--wrap {
+  padding: 30px 0;
+  width: 80%;
+  margin-left: 10%;
+}
