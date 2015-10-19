@@ -141,4 +141,17 @@ function infinite_projects( $query ) {
 }
 add_action( 'pre_get_posts', 'infinite_projects' );
 
+
+// add_filter( 'the_password_form', 'sticky_password_form' );
+function sticky_password_form() {
+  global $post;
+  $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+  $o = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post">
+  ' . __( "This is password protected content. To view it please enter your password below" ) . '
+  <label class="pass-label" for="' . $label . '">' . __( "Password" ) . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="button" value="' . esc_attr__( "Submit" ) . '" />
+  </form>
+  ';
+  return $o;
+}
+
 ?>
