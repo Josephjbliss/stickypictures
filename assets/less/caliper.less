@@ -121,14 +121,25 @@ nav {
   }
 
   .caption {
+    width: 100%;
+    position: absolute;
+    bottom:0;
+    left:0;
+
     opacity:0;
-    z-index: -1;
+    // z-index: -1;
+    
     -webkit-transition: opacity .3s ease;
        -moz-transition: opacity .3s ease;
         -ms-transition: opacity .3s ease;
          -o-transition: opacity .3s ease;
             transition: opacity .3s ease;
+    @media (max-width:479px) {
+      opacity:1;
+      z-index: 3;      
+    }
   }
+
   &.hover-active {
     .swiper-slide-active .caption {
       opacity:1;

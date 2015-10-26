@@ -147,14 +147,6 @@ nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .proj
     color: #ffffff;
 }
 
-.no-touch .slideshow .caption {
-    width: 100%;
-    position: absolute;
-    bottom:0;
-    left:0;
-    z-index: 2;
-    /*display: none;*/
-}
 
 .slideshow .caption h2 {
     padding: 0 12px;
@@ -791,7 +783,7 @@ footer {
     .slideshow .caption {
         font-size: 20px;
         height: 48px;
-        line-height: 48px;        
+        line-height: 48px;     
     }
     .masonry-element {
         width: 49.5%;
