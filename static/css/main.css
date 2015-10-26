@@ -114,6 +114,7 @@ nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .proj
     position: absolute;
     width: 100%;
     top: 0;
+    bottom:auto;
     text-align: center;
     overflow: hidden;
     margin-top: 8px;
@@ -152,16 +153,16 @@ nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .proj
     bottom:0;
     left:0;
     z-index: 2;
-    display: none;
+    /*display: none;*/
 }
 
 .slideshow .caption h2 {
     padding: 0 12px;
-    display: none;
+    /*display: none;*/
 }
 
 .slideshow .caption h2.current {
-    display: block;
+    /*display: block;*/
 }
 
 .slideshow .caption a {

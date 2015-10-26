@@ -19,8 +19,9 @@ if( !empty( $slides ) ) :
     <div class="swiper-wrapper">
       <?php
       for ($i=0; $i < count( $projects ); $i++) :
+        $link = !empty( $projects[ $i ]['link'] ) ? $projects[ $i ]['link'] : false; 
       ?>
-        <div class="swiper-slide">
+        <div class="swiper-slide <?php if( $link ) echo 'slide-has-link'; ?>" data-slide-link="<?php echo $link ?>">
           <?php
             $src = !empty( $projects[ $i ]['img'] ) ? $projects[ $i ]['img']['url'] : 'http://placehold.it/1200x500?text=' . $projects[ $i ]['title']
           ?>
@@ -28,7 +29,7 @@ if( !empty( $slides ) ) :
           <div class="caption antialiased">
             <h2 <?php echo $i == 0 ? 'class="current"' : ''; ?>>
               <span class="client"><?php echo $projects[ $i ]['client'] ?></span>
-              <a href="<?php echo $projects[ $i ]['link']; ?>" alt="<?php echo $projects[ $i ]['title'] ?>"><?php echo $projects[ $i ]['project_name']; ?></a>
+              <a href="<?php echo $link; ?>" alt="<?php echo $projects[ $i ]['title'] ?>"><?php echo $projects[ $i ]['project_name']; ?></a>
             </h2>
           </div>
 

@@ -1,3 +1,5 @@
+var mainSwiper = false;
+
 $(document).ready(function(){
   ///////////////////////////////////////
   //Home Page 
@@ -22,7 +24,7 @@ $(document).ready(function(){
 
   ///////////////////////////////////////
   // Slideshow
-  var mainSwiper = $('.swiper-container').swiper({
+  mainSwiper = $('.swiper-container').swiper({
     loop: true,
     autoplay: 5000, // Time between auto slides
     speed: 400, // Transition execution time (in ms)
@@ -38,20 +40,34 @@ $(document).ready(function(){
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
 
-    grabCursor: true,
+    // grabCursor: true,
 
     onSlideChangeEnd : function(swiper) {
       var slide = swiper.slides[ swiper.activeIndex ];
-      console.log( slide );
       $('.swiper-container .caption h2').removeClass('current');
       $('.swiper-slide-active .caption h2').addClass('current');
+    },
+    onImagesReady : function(swiper) {
+      // console.log('ready');
+      var slide_width = $('.swiper-container').width();
+      // console.log('slide width', slide_width );
+      swiper.setWrapperTranslate( -slide_width );
+      // swiper.destroy();
     }
   });
 
-  $(".no-touch .swiper-slide").hover(function(e){
-    $(this).find(".caption").fadeIn(250);
-  }, function(){
-    $(this).find(".caption").fadeOut(250);
+  // Hover to show/hide caption
+  $(".no-touch .swiper-container").hover(function(e){
+    $(this).toggleClass('hover-active');
+  });
+
+  // Click to go to link
+  $(".swiper-slide").click( function(e){
+    var link = $(this).data('slide-link');
+    if( link.length > 0 )
+      window.location = link;
+    else
+      return false;
   });
 
 

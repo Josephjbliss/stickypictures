@@ -1,6 +1,10 @@
 module.exports = 
   build:
-    mangle: false
+    options:
+      mangle: false
+      # sourceMap: true
+      # compress: false
+      # beautify: true
     files:
       'assets/js/stickypictures.min.js': [
         "assets/js/jquery-1.11.3.min.js"

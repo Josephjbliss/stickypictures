@@ -7,8 +7,9 @@ if( !empty( $slides ) ) :
     <div class="swiper-wrapper">
       <?php
       for ($i=0; $i < count( $slides ); $i++) :
+        $link = $slides[ $i ]['link'] ? get_permalink( $slides[ $i ]['link']->ID ) : false;
       ?>
-        <div class="swiper-slide">
+        <div class="swiper-slide <?php if( $link ) echo 'slide-has-link';  ?>" data-slide-link="<?php echo $link; ?>">
           <?php
         $src = !empty( $slides[ $i ]['image'] ) ? $slides[ $i ]['image']['url'] : 'http://placehold.it/1200x500?text=' . $slides[ $i ]['caption']
           ?>
@@ -16,7 +17,6 @@ if( !empty( $slides ) ) :
           <div class="caption antialiased">
             <h2 <?php echo $i == 0 ? 'class="current"' : ''; ?>>
               <?php
-              $link = $slides[ $i ]['link'] ? get_permalink( $slides[ $i ]['link']->ID ) : false;
               $caption_format = $link ? '<a href="%2$s" alt=%1$s"><span>%1$s</span></a>' : '<span>%1$s</span>' ;
               echo sprintf( $caption_format, $slides[ $i ]['caption'], $link );
               ?>
