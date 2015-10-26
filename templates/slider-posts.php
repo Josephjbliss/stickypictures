@@ -15,31 +15,29 @@ if( !empty( $slides ) ) :
   endforeach; wp_reset_postdata();
   ?>      
 
-  <section class="slideshow">
-    <div class="dots">
-      <?php for ($i=0; $i < count( $projects ); $i++) : ?>
-        <span class="dot <?php echo $i == 0 ? 'current' : ''; ?>"></span>
-      <?php endfor; ?>
-    </div>
-
-    <div class="slides">
-      <?php for ($i=0; $i < count( $projects ); $i++) :
-        $src = !empty( $projects[ $i ]['img'] ) ? $projects[ $i ]['img']['url'] : 'http://placehold.it/1200x500?text=' . $projects[ $i ]['title']
-      ?>
-        <img src="<?php echo $src; ?>">
-      <?php endfor; ?>
-    </div>
-
-    <div class="caption antialiased">
+  <section class="swiper-container">
+    <div class="swiper-wrapper">
       <?php
       for ($i=0; $i < count( $projects ); $i++) :
       ?>
-        <h2 <?php echo $i == 0 ? 'class="current"' : ''; ?>>
-          <span class="client"><?php echo $projects[ $i ]['client'] ?></span>
-          <a href="<?php echo $projects[ $i ]['link']; ?>" alt="<?php echo $projects[ $i ]['title'] ?>"><?php echo $projects[ $i ]['project_name']; ?></a>
-        </h2>
-      <?php endfor; wp_reset_postdata(); ?>
+        <div class="swiper-slide">
+          <?php
+            $src = !empty( $projects[ $i ]['img'] ) ? $projects[ $i ]['img']['url'] : 'http://placehold.it/1200x500?text=' . $projects[ $i ]['title']
+          ?>
+            <img src="<?php echo $src; ?>">
+          <h2 <?php echo $i == 0 ? 'class="current"' : ''; ?>>
+            <span class="client"><?php echo $projects[ $i ]['client'] ?></span>
+            <a href="<?php echo $projects[ $i ]['link']; ?>" alt="<?php echo $projects[ $i ]['title'] ?>"><?php echo $projects[ $i ]['project_name']; ?></a>
+          </h2>
+        </div>
+      <?php endfor; wp_reset_postdata(); ?>      
     </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>    
   </section>
   <?php
 endif;
