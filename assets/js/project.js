@@ -22,15 +22,39 @@ $(document).ready(function(){
 
   ///////////////////////////////////////
   // Slideshow
-  var mySwiper = $('.swiper-container').swiper({
+  var mainSwiper = $('.swiper-container').swiper({
     loop: true,
+    autoplay: 5000, // Time between auto slides
+    speed: 400, // Transition execution time (in ms)
+    autoplayDisableOnInteraction: false,
     // If we need pagination
     pagination: '.swiper-pagination',
+    paginationClickable: true,
+
+    bulletClass:'dot',
+    bulletActiveClass:'current',
 
     // Navigation arrows
     nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',      
-  })   
+    prevButton: '.swiper-button-prev',
+
+    grabCursor: true,
+
+    onSlideChangeEnd : function(swiper) {
+      var slide = swiper.slides[ swiper.activeIndex ];
+      console.log( slide );
+      $('.swiper-container .caption h2').removeClass('current');
+      $('.swiper-slide-active .caption h2').addClass('current');
+    }
+  });
+
+  $(".no-touch .swiper-slide").hover(function(e){
+    $(this).find(".caption").fadeIn(250);
+  }, function(){
+    $(this).find(".caption").fadeOut(250);
+  });
+
+
   ///////////////////////////////////////
 
 

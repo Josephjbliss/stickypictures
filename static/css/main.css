@@ -110,7 +110,7 @@ nav a:hover, nav a.selected, .home-page nav a.home, .work-page nav a.work, .proj
     overflow: hidden;
 }
 
-.slideshow .dots {
+.slideshow .swiper-pagination {
     position: absolute;
     width: 100%;
     top: 0;

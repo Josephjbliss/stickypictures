@@ -68,21 +68,22 @@ module.exports =
 
   # ==========  Start Environment Definitions  ==========
 
-  live:
-    title: "live"
-    database: "client_db"
-    table_prefix: "client_name_db_"
+  dev:
+    title: "Dev Server"
+    database: "clients"
+    table_prefix: "sticky_wp_"
     table_exclusions : [
-      "_wf" # Will exclude with " NOT LIKE '%_wf%' " SQL statement
+      # "_wf" # Will exclude with " NOT LIKE '%_wf%' " statement
     ]        
-    user: "<%= grunt.config.data.deployconfig.live.db_user %>"
-    pass: "<%= grunt.config.data.deployconfig.live.db_pass %>"
-    host: "mysql.stickypictures.com"
-    url: "//stickypictures.com"
+    user: "<%= grunt.config.data.deployconfig.dev.db_user %>"
+    pass: "<%= grunt.config.data.deployconfig.dev.db_pass %>"
+    host: "127.0.0.1"
+    url: "//clients.madebycaliper.com/stickypictures"
     path:
-      theme: "/home/client_name/client-site.com/wp-content/themes/client_name-theme/"
-      uploads: "/home/client_name/client-site.com/wp-content/uploads/"
-    ssh_host: "client_name@my.live.com"
+      theme: "/srv/users/serverpilot/apps/clients/public/stickypictures/wp-content/themes/sticky-pictures/"
+      uploads: "/srv/users/serverpilot/apps/clients/public/stickypictures/wp-content/uploads/"
+      plugins: "/srv/users/serverpilot/apps/clients/public/stickypictures/wp-content/plugins/"
+    ssh_host: "serverpilot@ssh.madebycaliper.com"
 
   mt:
     title: "Media Temple"
@@ -95,7 +96,7 @@ module.exports =
     user: "<%= grunt.config.data.deployconfig.mt.db_user %>"
     pass: "<%= grunt.config.data.deployconfig.mt.db_pass %>"
     host: "internal-db.s209892.gridserver.com"
-    url: "//s209892.gridserver.com"
+    url: "//stickypictures.com"
     path:
       theme: "/nfs/c09/h01/mnt/209892/users/.home/domains/stickypictures.com/html/wp-content/themes/sticky-pictures/"
       uploads: "/nfs/c09/h01/mnt/209892/users/.home/domains/stickypictures.com/html/wp-content/uploads/"

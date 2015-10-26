@@ -15,7 +15,7 @@ if( !empty( $slides ) ) :
   endforeach; wp_reset_postdata();
   ?>      
 
-  <section class="swiper-container">
+  <section class="swiper-container slideshow">
     <div class="swiper-wrapper">
       <?php
       for ($i=0; $i < count( $projects ); $i++) :
@@ -24,11 +24,14 @@ if( !empty( $slides ) ) :
           <?php
             $src = !empty( $projects[ $i ]['img'] ) ? $projects[ $i ]['img']['url'] : 'http://placehold.it/1200x500?text=' . $projects[ $i ]['title']
           ?>
-            <img src="<?php echo $src; ?>">
-          <h2 <?php echo $i == 0 ? 'class="current"' : ''; ?>>
-            <span class="client"><?php echo $projects[ $i ]['client'] ?></span>
-            <a href="<?php echo $projects[ $i ]['link']; ?>" alt="<?php echo $projects[ $i ]['title'] ?>"><?php echo $projects[ $i ]['project_name']; ?></a>
-          </h2>
+          <img src="<?php echo $src; ?>">
+          <div class="caption antialiased">
+            <h2 <?php echo $i == 0 ? 'class="current"' : ''; ?>>
+              <span class="client"><?php echo $projects[ $i ]['client'] ?></span>
+              <a href="<?php echo $projects[ $i ]['link']; ?>" alt="<?php echo $projects[ $i ]['title'] ?>"><?php echo $projects[ $i ]['project_name']; ?></a>
+            </h2>
+          </div>
+
         </div>
       <?php endfor; wp_reset_postdata(); ?>      
     </div>
