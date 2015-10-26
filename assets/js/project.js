@@ -48,17 +48,22 @@ $(document).ready(function(){
       $('.swiper-slide-active .caption h2').addClass('current');
     },
     onImagesReady : function(swiper) {
-      // console.log('ready');
       var slide_width = $('.swiper-container').width();
-      // console.log('slide width', slide_width );
       swiper.setWrapperTranslate( -slide_width );
-      // swiper.destroy();
     }
   });
 
   // Hover to show/hide caption
   $(".no-touch .swiper-container").hover(function(e){
-    $(this).toggleClass('hover-active');
+    if( $(this).hasClass('hover-active') ) {
+      // Hovering off the container
+      $(this).removeClass('hover-active');
+      mainSwiper.startAutoplay();
+    } else {
+      // Hovering onto the container
+      $(this).addClass('hover-active');
+      mainSwiper.stopAutoplay();
+    }
   });
 
   // Click to go to link
