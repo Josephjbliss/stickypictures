@@ -55,13 +55,11 @@ $(document).ready(function(){
 
   // Hover to show/hide caption
   $(".no-touch .swiper-container").hover(function(e){
-    if( $(this).hasClass('hover-active') ) {
+    if( e.type == "mouseleave" ) {
       // Hovering off the container
-      $(this).removeClass('hover-active');
       mainSwiper.startAutoplay();
     } else {
       // Hovering onto the container
-      $(this).addClass('hover-active');
       mainSwiper.stopAutoplay();
     }
   });
