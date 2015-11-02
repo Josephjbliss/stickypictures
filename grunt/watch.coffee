@@ -9,8 +9,13 @@ module.exports =
     tasks: ['uglify:build']
     options:
       spawn: false
-  notify:
+  notify_js:
     files: ['assets/js/project.js']
     tasks: ['notify:notify_hooks']
+    options:
+      spawn: false
+  notify_css:
+    files: ['assets/less/caliper.less','static/css/main.css']
+    tasks: ['notify:css']
     options:
       spawn: false
