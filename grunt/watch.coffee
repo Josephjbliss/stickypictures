@@ -9,3 +9,8 @@ module.exports =
     tasks: ['uglify:build']
     options:
       spawn: false
+  notify:
+    files: ['assets/js/project.js','assets/less/caliper.less']
+    tasks: ['notify:notify_hooks']
+    options:
+      spawn: false
