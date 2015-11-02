@@ -128,4 +128,9 @@ html.touch .swiper-container .caption {
   opacity: 1;
   z-index: 3;
 }
-/* Prevent FOUC if opacity class is present */
+html.opacity .masonry img,
+html.opacity .project-masonry img,
+html.opacity .work-page-masonry img {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
