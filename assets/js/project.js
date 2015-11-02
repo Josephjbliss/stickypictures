@@ -1,21 +1,15 @@
+jQuery.fn.exists = function(){return this.length>0;};
+var $ = jQuery;
+
 var mainSwiper = false;
+
+// If masonry is currently active
+var grid_is_active = false,
+    $masonry_obj, $grid_container, masonry_opts;
 
 $(document).ready(function(){
   ///////////////////////////////////////
   //Home Page 
-  $(".no-touch .home-project .home-project-text").each(function(){
-    $(this).css("bottom", -$(this).height());
-  });
-
-  $(".no-touch .home-project").hover(function(){
-    var $slide = $(this).find(".home-project-text");
-    $slide.animate({bottom: 0}, 400);
-    $(this).find("img").animate({top: "-"+$slide.height()/2+"px"}, 400);
-  }, function(){
-    var $slide = $(this).find(".home-project-text");
-    $slide.animate({bottom: "-"+$slide.height()+"px"}, 400);
-    $(this).find("img").animate({top: 0}, 400);
-  });
 
   $(".home-project").click(function(){
     window.location = $(this).find(".project a").attr("href");
@@ -41,6 +35,9 @@ $(document).ready(function(){
     prevButton: '.swiper-button-prev',
 
     // grabCursor: true,
+
+    lazyLoading: true,
+    lazyLoadingInPrevNext: true,
 
     onSlideChangeEnd : function(swiper) {
       var slide = swiper.slides[ swiper.activeIndex ];
@@ -113,10 +110,14 @@ $(document).ready(function(){
   });
   ///////////////////////////////////////
 
+
+
   ///////////////////////////////////////
   //Reel Page
   $(".reel").fitVids();   
   ///////////////////////////////////////
+
+
 
   ///////////////////////////////////////
   //Contact Page
@@ -130,6 +131,8 @@ $(document).ready(function(){
     $(".contact-map iframe").css("pointer-events", "none");
   });
   ///////////////////////////////////////
+
+
 
   ///////////////////////////////////////
   //Capabilities Page
@@ -169,7 +172,7 @@ $(document).ready(function(){
     go_to_filter_from_url($(".work-page-masonry"));
   }
 
-  function go_to_filter_from_url( $grid ) {
+  function go_to_filter_from_url( $grid_container ) {
     var hash = window.location.hash,
       hash_parts = hash.split("/"),
       filter = hash_parts[0].slice(1),
@@ -181,8 +184,8 @@ $(document).ready(function(){
 
     if(filter.length > 0) {
       $(".tag-filters-wrap").show();
-      $grid.isotope(workPageIsotopeOptions);
-      $grid.isotope({ filter: link_attr });
+      $grid_container.isotope(workPageIsotopeOptions);
+      $grid_container.isotope({ filter: link_attr });
       $(".tag-filters .is-checked").removeClass("is-checked");
       $(".tags-toggle-btn").addClass("open");
       $(".filter-link[data-filter=\"" + link_attr + "\"]").addClass("is-checked");
@@ -190,35 +193,12 @@ $(document).ready(function(){
   }
   ///////////////////////////////////////
 
+
+
   ///////////////////////////////////////
-  //Masonry Layouts
-  var masonryOptions = {
-    itemSelector: ".masonry-element",
-    columnWidth: ".masonry-element",
-    stamp: ".masonry-stamp",
-    transitionDuration: 0,
-    percentPosition: true
-  };
-
-  var workPageIsotopeOptions = {
-    itemSelector: ".masonry-element",
-    percentPosition: true,
-    masonry: masonryOptions
-  };
-
-  var projectMasonryOptions = {
-    itemSelector: ".project-masonry-element",
-    columnWidth: ".project-masonry-element",        
-    transitionDuration: 0,
-    percentPosition: true
-  };
-
-  // If masonry is currently active
-  var isActive = false;
-
   $(window).resize(function(){
     //Update hovers and Masonry on window resize
-    updateMasonry();
+    updateGrid();
     
     $(".no-touch .home-project .home-project-text").each(function(){
       $(this).css("bottom", -$(this).height());
@@ -236,64 +216,170 @@ $(document).ready(function(){
     $(".slides").stop().css({left: -$(".dot.current").index()*$("body").width()});
   });
 
-  //If resized, only update masonry once with isActive
-  function updateMasonry() {
-    if(isActive) {
-      $(".masonry").masonry("layout");
-      $(".project-masonry").masonry("layout");
-      $(".work-page-masonry").isotope("layout");
-    }
 
-    if ($("body").hasClass("project-page"))  {
-      if($(window).width() < 765) {
-        if(isActive) {
-          $(".project-masonry").masonry("destroy"); // destroy
-          isActive = false;
-        }
-      }
-      else {
-        if(!isActive){
-          $(".project-masonry").imagesLoaded(function(){
-            $(".project-masonry").masonry(projectMasonryOptions);
-          });
-          isActive = true;
-        }
-      }
-    }
-    else {
-      if($(window).width() < 600) {
-        if(isActive) {
-          $(".masonry").masonry("destroy");  // destroy
-          $(".work-page-masonry").isotope("destroy");  // destroy
-          go_to_filter_from_url($(".work-page-masonry"));
-          isActive = false;
-        }
-      }
-      else {
-        if(!isActive){
-          $(".masonry").imagesLoaded(function(){
-            $(".masonry").masonry(masonryOptions);
-          });
-          $(".work-page-masonry").imagesLoaded(function(){
-            $(".work-page-masonry").isotope(workPageIsotopeOptions);
-          });
-          isActive = true;
-        }
-      }
-    }
-  }
-  ///////////////////////////////////////
+  // START Lazy load
 
+  // var $win = $(window),
+  //     $lazy_imgs = $("img.lazy");
+
+  // $grid_container.on('layoutComplete', function(){
+  //   console.log('layout complete');
+  //   // $masonry_obj.masonry('layout');
+  // });
+
+  // $lazy_imgs.lazyload({
+  //   failure_limit: Math.max($lazy_imgs.length - 1, 0),
+  //   effect : "fadeIn"    
+  // });  
+
+  // END Lazy load
+    
   $(window).load(function(){
-    updateMasonry(); //Set up masonry only on window load
+
+    updateGrid();
+
+    // START Home page only
+    $(".no-touch .home-project .home-project-text").each(function(){
+      $(this).css("bottom", -$(this).height());
+    });
+
+    $(".no-touch .home-project").hover(function(){
+      var $slide = $(this).find(".home-project-text");
+      $slide.animate({bottom: 0}, 400);
+      $(this).find("img").animate({top: "-"+$slide.height()/2+"px"}, 400);
+    }, function(){
+      var $slide = $(this).find(".home-project-text");
+      $slide.animate({bottom: "-"+$slide.height()+"px"}, 400);
+      $(this).find("img").animate({top: 0}, 400);
+    });
+    // END Home page only
 
     //Prevent FOUC 
-    $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").animate({opacity: 1}, 200);
+    // $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
 
     //Play project hero video
-    $f($(".project-hero iframe")[0]).api("play");
+    // $f($(".project-hero iframe")[0]).api("play");
   });
 });
+
+
+//Masonry Layouts$
+var masonryOptions = {
+  itemSelector: ".masonry-element",
+  columnWidth: ".masonry-element",
+  stamp: ".masonry-stamp",
+  transitionDuration: 0,
+  percentPosition: true
+};
+
+var workPageIsotopeOptions = {
+  itemSelector: ".masonry-element",
+  percentPosition: true,
+  masonry: masonryOptions
+};
+
+var projectMasonryOptions = {
+  itemSelector: ".project-masonry-element",
+  columnWidth: ".project-masonry-element",        
+  transitionDuration: 0,
+  percentPosition: true
+};
+
+// Get all masonry-related vars and elems
+init_grid();
+function init_grid() {
+
+  if( $(".masonry").length > 0 ) {
+    masonry_opts = masonryOptions;
+    $grid_container =  $(".masonry");
+  } else if( $(".project-masonry").length > 0 )  {
+    masonry_opts = projectMasonryOptions;
+    $grid_container =  $(".project-masonry");
+  }
+  
+  $masonry_obj = $grid_container.masonry();
+
+  // grid_is_active = true;
+
+} // end init_grid()
+
+
+function updateGrid() {
+
+  if( grid_is_active ) {
+    update_grid_once();
+  }
+
+  if ( $("body").hasClass("project-page") ) {
+    updateProjectGrid();      
+  } else {
+
+    if($(window).width() < 600) {
+      
+      if(grid_is_active) {
+        destroyGrid();
+        go_to_filter_from_url($(".work-page-masonry"));
+      }
+
+    } else {
+
+      if(!grid_is_active)
+        activate_grid();
+
+    }
+
+  }
+
+} // END updateGrid()
+///////////////////////////////////////
+
+
+function update_grid_once() {
+  console.log('update grid once');
+  $grid_container.masonry("layout");
+  $(".work-page-masonry").isotope("layout");
+  
+} // end update_grid_once()
+
+
+function updateProjectGrid() {
+  console.log('updating Project grid...');
+  if( $(window).width() < 765 ) {
+
+    if( grid_is_active )
+      destroyGrid();
+
+  }
+  else {
+
+    if( !grid_is_active )
+      activate_grid();
+
+  }
+} // end updateProjectGrid()
+
+
+function activate_grid() {
+
+  $grid_container.imagesLoaded(function(){
+    $masonry_obj.masonry(masonry_opts);
+  });
+
+  $(".work-page-masonry").imagesLoaded(function(){
+    $(".work-page-masonry").isotope(workPageIsotopeOptions);
+  });
+
+  grid_is_active = true;
+  
+} // end activate_grid()
+
+
+function destroyGrid() {
+  $masonry_obj.masonry("destroy");  // destroy
+  $(".work-page-masonry").isotope("destroy");  // destroy
+  grid_is_active = false;
+} // end destroyGrid()
+
 
 //when ipad orientation changes
 window.onorientationchange = function(){
