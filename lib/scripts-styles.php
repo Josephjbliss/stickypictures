@@ -5,8 +5,6 @@ define('THEME_URL', get_bloginfo('stylesheet_directory').'/');
 
 function client_scripts($hook) {
 
-    // wp_dequeue_script('jquery');
-
     wp_enqueue_script(
       THEME_PREFIX .'-modernizr',
       THEME_URL . 'assets/js/modernizr.js'
@@ -16,7 +14,9 @@ function client_scripts($hook) {
     wp_enqueue_script(
       THEME_PREFIX .'-main-js',
       THEME_URL . 'assets/js/stickypictures.min.js',
-      array('jquery')
+      array('jquery'),
+      get_bloginfo('version'),
+      $in_footer = true
     );
 
 }
