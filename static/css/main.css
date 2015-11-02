@@ -220,10 +220,10 @@ body.home .slides {
     top: 0;    
 }
 
-.home-project img {
+/*.home-project img {
     width: 100%;
     display: block;
-}
+}*/
 
 .home-project .home-project-text {
     color: #ffffff;
@@ -454,10 +454,10 @@ footer {
     background: transparent url("../images/dotted-border.png") bottom left repeat-x;
 }
 
-.project-masonry-element img {
+/*.project-masonry-element img {
     display: block;
     width: 100%;
-}
+}*/
 
 .project-masonry-element {
     margin-bottom: 6px;

@@ -171,26 +171,6 @@ $(document).ready(function(){
     
     go_to_filter_from_url($(".work-page-masonry"));
   }
-
-  function go_to_filter_from_url( $grid_container ) {
-    var hash = window.location.hash,
-      hash_parts = hash.split("/"),
-      filter = hash_parts[0].slice(1),
-      link_attr = ".tag-" + filter;
-
-    if(filter == "all") {
-      link_attr = "*";
-    }
-
-    if(filter.length > 0) {
-      $(".tag-filters-wrap").show();
-      $grid_container.isotope(workPageIsotopeOptions);
-      $grid_container.isotope({ filter: link_attr });
-      $(".tag-filters .is-checked").removeClass("is-checked");
-      $(".tags-toggle-btn").addClass("open");
-      $(".filter-link[data-filter=\"" + link_attr + "\"]").addClass("is-checked");
-    }
-  }
   ///////////////////////////////////////
 
 
@@ -219,18 +199,27 @@ $(document).ready(function(){
 
   // START Lazy load
 
-  // var $win = $(window),
-  //     $lazy_imgs = $("img.lazy");
+  // for mobile
+  var threshold = 50;
 
-  // $grid_container.on('layoutComplete', function(){
-  //   console.log('layout complete');
-  //   // $masonry_obj.masonry('layout');
-  // });
+  // Force load on large size
+  if( $(window).width() >= 765 )
+    threshold = 1000;
 
-  // $lazy_imgs.lazyload({
-  //   failure_limit: Math.max($lazy_imgs.length - 1, 0),
-  //   effect : "fadeIn"    
-  // });  
+  var $win = $(window),
+      $lazy_imgs = $("img.lazy");
+
+
+  $lazy_imgs.lazyload({
+    failure_limit: Math.max($lazy_imgs.length - 1, 0),
+    effect : "fadeIn",
+    threshold: threshold,
+    load: function(){ 
+      console.log('image laoded');
+      updateGrid();
+      $win.trigger('scroll');
+    }
+  });  
 
   // END Lazy load
     
@@ -255,12 +244,33 @@ $(document).ready(function(){
     // END Home page only
 
     //Prevent FOUC 
-    // $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
+    $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
 
     //Play project hero video
     // $f($(".project-hero iframe")[0]).api("play");
   });
 });
+
+
+function go_to_filter_from_url( $grid_container ) {
+  var hash = window.location.hash,
+    hash_parts = hash.split("/"),
+    filter = hash_parts[0].slice(1),
+    link_attr = ".tag-" + filter;
+
+  if(filter == "all") {
+    link_attr = "*";
+  }
+
+  if(filter.length > 0) {
+    $(".tag-filters-wrap").show();
+    $grid_container.isotope(workPageIsotopeOptions);
+    $grid_container.isotope({ filter: link_attr });
+    $(".tag-filters .is-checked").removeClass("is-checked");
+    $(".tags-toggle-btn").addClass("open");
+    $(".filter-link[data-filter=\"" + link_attr + "\"]").addClass("is-checked");
+  }
+} // end go_to_filter_from_url()
 
 
 //Masonry Layouts$
@@ -297,11 +307,31 @@ function init_grid() {
     $grid_container =  $(".project-masonry");
   }
   
-  $masonry_obj = $grid_container.masonry();
-
-  // grid_is_active = true;
+  $masonry_obj = activate_grid();
 
 } // end init_grid()
+
+
+function activate_grid() {
+
+  // console.log('activate_grid..');
+
+  grid_is_active = true;
+
+  if( $(".work-page-masonry").length > 0 ) {
+    $(".work-page-masonry").imagesLoaded(function(){
+      return $(".work-page-masonry").isotope(workPageIsotopeOptions);
+    });
+  } else {
+    return $grid_container.masonry(masonry_opts);
+    // $grid_container.imagesLoaded(function(){
+    //   $masonry_obj.masonry(masonry_opts);
+    // });
+  }
+
+
+  
+} // end activate_grid()
 
 
 function updateGrid() {
@@ -318,7 +348,7 @@ function updateGrid() {
       
       if(grid_is_active) {
         destroyGrid();
-        go_to_filter_from_url($(".work-page-masonry"));
+        go_to_filter_from_url( $(".work-page-masonry") );
       }
 
     } else {
@@ -335,7 +365,7 @@ function updateGrid() {
 
 
 function update_grid_once() {
-  console.log('update grid once');
+  // console.log('updating grid once...');
   $grid_container.masonry("layout");
   $(".work-page-masonry").isotope("layout");
   
@@ -343,7 +373,7 @@ function update_grid_once() {
 
 
 function updateProjectGrid() {
-  console.log('updating Project grid...');
+
   if( $(window).width() < 765 ) {
 
     if( grid_is_active )
@@ -357,21 +387,6 @@ function updateProjectGrid() {
 
   }
 } // end updateProjectGrid()
-
-
-function activate_grid() {
-
-  $grid_container.imagesLoaded(function(){
-    $masonry_obj.masonry(masonry_opts);
-  });
-
-  $(".work-page-masonry").imagesLoaded(function(){
-    $(".work-page-masonry").isotope(workPageIsotopeOptions);
-  });
-
-  grid_is_active = true;
-  
-} // end activate_grid()
 
 
 function destroyGrid() {

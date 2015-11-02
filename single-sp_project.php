@@ -55,7 +55,9 @@ get_header();
           $images = get_sub_field('images'); 
           foreach ( $images as $image ): ?>      
             <div class="project-masonry-element">
-              <img src="<?php echo $image['url']; ?>">
+              <img class="lazy" data-original="<?php echo $image['url']; ?>" width="<?php echo $image['width'] ?>" height="<?php echo $image['height'] ?>">
+              <!-- <img class="lazy" data-original="<?php echo $image['url']; ?>"> -->
+              <!-- <img src="<?php echo $image['url']; ?>"> -->
             </div>
           <?php endforeach; ?>
         </div> <!-- .project-masonry -->

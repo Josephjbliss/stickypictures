@@ -149,6 +149,26 @@ nav {
   }
 } // .swiper-container
 
+// Masonry-related styles + img stuff
+.home-project,
+.project-masonry-element {
+  // transition: height 1s ease;
+  img {
+    // transition: height 1s ease;
+    display:block;
+    max-width:100%;
+    width:100%;
+    height:auto;
+  }
+}
+img.lazy {
+  transition: height 1s ease;
+  display:block;
+  max-width:100%;
+  width:100%;
+  height:auto;
+}
+
 // Lazy-loading / FOUC
 // Prevent FOUC if opacity class is present 
 html.opacity {

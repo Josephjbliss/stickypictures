@@ -126,6 +126,20 @@ html.touch .swiper-container .caption {
   opacity: 1;
   z-index: 3;
 }
+.home-project img,
+.project-masonry-element img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+img.lazy {
+  transition: height 1s ease;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
 html.opacity .masonry img,
 html.opacity .project-masonry img,
 html.opacity .work-page-masonry img {
