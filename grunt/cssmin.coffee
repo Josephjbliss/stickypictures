@@ -9,7 +9,7 @@ module.exports =
         'bower_components/swiper/dist/css/swiper.min.css'
         'static/css/reset.css'
         'static/css/main.css'
-        'assets/css/caliper.css'
+        'assets/css/caliper.ap.css'
       ]
   dist:
     options:

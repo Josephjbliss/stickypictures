@@ -23,6 +23,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-postcss": "~0.6.0",
     "pixrem": "~2.0.0",
-    "autoprefixer": "~6.0.2"
+    "grunt-notify": "~0.4.1",
+    "grunt-autoprefixer": "~3.0.3"
   }
 }

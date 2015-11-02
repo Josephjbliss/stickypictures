@@ -1,0 +1,131 @@
+nav {
+  position: relative;
+}
+nav .inner {
+  width: 240px;
+  margin: 0 auto;
+}
+@media (min-width: 414px) {
+  nav .inner {
+    width: auto;
+  }
+}
+nav a.active {
+  border-bottom: 1px solid black;
+}
+nav .tags-toggle-btn {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  color: #a7a9ac;
+  text-decoration: none;
+  border-bottom: 0;
+  background: none;
+}
+nav .tags-toggle-btn:hover {
+  text-decoration: none;
+  border-bottom: 0;
+  background: none;
+}
+nav .tags-toggle-btn.open {
+  color: black;
+  text-decoration: none;
+  border-bottom: 0;
+  background: none;
+}
+.no-touch nav .tags-toggle-btn:hover {
+  color: black;
+  text-decoration: none;
+  border-bottom: 0;
+  background: none;
+}
+.tag-filters-wrap {
+  display: none;
+  position: relative;
+  background-color: #a7a9ac;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 0;
+  line-height: 27px;
+}
+.tag-filters-wrap .tag-list-el {
+  display: inline-block;
+}
+.tag-filters-wrap a {
+  color: white;
+  text-decoration: none;
+  margin: 0 16px;
+}
+.tag-filters-wrap a.is-checked {
+  color: black;
+}
+.password-form--wrap {
+  padding: 30px 0;
+  width: 80%;
+  margin-left: 10%;
+}
+.swiper-container .swiper-slide:hover.swiper-slide-active .caption {
+  opacity: 1;
+  z-index: 300;
+}
+.swiper-container .swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+.swiper-container .swiper-slide.slide-has-link {
+  cursor: pointer;
+}
+.swiper-container .swiper-button-prev,
+.swiper-container .swiper-button-next {
+  background-size: 44px 100%;
+  -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3));
+  /* Same syntax as box-shadow */
+  opacity: .7;
+}
+@media (min-width: 768px) {
+  .swiper-container .swiper-button-prev,
+  .swiper-container .swiper-button-next {
+    height: 37.4px;
+    width: 22.95px;
+    background-size: 37.4px;
+  }
+}
+html.touch .swiper-container .swiper-button-prev,
+html.touch .swiper-container .swiper-button-next {
+  display: none;
+}
+@media (max-width: 479px) {
+  .swiper-container .swiper-button-prev,
+  .swiper-container .swiper-button-next {
+    display: none;
+  }
+}
+.swiper-container .swiper-button-prev {
+  background-image: url('../images/chevron-thin-left.white.svg');
+  left: 8px;
+}
+.swiper-container .swiper-button-next {
+  background-image: url('../images/chevron-thin-right.white.svg');
+  right: 8px;
+}
+.swiper-container .caption {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+}
+@media (max-width: 479px) {
+  .swiper-container .caption {
+    opacity: 1;
+    z-index: 3;
+  }
+}
+html.touch .swiper-container .caption {
+  opacity: 1;
+  z-index: 3;
+}
+/* Prevent FOUC if opacity class is present */

@@ -1,7 +1,7 @@
 module.exports =
   css:
     files: ['assets/less/caliper.less','static/css/main.css']
-    tasks: ['less:dev', 'minify:dev']
+    tasks: ['less:dev', 'minify:dev', 'autoprefixer']
     options:
       spawn: false
   js:
@@ -10,7 +10,7 @@ module.exports =
     options:
       spawn: false
   notify:
-    files: ['assets/js/project.js','assets/less/caliper.less']
+    files: ['assets/js/project.js']
     tasks: ['notify:notify_hooks']
     options:
       spawn: false
