@@ -20,12 +20,6 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-/* Prevent FOUC if opacity class is present */
-html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry {
-    opacity: 0;
-    filter: alpha(opacity=0);   
-}
-
 ::-moz-selection {
     background: #3a3a3c;
     text-shadow: none;
