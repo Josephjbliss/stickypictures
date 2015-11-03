@@ -1,8 +1,11 @@
 <?php
-global $post;
+global $post, $post_count;
 $classes = array('masonry-element home-project');
+$classes[] = 'masonry-element-' . ($post_count + 1);
+
 $is_work_page = is_post_type_archive( project_cpt_name() );
 $classes[] = $is_work_page ? 'work-project' : '';
+
 $has_thumb = false;
 
 if ( has_post_thumbnail() ) {
@@ -15,9 +18,9 @@ if ( has_post_thumbnail() ) {
 
 ?>
 <div <?php post_class( $classes ); ?> style="<?php echo 'background-color:'.get_field('bg_color').';'; //echo "width:${w}px;height:${h}px;"; ?>" >
-  <?php if ( $has_thumb ): ?>
-    <!-- <img src="<?php echo wp_get_attachment_url( $thumb_id ); ?>" alt="<?php the_title(); ?>"> -->
-     <img class="lazy" data-original="<?php echo wp_get_attachment_url( $thumb_id ); ?>" width="<?php echo $w; ?>" height="<?php echo $h; ?>"> 
+  <?php if ( $has_thumb ):
+    lazy_image( wp_get_attachment_url( $thumb_id ), $w, $h );
+  ?>
   <?php else: ?>
     <img src="http://placehold.it/600x400/<?php echo str_replace('#', '', get_field('bg_color') );  ?>/FFFFFF/?text=<?php the_title(); ?>">
   <?php endif; ?>

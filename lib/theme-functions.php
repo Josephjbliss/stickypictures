@@ -154,4 +154,22 @@ function sticky_password_form() {
   return $o;
 }
 
+function lazy_image( $src=0, $w=0, $h=0, $echo = true ) {
+  if( !$src || !$w || !$h ) return false;
+
+  ob_start();
+  ?>
+    <img class="lazy" data-original="<?php echo $src; ?>" width="<?php echo $w; ?>" height="<?php echo $h; ?>">
+    <!-- <img class="lazyxt" data-src="<?php echo $src; ?>" data-effect="fadeIn" width="<?php echo $w; ?>" height="<?php echo $h; ?>"> -->
+  <?php
+  $img = ob_get_clean();
+
+  if( $echo )
+    echo $img;
+
+  return $img;
+
+} // END lazy_image()
+
+
 ?>

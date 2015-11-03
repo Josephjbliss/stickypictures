@@ -16,7 +16,8 @@ if ( have_posts() ) {
         $projects = get_field('featured_projects');
       ?>
       <?php
-        foreach ( $projects as $post ):
+        global $post_count;
+        foreach ( $projects as $post_count => $post ):
           setup_postdata( $post );
           get_template_part('templates/content', 'project' );
         endforeach; wp_reset_postdata();
