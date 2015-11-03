@@ -7,6 +7,7 @@ module.exports =
     files:
       'assets/css/stickypictures.min.css' : [
         'bower_components/swiper/dist/css/swiper.min.css'
+        # 'bower_components/lazyloadxt/dist/jquery.lazyloadxt.fadein.css'
         'static/css/reset.css'
         'static/css/main.css'
         'assets/css/caliper.ap.css'
@@ -18,6 +19,7 @@ module.exports =
     files:
       'assets/css/stickypictures.min.css' : [
         'bower_components/swiper/dist/css/swiper.min.css'
+        # 'bower_components/lazyloadxt/dist/jquery.lazyloadxt.fadein.css'
         'static/css/reset.css'
         'static/css/main.css'
         'assets/css/caliper.css'

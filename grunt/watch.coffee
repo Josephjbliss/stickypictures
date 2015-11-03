@@ -4,11 +4,13 @@ module.exports =
     tasks: ['less:dev', 'minify:dev', 'autoprefixer']
     options:
       spawn: false
+      # livereload : true      
   js:
     files: ['assets/js/caliper.js','assets/js/project.js','assets/js/grid-functions.js']
     tasks: ['uglify:build']
     options:
       spawn: false
+      # livereload : true
   notify_js:
     files: ['assets/js/project.js','assets/js/grid-functions.js']
     tasks: ['notify:notify_hooks']
