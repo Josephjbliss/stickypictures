@@ -216,7 +216,6 @@ $(document).ready(function(){
     effect : "fadeIn",
     threshold: threshold,
     load: function(){ 
-      console.log('image laoded');
       updateGrid();
       $win.trigger('scroll');
     }
@@ -310,8 +309,6 @@ function init_grid() {
     $grid_container = $(".work-page-masonry");
   }
   
-  console.log('grid container', $grid_container);
-
   $masonry_obj = activate_grid();
 
 } // end init_grid()
