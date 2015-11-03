@@ -35,6 +35,7 @@ $(document).ready(function(){
     });
     
     go_to_filter_from_url($(".work-page-masonry"));
+
   }
   ///////////////////////////////////////
 
@@ -61,14 +62,22 @@ $(document).ready(function(){
     failure_limit: Math.max($lazy_imgs.length - 1, 0),
     effect : "fadeIn",
     threshold: threshold,
-    load: function(){ 
-      updateGrid();
+    // placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+    load: function(elements_left){
+      // debugger;
+      $(this).parent('.masonry-element').addClass('lazy-loaded');
+      $(this).parent('.masonry-element').css({'height':'auto'});
+
+      if( $('.work-page-masonry').length <= 0 ) { // Don't trigger on Work page
+        updateGrid();
+      }
       $win.trigger('scroll');
     }
   });  
 
   // END Lazy load
-    
+
+
   $(window).load(function(){
     updateGrid();
 
@@ -149,20 +158,38 @@ function activate_grid() {
   grid_is_active = true;
 
   if( $(".work-page-masonry").length > 0 ) {
+
     is_isotope = true;
-    // $(".work-page-masonry .masonry-element-1, .work-page-masonry .masonry-element-2").imagesLoaded(function(){
-    // $(".work-page-masonry").imagesLoaded(function(){
-      console.log('activate isotope..');
+    $(".work-page-masonry").imagesLoaded(function(){
+      
+      // console.log('activate isotope..');
+
+      $('.masonry-element').each( set_grid_elem_height );
       return $(".work-page-masonry").isotope(workPageIsotopeOptions);
-    // });
+    });
+
   } else {
-    console.log('activate masonry..');    
+
+    // console.log('activate masonry..');
+    $grid_container.imagesLoaded(function(){
+      if( !$('body').is('.home') ) {
+        $('.masonry-element').each( set_grid_elem_height );
+      }
+    });
     return $grid_container.masonry(masonry_opts);
+
   }
-
-
-  
 } // end activate_grid()
+
+function set_grid_elem_height(){
+  // console.log('set height');
+
+  var pcnt = $(this).width() / $(this).find('img').attr('width');
+  $(this).css({
+    'height' : $(this).find('img').attr('height') * pcnt,
+    'overflow' : 'hidden'
+  });
+} // end set_grid_elem_height()
 
 
 function updateGrid() {
@@ -207,19 +234,17 @@ function update_grid_once() {
 
 
 function updateProjectGrid() {
+  // console.log('updating project grid...');
 
   if( $(window).width() < 765 ) {
-
     if( grid_is_active )
       destroyGrid();
-
   }
   else {
-
     if( !grid_is_active )
       activate_grid();
-
   }
+
 } // end updateProjectGrid()
 
 
