@@ -71,6 +71,10 @@ $(document).ready(function(){
     
   $(window).load(function(){
     updateGrid();
+
+    //Prevent FOUC 
+    $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
+
   });
 });
 

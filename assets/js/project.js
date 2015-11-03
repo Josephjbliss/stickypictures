@@ -178,9 +178,6 @@ $(document).ready(function(){
     });
     // END Home page only
 
-    //Prevent FOUC 
-    $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
-
     //Play project hero video
     $f($(".project-hero iframe")[0]).api("play");
   });
