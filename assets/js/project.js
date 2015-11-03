@@ -5,6 +5,7 @@ var mainSwiper = false;
 
 // If masonry is currently active
 var grid_is_active = false,
+    is_isotope = false,
     $masonry_obj, $grid_container, masonry_opts;
 
 $(document).ready(function(){
@@ -247,7 +248,7 @@ $(document).ready(function(){
     $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
 
     //Play project hero video
-    // $f($(".project-hero iframe")[0]).api("play");
+    $f($(".project-hero iframe")[0]).api("play");
   });
 });
 
@@ -301,12 +302,16 @@ function init_grid() {
 
   if( $(".masonry").length > 0 ) {
     masonry_opts = masonryOptions;
-    $grid_container =  $(".masonry");
+    $grid_container = $(".masonry");
   } else if( $(".project-masonry").length > 0 )  {
     masonry_opts = projectMasonryOptions;
-    $grid_container =  $(".project-masonry");
+    $grid_container = $(".project-masonry");
+  } else if( $(".work-page-masonry").length > 0 ) {
+    $grid_container = $(".work-page-masonry");
   }
   
+  console.log('grid container', $grid_container);
+
   $masonry_obj = activate_grid();
 
 } // end init_grid()
@@ -319,14 +324,10 @@ function activate_grid() {
   grid_is_active = true;
 
   if( $(".work-page-masonry").length > 0 ) {
-    $(".work-page-masonry").imagesLoaded(function(){
-      return $(".work-page-masonry").isotope(workPageIsotopeOptions);
-    });
+    is_isotope = true;
+    return $(".work-page-masonry").isotope(workPageIsotopeOptions);
   } else {
     return $grid_container.masonry(masonry_opts);
-    // $grid_container.imagesLoaded(function(){
-    //   $masonry_obj.masonry(masonry_opts);
-    // });
   }
 
 
@@ -366,8 +367,11 @@ function updateGrid() {
 
 function update_grid_once() {
   // console.log('updating grid once...');
-  $grid_container.masonry("layout");
-  $(".work-page-masonry").isotope("layout");
+  if( is_isotope ) {
+    $(".work-page-masonry").isotope("layout");
+  } else {
+    $grid_container.masonry("layout");
+  }
   
 } // end update_grid_once()
 
@@ -390,8 +394,11 @@ function updateProjectGrid() {
 
 
 function destroyGrid() {
-  $masonry_obj.masonry("destroy");  // destroy
-  $(".work-page-masonry").isotope("destroy");  // destroy
+  if( is_isotope ) {
+    $(".work-page-masonry").isotope("destroy");  // destroy
+  } else {
+    $masonry_obj.masonry("destroy");  // destroy
+  }
   grid_is_active = false;
 } // end destroyGrid()
 
