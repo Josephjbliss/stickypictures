@@ -15,5 +15,6 @@ module.exports =
         "assets/js/imagesloaded.pkgd.min.js"
         "assets/js/jquery.fitvids.js"
         "assets/js/froogaloop.min.js"
+        "assets/js/grid-functions.js"
         "assets/js/project.js"
       ]

@@ -5,12 +5,12 @@ module.exports =
     options:
       spawn: false
   js:
-    files: ['assets/js/caliper.js','assets/js/project.js']
+    files: ['assets/js/caliper.js','assets/js/project.js','assets/js/grid-functions.js']
     tasks: ['uglify:build']
     options:
       spawn: false
   notify_js:
-    files: ['assets/js/project.js']
+    files: ['assets/js/project.js','assets/js/grid-functions.js']
     tasks: ['notify:notify_hooks']
     options:
       spawn: false
