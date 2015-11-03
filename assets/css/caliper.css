@@ -126,15 +126,20 @@ html.touch .swiper-container .caption {
   opacity: 1;
   z-index: 3;
 }
-.home-project img,
-.project-masonry-element img {
+.home-project,
+.project-masonry-element {
+  transition: opacity 0.2s ease;
+}
+.home-project img.lazy,
+.project-masonry-element img.lazy {
+  transition: opacity 0.2s ease;
   display: block;
   max-width: 100%;
   width: 100%;
   height: auto;
 }
 img.lazy {
-  transition: height 1s ease;
+  transition: opacity 0.2s ease;
   display: block;
   max-width: 100%;
   width: 100%;

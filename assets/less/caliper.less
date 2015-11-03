@@ -150,19 +150,21 @@ nav {
 } // .swiper-container
 
 // Masonry-related styles + img stuff
+@transition : opacity .2s ease;
 .home-project,
 .project-masonry-element {
-  // transition: height 1s ease;
-  img {
-    // transition: height 1s ease;
+  transition: @transition;
+  img.lazy {
+    transition: @transition;
     display:block;
     max-width:100%;
     width:100%;
     height:auto;
   }
 }
+
 img.lazy {
-  transition: height 1s ease;
+  transition: @transition;
   display:block;
   max-width:100%;
   width:100%;
