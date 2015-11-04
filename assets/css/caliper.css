@@ -128,26 +128,24 @@ html.touch .swiper-container .caption {
 }
 .home-project,
 .project-masonry-element {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
 }
 .home-project img.lazy,
 .project-masonry-element img.lazy {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
   display: block;
   max-width: 100%;
   width: 100%;
   height: auto;
+}
+.masonry-element.lazy-loaded img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 img.lazy {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
   display: block;
   max-width: 100%;
   width: 100%;
   height: auto;
-}
-html.opacity .masonry img,
-html.opacity .project-masonry img,
-html.opacity .work-page-masonry img {
-  opacity: 0;
-  filter: alpha(opacity=0);
 }

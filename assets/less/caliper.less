@@ -150,7 +150,7 @@ nav {
 } // .swiper-container
 
 // Masonry-related styles + img stuff
-@transition : opacity .2s ease;
+@transition : opacity .3s ease;
 .home-project,
 .project-masonry-element {
   transition: @transition;
@@ -163,6 +163,14 @@ nav {
   }
 }
 
+.masonry-element.lazy-loaded {
+  img {
+    opacity:1;
+    transition: @transition;    
+  }
+}
+
+
 img.lazy {
   transition: @transition;
   display:block;
@@ -173,13 +181,13 @@ img.lazy {
 
 // Lazy-loading / FOUC
 // Prevent FOUC if opacity class is present 
-html.opacity {
-  .masonry,
-  .project-masonry,
-  .work-page-masonry {
-    img {
-      opacity: 0;
-      filter: alpha(opacity=0);   
-    }
-  }
-}
+// html.opacity {
+//   .masonry,
+//   .project-masonry,
+//   .work-page-masonry {
+//     img {
+//       opacity: 0;
+//       filter: alpha(opacity=0);   
+//     }
+//   }
+// }

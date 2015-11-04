@@ -72,6 +72,12 @@ $(document).ready(function(){
         updateGrid();
       }
       $win.trigger('scroll');
+
+      if( elements_left == 0 ) {
+        $(window).trigger('resize');
+        // alert('resize');
+      }
+
     }
   });  
 
@@ -82,7 +88,7 @@ $(document).ready(function(){
     updateGrid();
 
     //Prevent FOUC 
-    $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
+    // $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
 
   });
 });
@@ -172,6 +178,7 @@ function activate_grid() {
 
     // console.log('activate masonry..');
     $grid_container.imagesLoaded(function(){
+
       if( !$('body').is('.home') ) {
         $('.masonry-element').each( set_grid_elem_height );
       }
