@@ -54,7 +54,7 @@ get_header();
           <?php 
           $images = get_sub_field('images'); 
           foreach ( $images as $count => $image ): ?>      
-            <div class="project-masonry-element masonry-element-<?php echo $count+1; ?>">
+            <div class="project-masonry-element masonry-element masonry-element-<?php echo $count+1; ?>">
                 <?php lazy_image( $image['url'], $image['width'], $image['height'] ); ?>
             </div>
           <?php endforeach; ?>
