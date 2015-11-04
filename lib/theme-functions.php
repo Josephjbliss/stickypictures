@@ -158,10 +158,16 @@ function lazy_image( $src=0, $w=0, $h=0, $echo = true ) {
   if( !$src || !$w || !$h ) return false;
 
   ob_start();
+  if( is_post_type_archive( project_cpt_name() ) ) :
+  ?>
+    <img class="work-archive-img" src="<?php echo $src; ?>" width="<?php echo $w; ?>" height="<?php echo $h; ?>">
+  <?php
+  else:
   ?>
     <img class="lazy" data-original="<?php echo $src; ?>" width="<?php echo $w; ?>" height="<?php echo $h; ?>">
     <!-- <img class="lazyxt" data-src="<?php echo $src; ?>" data-effect="fadeIn" width="<?php echo $w; ?>" height="<?php echo $h; ?>"> -->
   <?php
+  endif;
   $img = ob_get_clean();
 
   if( $echo )

@@ -163,31 +163,35 @@ nav {
   }
 }
 
-.masonry-element.lazy-loaded {
+.masonry-element {
+
   img {
-    opacity:1;
-    transition: @transition;    
+    transition: @transition;
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+
+  }
+
+  &.lazy-loaded {
+    // img {
+    //   opacity:1;
+    //   transition: @transition;    
+    // }
   }
 }
 
 
-img.lazy {
-  transition: @transition;
-  display:block;
-  max-width:100%;
-  width:100%;
-  height:auto;
-}
-
 // Lazy-loading / FOUC
 // Prevent FOUC if opacity class is present 
-// html.opacity {
-//   .masonry,
-//   .project-masonry,
-//   .work-page-masonry {
-//     img {
-//       opacity: 0;
-//       filter: alpha(opacity=0);   
-//     }
-//   }
-// }
+html.opacity {
+
+  .masonry-element {
+    .work-archive-img {
+      opacity: 0;
+      filter: alpha(opacity=0);   
+    }
+  }
+
+} // html.opacity

@@ -138,14 +138,14 @@ html.touch .swiper-container .caption {
   width: 100%;
   height: auto;
 }
-.masonry-element.lazy-loaded img {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-img.lazy {
+.masonry-element img {
   transition: opacity 0.3s ease;
   display: block;
-  max-width: 100%;
   width: 100%;
+  max-width: 100%;
   height: auto;
+}
+html.opacity .masonry-element .work-archive-img {
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
