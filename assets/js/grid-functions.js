@@ -82,6 +82,9 @@ $(document).ready(function(){
     if( is_work_page ) {
       $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
       $('.masonry-element').css({'height':'auto'});
+      $('.masonry-element img').each(function() {
+        init_project_text_fns( this );      
+      });
     }
 
   });
