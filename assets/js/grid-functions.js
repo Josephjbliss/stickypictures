@@ -273,12 +273,10 @@ function init_lazyload() {
   var $win = $(window),
       $lazy_imgs = $("img.lazy");
 
-
-  $lazy_imgs.lazyload({
+  var lazyload_params = {
     failure_limit: Math.max($lazy_imgs.length - 1, 0),
     effect : "fadeIn",
     threshold: threshold,
-    placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
     load: function(elements_left){
       after_image_loaded_fns( this );
 
@@ -289,7 +287,16 @@ function init_lazyload() {
       }
 
     }
-  });  
+  };
+
+  // If we're not on a Single Project page, use a transparent placeholder image
+  if( !$('body').is('.single-sp_project') ) {
+    console.log('single projc');
+    lazyload_params.placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+  }
+
+  $lazy_imgs.lazyload( lazyload_params );  
+
 } // end init_lazyload();
 
 
