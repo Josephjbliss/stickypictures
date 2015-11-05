@@ -161,23 +161,6 @@ $(document).ready(function(){
 
     
   $(window).load(function(){
-
-    // START Home page only
-    $(".no-touch .masonry-element .project-text").each(function(){
-      $(this).css("bottom", -$(this).height());
-    });
-
-    $(".no-touch .masonry-element").hover(function(){
-      var $slide = $(this).find(".project-text");
-      $slide.animate({bottom: 0}, 400);
-      $(this).find("img").animate({top: "-"+$slide.height()/2+"px"}, 400);
-    }, function(){
-      var $slide = $(this).find(".project-text");
-      $slide.animate({bottom: "-"+$slide.height()+"px"}, 400);
-      $(this).find("img").animate({top: 0}, 400);
-    });
-    // END Home page only
-
     //Play project hero video
     autoplay_vimeo();
   });

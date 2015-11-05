@@ -136,44 +136,40 @@ function init_grid() {
     $grid_container = $(".work-page-masonry");
   }
   
-  $masonry_obj = activate_grid();
+  activate_grid();
 
 } // end init_grid()
 
 
 function activate_grid() {
 
+  console.log('activate_grid');
   if( grid_is_active )
     return false;
 
+  $('.masonry-element:not(.lazy-loaded)').each( set_grid_elem_height );
+
   if( $(".work-page-masonry").length > 0 ) {
 
-    is_isotope = true;
-      
     // console.log('activate isotope..');
-
-    $('.masonry-element').each( set_grid_elem_height );
+    is_isotope = true;
     grid_is_active = true;
-    return $(".work-page-masonry").isotope(workPageIsotopeOptions);
+    $masonry_obj = $(".work-page-masonry").isotope( workPageIsotopeOptions );
 
 
   } else {
 
     // console.log('activate masonry..');
-    $grid_container.imagesLoaded(function(){
-
-      if( !$('body').is('.home') ) {
-        $('.masonry-element').each( set_grid_elem_height );
-      }
-    });
     grid_is_active = true;
-    return $grid_container.masonry(masonry_opts);
+    $masonry_obj = $grid_container.masonry( masonry_opts );
 
   }
+
+
 } // end activate_grid()
 
 function set_grid_elem_height(){
-  // console.log('set height');
+  console.log('set_grid_elem_height');
 
   var width = $(this).width();
 
@@ -200,14 +196,16 @@ function updateGrid() {
     updateProjectGrid();      
   } else {
 
-    if($(window).width() < 600) {
+    // Destroy Grid if < 600
+    if( $(window).width() < 600 ) {
       
       if( grid_is_active ) {
         destroyGrid();
         go_to_filter_from_url( $(".work-page-masonry") );
       }
 
-    } else {
+    } // or activate it if it's not
+    else if( !grid_is_active ) {
       activate_grid();
     }
 
@@ -259,6 +257,9 @@ function destroyGrid() {
 // This won't hit the Work archive page
 // Just the Home page and Single Projects
 function init_lazyload() {
+
+  // return false;
+
   // for mobile
   var threshold = 50;
 
@@ -278,7 +279,11 @@ function init_lazyload() {
     load: function(elements_left){
       // debugger;
       $(this).parent('.masonry-element').addClass('lazy-loaded');
+
+      console.log('setting height to auto');
       $(this).parent('.masonry-element').css({'height':'auto'});
+      
+      init_project_text_fns( this );
 
       $win.trigger('scroll');
 
@@ -290,3 +295,22 @@ function init_lazyload() {
     }
   });  
 } // end init_lazyload();
+
+
+function init_project_text_fns( img ) {
+
+  var $elem = $(img).parent('.masonry-element');
+
+  $elem.find('.project-text').css("bottom", -$(this).height());
+
+  $elem.hover(function(){
+    var $slide = $(this).find(".project-text");
+    $slide.animate({bottom: 0}, 400);
+    $(this).find("img").animate({top: "-"+$slide.height()/2+"px"}, 400);
+  }, function(){
+    var $slide = $(this).find(".project-text");
+    $slide.animate({bottom: "-"+$slide.height()+"px"}, 400);
+    $(this).find("img").animate({top: 0}, 400);
+  });
+  
+} // end init_project_text_fns()
