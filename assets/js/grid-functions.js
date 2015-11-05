@@ -83,7 +83,7 @@ $(document).ready(function(){
       $("html.opacity .masonry, html.opacity .project-masonry, html.opacity .work-page-masonry").find("img").animate({opacity: 1}, 500);
       $('.masonry-element').css({'height':'auto'});
       $('.masonry-element img').each(function() {
-        init_project_text_fns( this );      
+        after_image_loaded_fns( this );      
       });
     }
 
@@ -280,19 +280,12 @@ function init_lazyload() {
     threshold: threshold,
     placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
     load: function(elements_left){
-      // debugger;
-      $(this).parent('.masonry-element').addClass('lazy-loaded');
-
-      console.log('setting height to auto');
-      $(this).parent('.masonry-element').css({'height':'auto'});
-      
-      init_project_text_fns( this );
+      after_image_loaded_fns( this );
 
       $win.trigger('scroll');
 
       if( elements_left == 0 ) {
         $(window).trigger('resize');
-        // alert('resize');
       }
 
     }
@@ -300,9 +293,13 @@ function init_lazyload() {
 } // end init_lazyload();
 
 
-function init_project_text_fns( img ) {
+function after_image_loaded_fns( img ) {
 
   var $elem = $(img).parent('.masonry-element');
+
+  console.log('setting height to auto');
+
+  $elem.css({'height':'auto'}).addClass('lazy-loaded');
 
   $elem.find('.project-text').css("bottom", -$(this).height());
 
@@ -316,4 +313,4 @@ function init_project_text_fns( img ) {
     $(this).find("img").animate({top: 0}, 400);
   });
   
-} // end init_project_text_fns()
+} // end after_image_loaded_fns()
