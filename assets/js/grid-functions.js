@@ -127,8 +127,10 @@ function go_to_filter_from_url( $grid_container ) {
 init_grid();
 function init_grid() {
 
-  // console.log('init grid');
+  if( $('.masonry-element').length == 0 )
+    return false;
 
+  // console.log('init grid');
   if( $(".masonry").length > 0 ) {
     masonry_opts = masonryOptions;
     $grid_container = $(".masonry");
@@ -160,7 +162,7 @@ function activate_grid() {
     $masonry_obj = $(".work-page-masonry").isotope( workPageIsotopeOptions );
 
 
-  } else {
+  } else if( $grid_container.length > 0 ) {
 
     // console.log('activate masonry..');
     grid_is_active = true;
