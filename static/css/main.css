@@ -225,7 +225,7 @@ body.home .slides {
     display: block;
 }*/
 
-.masonry-element .project-text {
+/*.masonry-element .project-text {
     color: #ffffff;
     background-color: #9d9fa2;
 }
@@ -270,7 +270,7 @@ body.home .slides {
 .no-touch .masonry-element .project-text h3:first-child {
     margin-top: 9px;
 }
-
+*/
 .tags a {
     display: inline-block;
 }

@@ -163,6 +163,9 @@ nav {
   }
 }
 
+.home-project {
+}
+
 .masonry-element {
 
   img {
@@ -181,6 +184,63 @@ nav {
     // }
   }
 }
+
+
+// Project Text / Meta Info Styles
+.masonry-element {
+	
+  .project-text {
+    color: #ffffff;
+    background-color: #9d9fa2;
+
+    h3 {
+      font-size: 20px;
+      line-height: 22px;
+      padding: 0 12px;
+      font-family: "FranklinGothic-Condensed";
+      text-transform: uppercase;
+    }
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      margin-right: 12px;
+    }
+    .tags {
+      padding: 0 12px;
+      line-height: 17px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  }
+
+  .no-touch & {
+    .project-text {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      .tags {
+        margin-bottom: 9px;
+      }
+      h3:first-child {
+        margin-top: 9px;
+      }
+    }    
+  }
+
+  .touch & {
+    .project-text {
+      .tags {
+        padding-bottom: 9px;
+        margin-bottom: 0;
+      }
+      h3:first-child {
+        padding-top: 9px;
+        margin-top: 0;
+      }
+    }    
+  }
+
+} // .masonry-element
 
 
 // Lazy-loading / FOUC
