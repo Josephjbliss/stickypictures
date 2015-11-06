@@ -1,4 +1,6 @@
 @dark-gray:color('#a7a9ac');
+@gt_tablet : ~'(min-width:765px)';
+@lt_tablet : ~'(max-width:764px)';
 
 nav {
   position: relative;
@@ -149,24 +151,27 @@ nav {
   }
 } // .swiper-container
 
+
+
 // Masonry-related styles + img stuff
 @transition : opacity .3s ease;
-.home-project,
-.project-masonry-element {
-  transition: @transition;
-  img.lazy {
-    transition: @transition;
-    display:block;
-    max-width:100%;
-    width:100%;
-    height:auto;
-  }
-}
-
-.home-project {
-}
-
 .masonry-element {
+
+  &.work-project {
+    @media @gt_tablet {
+      
+      .project-text {
+        display:none;
+      }
+      &.lazy-loaded {
+        .project-text {
+          display:block;
+        }
+      }
+
+    }
+
+  } // &.work-project
 
   img {
     transition: @transition;
@@ -175,13 +180,6 @@ nav {
     max-width:100%;
     height:auto;
 
-  }
-
-  &.lazy-loaded {
-    // img {
-    //   opacity:1;
-    //   transition: @transition;    
-    // }
   }
 }
 
@@ -240,17 +238,42 @@ nav {
     }    
   }
 
+  &.project-masonry-element {
+    @media only screen and @gt_tablet  {
+      float: left;
+      width: 49.5%;
+      margin: .25%;
+    }
+  }
+
 } // .masonry-element
+
+
+.home-project,
+.project-masonry-element {
+  transition: @transition;
+  img.lazy {
+    transition: @transition;
+    display:block;
+    max-width:100%;
+    width:100%;
+    height:auto;
+  }
+}
+
 
 
 // Lazy-loading / FOUC
 // Prevent FOUC if opacity class is present 
 html.opacity {
 
-  .masonry-element {
-    .work-archive-img {
-      opacity: 0;
-      filter: alpha(opacity=0);   
+  @media @lt_tablet {
+
+    .masonry-element {
+      .work-archive-img {
+        opacity: 0;
+        filter: alpha(opacity=0);   
+      }
     }
   }
 

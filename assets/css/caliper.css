@@ -126,17 +126,13 @@ html.touch .swiper-container .caption {
   opacity: 1;
   z-index: 3;
 }
-.home-project,
-.project-masonry-element {
-  transition: opacity 0.3s ease;
-}
-.home-project img.lazy,
-.project-masonry-element img.lazy {
-  transition: opacity 0.3s ease;
-  display: block;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
+@media (min-width:765px) {
+  .masonry-element.work-project .project-text {
+    display: none;
+  }
+  .masonry-element.work-project.lazy-loaded .project-text {
+    display: block;
+  }
 }
 .masonry-element img {
   transition: opacity 0.3s ease;
@@ -186,7 +182,28 @@ html.touch .swiper-container .caption {
   padding-top: 9px;
   margin-top: 0;
 }
-html.opacity .masonry-element .work-archive-img {
-  opacity: 0;
-  filter: alpha(opacity=0);
+@media only screen and (min-width:765px) {
+  .masonry-element.project-masonry-element {
+    float: left;
+    width: 49.5%;
+    margin: .25%;
+  }
+}
+.home-project,
+.project-masonry-element {
+  transition: opacity 0.3s ease;
+}
+.home-project img.lazy,
+.project-masonry-element img.lazy {
+  transition: opacity 0.3s ease;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+@media (max-width:764px) {
+  html.opacity .masonry-element .work-archive-img {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
 }
