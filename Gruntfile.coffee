@@ -11,11 +11,11 @@ module.exports = (grunt) ->
   # Register tasks
   grunt.registerTask "default", ["watch"]
   grunt.registerTask "minify:dev", [
-    "uglify:build"
+    "uglify:dev"
     "cssmin:dev"
   ]
   grunt.registerTask "minify:dist", [
-    "uglify:build"
+    "uglify:dist"
     "cssmin:dist"
   ]
   grunt.registerTask "deploy", ["build", "push_theme"]
