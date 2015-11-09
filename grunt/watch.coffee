@@ -7,7 +7,7 @@ module.exports =
       # livereload : true      
   js:
     files: ['assets/js/caliper.js','assets/js/project.js','assets/js/grid-functions.js']
-    tasks: ['uglify:build']
+    tasks: ['uglify:dev']
     options:
       spawn: false
       # livereload : true
