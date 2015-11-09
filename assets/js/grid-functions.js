@@ -148,7 +148,7 @@ function init_grid() {
 
 function activate_grid() {
 
-  console.log('activate_grid');
+  // console.log('activate_grid');
   if( grid_is_active )
     return false;
 
@@ -174,7 +174,7 @@ function activate_grid() {
 } // end activate_grid()
 
 function set_grid_elem_height(){
-  console.log('set_grid_elem_height');
+  // console.log('set_grid_elem_height');
 
   var width = $(this).width();
 
@@ -306,7 +306,7 @@ function after_image_loaded_fns( img ) {
 
   var $elem = $(img).parent('.masonry-element');
 
-  console.log('setting height to auto');
+  // console.log('setting height to auto');
 
   $elem.css({'height':'auto'}).addClass('lazy-loaded');
 
