@@ -85,7 +85,7 @@ module.exports =
       plugins: "/srv/users/serverpilot/apps/clients/public/stickypictures/wp-content/plugins/"
     ssh_host: "serverpilot@ssh.madebycaliper.com"
 
-  mt:
+  live:
     title: "Media Temple"
     database: "db209892_wp"
     table_prefix: "sticky_wp_"
@@ -93,8 +93,8 @@ module.exports =
       # "_wf" # Will exclude with " NOT LIKE '%_wf%' " statement
     ]        
     port: 3306
-    user: "<%= grunt.config.data.deployconfig.mt.db_user %>"
-    pass: "<%= grunt.config.data.deployconfig.mt.db_pass %>"
+    user: "<%= grunt.config.data.deployconfig.live.db_user %>"
+    pass: "<%= grunt.config.data.deployconfig.live.db_pass %>"
     host: "internal-db.s209892.gridserver.com"
     url: "//stickypictures.com"
     path:
