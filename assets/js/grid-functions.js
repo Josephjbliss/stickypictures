@@ -193,6 +193,10 @@ function set_grid_elem_height(){
 
 function updateGrid() {
 
+  // If there's no grid, bail
+  if( $('.masonry-element').length == 0 )
+    return false;
+
   if( grid_is_active ) {
     update_grid_once();
   }
@@ -293,7 +297,6 @@ function init_lazyload() {
 
   // If we're not on a Single Project page, use a transparent placeholder image
   if( !$('body').is('.single-sp_project') ) {
-    console.log('single projc');
     lazyload_params.placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
   }
 
@@ -303,6 +306,8 @@ function init_lazyload() {
 
 
 function after_image_loaded_fns( img ) {
+  
+  // console.log('after_image_loaded_fns...');
 
   var $elem = $(img).parent('.masonry-element');
 
@@ -310,7 +315,8 @@ function after_image_loaded_fns( img ) {
 
   $elem.css({'height':'auto'}).addClass('lazy-loaded');
 
-  $elem.find('.project-text').css("bottom", -$(this).height());
+  var project_text_height = $elem.find(".project-text").height();
+  $elem.find('.project-text').css( "bottom", -project_text_height );
 
   $elem.hover(function(){
     var $slide = $(this).find(".project-text");
