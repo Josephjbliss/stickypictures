@@ -47,6 +47,21 @@ function bolt_setup() {
 add_action('after_setup_theme', 'bolt_setup');
 
 
+/**
+ * Change what Editor users can see
+ */
+function sticky_modify_editor_roles() {
+
+  // get the the role object
+  $role_object = get_role( 'editor' );
+
+  // add $cap capability to this role object
+  $role_object->add_cap( 'edit_theme_options' );
+}  
+add_action( 'init', 'sticky_modify_editor_roles' );
+
+
+
 
 /**
  * Register sidebars
