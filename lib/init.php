@@ -61,6 +61,11 @@ function sticky_modify_editor_roles() {
 add_action( 'init', 'sticky_modify_editor_roles' );
 
 
+function sticky_allow_non_admins_to_change_site_identity( $wp_customize ) {
+    $wp_customize->get_setting( 'blogname' )->capability = 'edit_theme_options'; // or edit_posts or whatever capability your site owner has
+    $wp_customize->get_setting( 'blogdescription' )->capability = 'edit_theme_options'; // or edit_posts or whatever capability your site owner has
+}
+add_action( 'customize_register', 'sticky_allow_non_admins_to_change_site_identity', 1000 );
 
 
 /**
