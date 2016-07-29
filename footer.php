@@ -3,7 +3,7 @@
   </div><!-- /.wrap -->
 
 <footer>
-    <p class="copyright">&copy; 2015 Sticky Pictures</p>
+    <p class="copyright">&copy; <?php echo date('Y'); ?> Sticky Pictures</p>
     <?php footer_social_links(); ?>
 </footer>
 <script type="text/javascript">
