@@ -7,7 +7,8 @@ module.exports =
       "-rlpt"
       "--compress"
       "--omit-dir-times"
-      "--delete"
+      # "--delete"
+      # "--dry-run"
     ]
     exclusions: [
       "Gruntfile.*"
