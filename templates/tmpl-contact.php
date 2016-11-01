@@ -12,30 +12,19 @@ if ( have_posts() ) :
 
         <section class="contact-info">
             <div class="contact-info-content">
-                <h3>Sticky Pictures</h3>
+                <?php the_field('contact_page_column_1', 'options'); ?>
             </div>
             
             <div class="contact-info-content">
-                <?php the_field('address','options'); ?>
-                <p><?php the_field('tel','options'); ?></p>
+                <?php the_field('contact_page_column_2', 'options'); ?>
             </div>
 
             <div class="contact-info-content">
-              <p>New Business Inquiries:<br>
-                  <a href="mailto:<?php the_field('new_business_email','options'); ?>"><?php the_field('new_business_email','options'); ?></a>
-              </p>
-
-              <p>General inquiries please email:<br>
-                  <a href="mailto:<?php the_field('general_inquiries_email','options'); ?>"><?php the_field('general_inquiries_email','options'); ?></a>
-              </p>
+                <?php the_field('contact_page_column_3', 'options'); ?>
             </div>
 
             <div class="contact-info-content">
-              <p>We are always looking for talented individuals.</p>
-
-              <p>Please send portfolios to:<br>
-                  <a href="mailto:<?php the_field('portfolios_email','options'); ?>"><?php the_field('portfolios_email','options'); ?></a>
-              </p>
+              <?php the_field('contact_page_column_4', 'options'); ?>
             </div>
         </section>
 
