@@ -5,7 +5,8 @@ module.exports = (grunt) ->
   require('load-grunt-config')(grunt,
     config:
       deployconfig : deployconfig
-      pkg: grunt.file.readJSON('package.json')      
+      pkg: grunt.file.readJSON('package.json')
+      theme_name: 'sticky-pictures'
   )
 
   # Register tasks
@@ -20,6 +21,8 @@ module.exports = (grunt) ->
   ]
   grunt.registerTask "deploy", ["build", "push_theme"]
   grunt.registerTask "build", ["less", "minify:dist", "clean:build", "copy:build", "compress:build"]
+  
+  grunt.registerTask "sync_up" , ["push_uploads", "push_plugins", "deploy", "push_db"]
 
   return
 

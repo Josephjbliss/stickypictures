@@ -32,23 +32,23 @@ module.exports =
       "vendor"
       "*.coffee"
       "deployconfig.*"
-      ".codekit-cache/"      
+      ".codekit-cache/"
       # Grunt Build
       "releases/"
       "build/"
       # For Use with Roots Theme Setup
       "assets/less/"
       "assets/js/plugins"
-      ".editorconfig" 
-      ".bowerrc" 
-      "bower.json"       
+      ".editorconfig"
+      ".bowerrc"
+      "bower.json"
       # Theme-specific Exclusions
       "_Production/"
     ]
 
   local:
     title: "Local"
-    database: "wordpress"
+    database: "stickypictures"
     table_prefix: "sticky_wp_"
     table_exclusions : [
       # "wfBadLeechers",
@@ -57,14 +57,14 @@ module.exports =
       # "wfFileMods",
       # "wfHits"
     ]
-    user: "admin"
-    pass: "admin"
+    user: "<%= deployconfig.local.db_user %>"
+    pass: "<%= deployconfig.local.db_pass %>"    
     host: "localhost"
-    url: "//localhost:8888/stickypictures.com"
+    url: "//sticky.dev"
     path:
-      theme: "/Applications/MAMP/htdocs/stickypictures.com/wp-content/themes/sticky-pictures/build/"
-      uploads: "/Applications/MAMP/htdocs/stickypictures.com/wp-content/uploads/"
-      plugins: "/Applications/MAMP/htdocs/stickypictures.com/wp-content/plugins/"
+      theme   : "<%= deployconfig.local.wp_content_path %>/themes/<%= theme_name %>/build/"
+      uploads : "<%= deployconfig.local.wp_content_path %>/uploads/"
+      plugins : "<%= deployconfig.local.wp_content_path %>/plugins/"
 
 
   # ==========  Start Environment Definitions  ==========
@@ -75,15 +75,15 @@ module.exports =
     table_prefix: "sticky_wp_"
     table_exclusions : [
       # "_wf" # Will exclude with " NOT LIKE '%_wf%' " statement
-    ]        
-    user: "<%= grunt.config.data.deployconfig.dev.db_user %>"
-    pass: "<%= grunt.config.data.deployconfig.dev.db_pass %>"
+    ]
+    user: "<%= deployconfig.dev.db_user %>"
+    pass: "<%= deployconfig.dev.db_pass %>"
     host: "127.0.0.1"
     url: "//clients.madebycaliper.com/stickypictures"
     path:
-      theme: "/srv/users/serverpilot/apps/clients/public/stickypictures/wp-content/themes/sticky-pictures/"
-      uploads: "/srv/users/serverpilot/apps/clients/public/stickypictures/wp-content/uploads/"
-      plugins: "/srv/users/serverpilot/apps/clients/public/stickypictures/wp-content/plugins/"
+      theme   : "<%= deployconfig.dev.wp_content_path %>/themes/<%= theme_name %>/"
+      uploads : "<%= deployconfig.dev.wp_content_path %>/uploads/"
+      plugins : "<%= deployconfig.dev.wp_content_path %>/plugins/"
     ssh_host: "serverpilot@ssh.madebycaliper.com"
 
   live:
@@ -92,14 +92,14 @@ module.exports =
     table_prefix: "sticky_wp_"
     table_exclusions : [
       # "_wf" # Will exclude with " NOT LIKE '%_wf%' " statement
-    ]        
+    ]
     port: 3306
-    user: "<%= grunt.config.data.deployconfig.live.db_user %>"
-    pass: "<%= grunt.config.data.deployconfig.live.db_pass %>"
+    user: "<%= deployconfig.live.db_user %>"
+    pass: "<%= deployconfig.live.db_pass %>"
     host: "internal-db.s209892.gridserver.com"
     url: "//stickypictures.com"
     path:
-      theme: "/nfs/c09/h01/mnt/209892/users/.home/domains/stickypictures.com/html/wp-content/themes/sticky-pictures/"
-      uploads: "/nfs/c09/h01/mnt/209892/users/.home/domains/stickypictures.com/html/wp-content/uploads/"
-      plugins: "/nfs/c09/h01/mnt/209892/users/.home/domains/stickypictures.com/html/wp-content/plugins/"
+      theme   : "<%= deployconfig.live.wp_content_path %>/themes/<%= theme_name %>/"
+      uploads : "<%= deployconfig.live.wp_content_path %>/uploads/"
+      plugins : "<%= deployconfig.live.wp_content_path %>/plugins/"
     ssh_host: "stickypictures.com@s209892.gridserver.com"
