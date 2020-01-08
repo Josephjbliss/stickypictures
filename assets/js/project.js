@@ -7,8 +7,10 @@ $(document).ready(function(){
   ///////////////////////////////////////
   //Home Page 
 
-  $("body.home .masonry-element").click(function(){
-    window.location = $(this).find(".project a").attr("href");
+  $("body.home .masonry-element, body.projects-archive-page .masonry-element").click(function() {
+    window.location = $(this)
+      .find(".project a")
+      .attr("href");
   });
   ///////////////////////////////////////
 
