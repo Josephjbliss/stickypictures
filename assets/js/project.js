@@ -7,9 +7,9 @@ $(document).ready(function(){
   ///////////////////////////////////////
   //Home Page 
 
-  // $(".masonry-element").click(function(){
-  //   window.location = $(this).find(".project a").attr("href");
-  // });
+  $("body.home .masonry-element").click(function(){
+    window.location = $(this).find(".project a").attr("href");
+  });
   ///////////////////////////////////////
 
   ///////////////////////////////////////
