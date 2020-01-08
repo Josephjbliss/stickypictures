@@ -126,6 +126,9 @@ body.home .home-masonry-wrap {
 body.single-sp_project .masonry-element {
   cursor: default;
 }
+body.single-sp_project .masonry-element.video-thumb {
+  cursor: pointer;
+}
 @media (min-width:765px) {
   .masonry-element.work-project .project-text {
     display: none;

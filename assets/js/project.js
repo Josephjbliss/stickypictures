@@ -62,10 +62,10 @@ $(document).ready(function(){
     $(".videos").hide();
   }
 
-  $(".video-thumb a").click(function(evt){
+  $(".video-thumb").click(function(evt){
     evt.preventDefault();
     
-    $(".project-hero .vimeo-iframe").html($(this).parent().find(".vimeo-iframe").html());
+    $(".project-hero .vimeo-iframe").html($(this).find(".vimeo-iframe").html());
 
     $("html, body").animate({scrollTop: $(".project-hero").offset().top}, 500, function(){
       autoplay_vimeo();
