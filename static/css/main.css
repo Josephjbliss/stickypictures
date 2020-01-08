@@ -312,7 +312,7 @@ footer {
 }
 
 .project-blurb {
-    padding: 12px 0;
+    padding: 16px 0;
     margin: 0 12px;
     font-size: 15px;
     line-height: 19px;
@@ -922,9 +922,8 @@ footer {
     /* Project Styles */
     .project-blurb {
         background: none;
-        padding-bottom: 0;
-        padding: 12px 12px 0 12px;
         margin: 0;
+        padding:16px 12px;
     }
     .project-blurb:after {
         content: "";
