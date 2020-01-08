@@ -89,7 +89,7 @@ nav {
 nav a {
     color: #3a3a3c;
     text-decoration: none;
-    margin: 0 16px;
+    margin: 0 12px;
 }
 
 /* Selected States for Nav */
@@ -725,9 +725,6 @@ footer {
     nav {
         width: auto;
     }
-    nav a {
-        margin: 0 12px;
-    }
 
     /* Project Page Styles */
     .credits .credit {
@@ -909,7 +906,7 @@ footer {
         font-size: 17px;
     }
     nav a {
-        margin: 0 14px;
+        margin: 0 17px;
     }
     .masonry-element {
         width: 32.833%;
