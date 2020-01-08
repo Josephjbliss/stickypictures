@@ -8,8 +8,8 @@ module.exports =
     files:
       'assets/js/stickypictures.min.js': [
         # "assets/js/jquery-1.11.3.min.js"
-        "bower_components/swiper/dist/js/swiper.jquery.umd.min.js"
-        "bower_components/jquery_lazyload/jquery.lazyload.js"
+        "assets/vendor/swiper/dist/js/swiper.jquery.umd.min.js"
+        "assets/vendor/jquery_lazyload/jquery.lazyload.js"
         # "bower_components/lazyloadxt/dist/jquery.lazyloadxt.min.js"
         "assets/js/masonry.pkgd.min.js"
         "assets/js/isotope.pkgd.min.js"
@@ -25,8 +25,8 @@ module.exports =
     files:
       'assets/js/stickypictures.min.js': [
         # "assets/js/jquery-1.11.3.min.js"
-        "bower_components/swiper/dist/js/swiper.jquery.umd.min.js"
-        "bower_components/jquery_lazyload/jquery.lazyload.js"
+        "assets/vendor/swiper/dist/js/swiper.jquery.umd.min.js"
+        "assets/vendor/jquery_lazyload/jquery.lazyload.js"
         # "bower_components/lazyloadxt/dist/jquery.lazyloadxt.min.js"
         "assets/js/masonry.pkgd.min.js"
         "assets/js/isotope.pkgd.min.js"
