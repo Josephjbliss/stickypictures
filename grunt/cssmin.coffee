@@ -7,7 +7,7 @@ module.exports =
       keepBreaks: true
     files:
       'assets/css/stickypictures.min.css' : [
-        'bower_components/swiper/dist/css/swiper.min.css'
+        'node_modules/swiper/css/swiper.min.css'
         # 'bower_components/lazyloadxt/dist/jquery.lazyloadxt.fadein.css'
         'static/css/reset.css'
         'static/css/main.css'
@@ -19,7 +19,7 @@ module.exports =
       roundingPrecision: -1
     files:
       'assets/css/stickypictures.min.css' : [
-        'bower_components/swiper/dist/css/swiper.min.css'
+        'node_modules/swiper/css/swiper.min.css'
         # 'bower_components/lazyloadxt/dist/jquery.lazyloadxt.fadein.css'
         'static/css/reset.css'
         'static/css/main.css'

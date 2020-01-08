@@ -14,48 +14,32 @@ $(document).ready(function(){
 
   ///////////////////////////////////////
   // Slideshow
-  mainSwiper = $('.swiper-container').swiper({
+  mainSwiper = new Swiper(".swiper-container", {
+    // Optional parameters
     loop: true,
-    autoplay: 5000, // Time between auto slides
-    speed: 400, // Transition execution time (in ms)
-    autoplayDisableOnInteraction: false,
-    // If we need pagination
-    pagination: '.swiper-pagination',
-    paginationClickable: true,
-
-    bulletClass:'dot',
-    bulletActiveClass:'current',
-
-    // Navigation arrows
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-
-    // grabCursor: true,
-
-    lazyLoading: true,
-    lazyLoadingInPrevNext: true,
-
-    onSlideChangeEnd : function(swiper) {
-      var slide = swiper.slides[ swiper.activeIndex ];
-      $('.swiper-container .caption h2').removeClass('current');
-      $('.swiper-slide-active .caption h2').addClass('current');
+    autoplay: {
+      delay: 5000, // Time between auto slides
+      disableOnInteraction: true
     },
-    onImagesReady : function(swiper) {
-      var slide_width = $('.swiper-container').width();
-      swiper.setWrapperTranslate( -slide_width );
-    }
-  });
+    speed: 400, // Transition execution time (in ms)
 
-  // Hover to show/hide caption
-  $(".no-touch .swiper-container").hover(function(e){
-    if( e.type == "mouseleave" ) {
-      // Hovering off the container
-      mainSwiper.startAutoplay();
-    } else {
-      // Hovering onto the container
-      mainSwiper.stopAutoplay();
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      bulletClass: "dot",
+      bulletActiveClass: "current"
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    lazy: {
+      loadPrevNext: true,
     }
-  });
+  });  
+
 
   // Click to go to link
   $(".swiper-slide").click( function(e){
