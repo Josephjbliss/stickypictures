@@ -78,18 +78,15 @@ nav .tags-toggle-btn.open {
 .swiper-container .swiper-button-prev,
 .swiper-container .swiper-button-next {
   background-size: 44px 100%;
-  -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3));
-          filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3));
+  height: 22px;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3));
   /* Same syntax as box-shadow */
   opacity: .7;
 }
-@media (min-width: 768px) {
-  .swiper-container .swiper-button-prev,
-  .swiper-container .swiper-button-next {
-    height: 37.4px;
-    width: 22.95px;
-    background-size: 37.4px;
-  }
+.swiper-container .swiper-button-prev::after,
+.swiper-container .swiper-button-next::after {
+  font-size: 32px;
+  color: white;
 }
 html.touch .swiper-container .swiper-button-prev,
 html.touch .swiper-container .swiper-button-next {
@@ -101,22 +98,13 @@ html.touch .swiper-container .swiper-button-next {
     display: none;
   }
 }
-.swiper-container .swiper-button-prev {
-  background-image: url('../images/chevron-thin-left.white.svg');
-  left: 8px;
-}
-.swiper-container .swiper-button-next {
-  background-image: url('../images/chevron-thin-right.white.svg');
-  right: 8px;
-}
 .swiper-container .caption {
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   opacity: 0;
-  -webkit-transition: opacity .3s ease;
-          transition: opacity .3s ease;
+  transition: opacity .3s ease;
 }
 @media (max-width: 479px) {
   .swiper-container .caption {
@@ -137,8 +125,7 @@ html.touch .swiper-container .caption {
   }
 }
 .masonry-element img {
-  -webkit-transition: opacity 0.3s ease;
-          transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   display: block;
   width: 100%;
   max-width: 100%;
@@ -194,13 +181,11 @@ html.touch .swiper-container .caption {
 }
 .home-project,
 .project-masonry-element {
-  -webkit-transition: opacity 0.3s ease;
-          transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 .home-project img.lazy,
 .project-masonry-element img.lazy {
-  -webkit-transition: opacity 0.3s ease;
-          transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   display: block;
   max-width: 100%;
   width: 100%;
