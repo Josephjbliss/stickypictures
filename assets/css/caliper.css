@@ -120,6 +120,9 @@ body.home .swiper-button-prev,
 body.home .swiper-button-next {
   display: none;
 }
+body.home .home-masonry-wrap {
+  margin-top: -0.5%;
+}
 body.single-sp_project .masonry-element {
   cursor: default;
 }

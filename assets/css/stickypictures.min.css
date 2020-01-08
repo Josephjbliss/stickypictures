@@ -131,8 +131,8 @@ nav a{color:#3a3a3c;text-decoration:none;margin:0 12px}
 .slideshow .caption h2{padding:0 12px}
 .slideshow .slides{position:relative;width:800%;overflow:hidden}
 .slideshow img{width:12.5%;display:block;float:left}
-.home-blurb{padding:12px 12px 0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}
-.home-blurb p{margin-bottom:14px}
+.home-blurb{padding:12px 16px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}
+.home-blurb p{margin:0;font-size:20px;line-height:22px}
 .home-blurb p.home-blurb-1{font-size:20px;line-height:22px}
 .home-blurb p.home-blurb-2{line-height:19px;font-size:15px}
 .masonry-element{width:auto;margin-bottom:2%}
@@ -230,12 +230,9 @@ section.capabilities,section.methods{float:left;width:50%;margin:0}
 @media only screen and (min-width:600px){.team-member:nth-of-type(2n+1),.the-studio-blurb2{clear:both}
 .masonry,.work-page-masonry{width:100.55%;left:-.25%}
 .slideshow .caption{font-size:20px;height:48px;line-height:48px}
-.masonry-element{width:49.5%;float:left;margin:.5% .25%}
-.home-blurb{width:99.5%;padding:8px 12px 0;overflow:hidden}
-.home-blurb p{margin-bottom:11px}
+.masonry-element{width:49.5%;float:left;margin:.5% .25%;margin-bottom:0}
 .home-blurb p.home-blurb-1{float:left;width:48%}
 .home-blurb p.home-blurb-2{float:right;width:49.5%}
-.masonry-element{margin-bottom:0}
 .reel h2{font-size:25px;line-height:60px;height:60px}
 .page-template-tmpl-capabilities .capabilties-section h3,.project-blurb h2{font-size:25px;line-height:26px}
 .tag-filters-wrap{margin:0 auto .5%}
@@ -261,7 +258,7 @@ h1 a{height:46px;width:215px;background-size:215px}
 nav{font-size:17px}
 nav a{margin:0 17px}
 .masonry-element{width:32.833%}
-.home-blurb{width:66.166%;padding:.5% 12px 0}
+.home-blurb p{font-size:28px;line-height:30px}
 .slideshow .dot:hover{border:1px solid #9C9EA1;background-color:#fff;margin:0 7px}
 .project-blurb{background:0 0;padding-bottom:0;padding:12px 12px 0;margin:0}
 .project-blurb:after{content:"";display:block;clear:both;height:1px;padding-top:0;background:url(../images/dotted-border.png) bottom left repeat-x}
@@ -293,7 +290,6 @@ section.capabilities,section.methods{padding:0 0 20px;width:25%}
 @media only screen and (min-width:765) and (max-width:1023px){.credits .credit:nth-of-type(2n+1){clear:both}
 }
 @media only screen and (min-width:1024px){.masonry-element{width:24.5%}
-.home-blurb{width:49.5%}
 .credits .credit{width:33.3333%}
 .credits .credit:nth-of-type(3n+1){clear:both}
 .contact-info{-webkit-column-count:1;-moz-column-count:1;column-count:1;overflow:hidden}
@@ -380,6 +376,7 @@ body.home .swiper-button-next,body.home .swiper-button-prev,html.touch .swiper-c
 .swiper-container .caption{opacity:1;z-index:3}
 }
 html.touch .swiper-container .caption{opacity:1;z-index:3}
+body.home .home-masonry-wrap{margin-top:-.5%}
 body.single-sp_project .masonry-element{cursor:default}
 @media (min-width:765px){.masonry-element.work-project .project-text{display:none}
 .masonry-element.work-project.lazy-loaded .project-text{display:block}

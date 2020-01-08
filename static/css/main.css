@@ -174,14 +174,16 @@ body.home .slides {
 
 /* Main Home Blurb Styles */
 .home-blurb {
-    padding: 12px 12px 0 12px;
+    padding: 12px 16px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
 
 .home-blurb p {
-    margin-bottom: 14px;
+    margin:0;
+    font-size:20px;
+    line-height:22px;
 }
 
 .home-blurb p.home-blurb-1 {
@@ -781,14 +783,6 @@ footer {
         float: left;
         margin: .5% .25%;
     }
-    .home-blurb {
-        width: 99.5%;
-        padding: 8px 12px 0 12px;
-        overflow: hidden;
-    }
-    .home-blurb p {
-        margin-bottom: 11px;
-    }
     .home-blurb p.home-blurb-1 {
         float: left;
         width: 48%;
@@ -911,9 +905,9 @@ footer {
     .masonry-element {
         width: 32.833%;
     }
-    .home-blurb {
-        width: 66.166%;
-        padding: .5% 12px 0 12px;
+    .home-blurb p  {
+        font-size:28px;
+        line-height:30px;
     }
     .slideshow .dot:hover {
         border: solid 1px #9C9EA1;
@@ -1069,10 +1063,6 @@ footer {
     .masonry-element {
         width: 24.5%;
     }
-    .home-blurb {
-        width: 49.5%;
-    }
-
     /* Project Styles */
     .credits .credit {
         width: 33.3333%;

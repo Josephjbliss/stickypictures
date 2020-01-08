@@ -7,11 +7,11 @@ if ( have_posts() ) {
 
     get_template_part('templates/slider','posts');
     ?>
-    <section class="masonry">
-      <div class="masonry-stamp home-blurb">
-        <div class="home-blurb-1"><?php the_field('home_blurb_1'); ?></div>
-        <div class="home-blurb-2"><?php the_field('home_blurb_2'); ?></div>
-      </div>
+    <div class="masonry-stamp home-blurb">
+      <div class="home-blurb-1"><?php the_field('home_blurb_1'); ?></div>
+      <div class="home-blurb-2"><?php the_field('home_blurb_2'); ?></div>
+    </div>
+    <section class="masonry home-masonry-wrap">
       <?php
         $projects = get_field('featured_projects');
       ?>
