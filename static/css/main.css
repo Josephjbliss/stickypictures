@@ -432,6 +432,7 @@ footer {
     margin-left: -29px;
     margin-top: -29px;
     background: transparent url("../images/play.png") top left no-repeat;
+    z-index: 3;
 }
 
 .video-thumb:hover .video-thumb-hover {
@@ -738,7 +739,7 @@ footer {
         left: -.5%;
         position: relative;
     }
-    .video-thumb, .related-project {
+    .videos .video-thumb, .related-project {
         float: left;
         width: 49%;
         margin: .5%;
@@ -820,7 +821,7 @@ footer {
     .credits .credit {
         width: 33.333%;
     }
-    .video-thumb, .related-project {
+    .videos .video-thumb, .related-project {
         width: 32.333%;
     }
     .contact-info {
@@ -956,7 +957,7 @@ footer {
         width: 100.5%;
         left: -.25%;
     }
-    .video-thumb, .related-project  {
+    .videos .video-thumb, .related-project  {
         width: 24.5%;
         margin: .25%;
     }
@@ -1177,7 +1178,7 @@ footer {
     }
     
     /* Project Styles */
-    .video-thumb, .related-project  {
+    .videos .video-thumb, .related-project  {
         width: 16.166%;
     }
     .project-blurb-col1 {
