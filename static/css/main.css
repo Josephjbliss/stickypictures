@@ -1184,11 +1184,8 @@ footer {
     .videos .video-thumb, .related-project  {
         width: 16.166%;
     }
-    .project-blurb-col1 {
-        width: 32.833%;
-    }       
     .project-blurb-col2 {
-        width: 33.333%;
+        max-width:500px;
         margin-left: .5%;
         float: left;
     }
