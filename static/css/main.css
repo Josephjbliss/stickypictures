@@ -466,6 +466,10 @@ footer {
     margin-bottom: 6px;
 }
 
+.project-masonry-element.full-width {
+    width:99.5% !important;    
+}
+
 .project-masonry-element:last-child {
     margin-bottom: 0;
 }

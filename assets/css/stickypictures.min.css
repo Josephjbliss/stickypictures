@@ -170,6 +170,7 @@ footer{margin:0 12px;overflow:hidden;height:54px;line-height:54px;clear:both}
 .project-hero .vimeo-iframe{display:block}
 .project-photos:after{display:block;height:1px;margin:0 12px;background:url(../images/dotted-border.png) bottom left repeat-x}
 .project-masonry-element{margin-bottom:6px}
+.project-masonry-element.full-width{width:99.5%!important}
 .project-masonry-element:last-child{margin-bottom:0}
 .related-projects{clear:both}
 .related-project{position:relative}
