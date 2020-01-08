@@ -1,6 +1,7 @@
 <?php
 
 define('THEME_URL', get_bloginfo('stylesheet_directory').'/');
+define('THEME_VERSION', '2.0.0');
 
 
 function client_scripts($hook) {
@@ -15,7 +16,7 @@ function client_scripts($hook) {
       THEME_PREFIX .'-main-js',
       THEME_URL . 'assets/js/stickypictures.min.js',
       array('jquery'),
-      get_bloginfo('version'),
+      THEME_VERSION,
       $in_footer = true
     );
 
@@ -27,7 +28,7 @@ function client_styles() {
 
     global $wp_styles;
     // Main Stylesheet
-    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'assets/css/stickypictures.min.css', array(), time() );
+    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'assets/css/stickypictures.min.css', array(), THEME_VERSION );
     wp_enqueue_style( THEME_PREFIX . '-theme' );
 
     wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "assets/css/ieonly.css", array( THEME_PREFIX . '-theme' )  );
