@@ -120,6 +120,9 @@ body.home .swiper-button-prev,
 body.home .swiper-button-next {
   display: none;
 }
+body.single-sp_project .masonry-element {
+  cursor: default;
+}
 @media (min-width:765px) {
   .masonry-element.work-project .project-text {
     display: none;

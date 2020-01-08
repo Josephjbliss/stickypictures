@@ -119,7 +119,7 @@ h1{background-color:#282829;margin:0}
 h1 a{height:34px;width:159px;text-transform:none;background-image:url(../images/logo.png);background-size:159px;text-indent:100%;white-space:nowrap;overflow:hidden}
 .about-page h3,.contact-info .company-name,.contact-info h3,.home-blurb p.home-blurb-1,.masonry-element .project-text h3,.page-template-tmpl-capabilities h3,.project-blurb .project a,.project-blurb h2,.project-blurb h4,.project-page h3,.reel h2{text-transform:uppercase}
 nav{text-align:center;line-height:27px}
-nav a{color:#3a3a3c;text-decoration:none;margin:0 17px}
+nav a{color:#3a3a3c;text-decoration:none;margin:0 12px}
 .about-page nav a.about,.contact-page nav a.contact,.home-page nav a.home,.project-page nav a.work,.reel-page nav a.reel,.work-page nav a.work,nav a.selected,nav a:hover{background:url(../images/underline.png) bottom left repeat-x}
 .slideshow{width:100%;overflow:hidden}
 .slideshow .swiper-pagination{position:absolute;width:100%;top:0;bottom:auto;text-align:center;overflow:hidden;margin-top:8px;line-height:0;z-index:3}
@@ -218,7 +218,6 @@ footer{margin:0 12px;overflow:hidden;height:54px;line-height:54px;clear:both}
 .the-studio-pic1,.the-studio-pic2{display:block;width:100%}
 .page-template-tmpl-capabilities section.the-studio{padding-bottom:24px}
 @media only screen and (min-width:414px){nav{width:auto}
-nav a{margin:0 12px}
 .credits .credit{width:50%;float:left}
 .related-project-thumbnails,.video-thumbnails{width:101%;left:-.5%;position:relative}
 .related-project,.video-thumb{float:left;width:49%;margin:.5%}
@@ -260,7 +259,7 @@ section.the-studio{padding-top:20px}
 h1{padding:10px 0}
 h1 a{height:46px;width:215px;background-size:215px}
 nav{font-size:17px}
-nav a{margin:0 14px}
+nav a{margin:0 17px}
 .masonry-element{width:32.833%}
 .home-blurb{width:66.166%;padding:.5% 12px 0}
 .slideshow .dot:hover{border:1px solid #9C9EA1;background-color:#fff;margin:0 7px}
@@ -368,19 +367,20 @@ nav .tags-toggle-btn{position:absolute;right:0;top:8px;color:#a7a9ac}
 .no-touch nav .tags-toggle-btn:hover,nav .tags-toggle-btn.open{color:#000;text-decoration:none;border-bottom:0;background:0 0}
 .tag-filters-wrap{display:none;position:relative;background-color:#a7a9ac;text-align:center;font-size:16px;padding:8px 0;line-height:27px}
 .tag-filters-wrap .tag-list-el{display:inline-block}
+body.home .swiper-button-next,body.home .swiper-button-prev,html.touch .swiper-container .swiper-button-next,html.touch .swiper-container .swiper-button-prev{display:none}
 .tag-filters-wrap a{color:#fff;text-decoration:none;margin:0 16px}
 .tag-filters-wrap a.is-checked{color:#000}
 .password-form--wrap{padding:30px 0;width:80%;margin-left:10%}
 .swiper-container .swiper-slide:hover.swiper-slide-active .caption{opacity:1;z-index:300}
 .swiper-container .swiper-slide img{width:100%;height:auto}
 .swiper-container .swiper-button-next,.swiper-container .swiper-button-prev{background-size:44px 100%;height:22px;filter:drop-shadow(0 0 3px rgba(0, 0, 0, .3));opacity:.7}
-.swiper-container .swiper-button-next::after,.swiper-container .swiper-button-prev::after{font-size:32px;color:#fff!important}
-html.touch .swiper-container .swiper-button-next,html.touch .swiper-container .swiper-button-prev{display:none}
+.swiper-container .swiper-button-next::after,.swiper-container .swiper-button-prev::after{font-size:32px;color:#fff}
 .swiper-container .caption{width:100%;position:absolute;bottom:0;left:0;opacity:0}
 @media (max-width:479px){.swiper-container .swiper-button-next,.swiper-container .swiper-button-prev{display:none}
 .swiper-container .caption{opacity:1;z-index:3}
 }
 html.touch .swiper-container .caption{opacity:1;z-index:3}
+body.single-sp_project .masonry-element{cursor:default}
 @media (min-width:765px){.masonry-element.work-project .project-text{display:none}
 .masonry-element.work-project.lazy-loaded .project-text{display:block}
 }
