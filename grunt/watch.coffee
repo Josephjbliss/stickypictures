@@ -1,7 +1,7 @@
 module.exports =
   css:
     files: ['assets/less/caliper.less','static/css/main.css']
-    tasks: ['less:dev', 'minify:dev', 'autoprefixer']
+    tasks: ['less:dev', 'autoprefixer', 'minify:dev']
     options:
       spawn: false
       # livereload : true      
