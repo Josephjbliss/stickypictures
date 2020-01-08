@@ -8,7 +8,7 @@ module.exports =
       "--compress"
       "--omit-dir-times"
       # "--delete"
-      # "--dry-run"
+      "--dry-run"
     ]
     exclusions: [
       "Gruntfile.*"
@@ -60,7 +60,7 @@ module.exports =
     user: "<%= deployconfig.local.db_user %>"
     pass: "<%= deployconfig.local.db_pass %>"    
     host: "localhost"
-    url: "//sticky.dev"
+    url: "//stickypictures.test"
     path:
       theme   : "<%= deployconfig.local.wp_content_path %>/themes/<%= theme_name %>/build/"
       uploads : "<%= deployconfig.local.wp_content_path %>/uploads/"
