@@ -9,8 +9,8 @@ if ( have_posts() ) {
     ?>
     <section class="masonry">
       <div class="masonry-stamp home-blurb">
-        <p class="home-blurb-1"><?php the_field('home_blurb_1', false, false); ?></p>
-        <p class="home-blurb-2"><?php the_field('home_blurb_2', false, false); ?></p>
+        <div class="home-blurb-1"><?php the_field('home_blurb_1'); ?></div>
+        <div class="home-blurb-2"><?php the_field('home_blurb_2'); ?></div>
       </div>
       <?php
         $projects = get_field('featured_projects');
