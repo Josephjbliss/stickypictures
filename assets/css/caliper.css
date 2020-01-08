@@ -116,6 +116,10 @@ html.touch .swiper-container .caption {
   opacity: 1;
   z-index: 3;
 }
+body.home .swiper-button-prev,
+body.home .swiper-button-next {
+  display: none;
+}
 @media (min-width:765px) {
   .masonry-element.work-project .project-text {
     display: none;
