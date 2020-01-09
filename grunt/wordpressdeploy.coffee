@@ -8,7 +8,7 @@ module.exports =
       "--compress"
       "--omit-dir-times"
       # "--delete"
-      "--dry-run"
+      # "--dry-run"
     ]
     exclusions: [
       "Gruntfile.*"
@@ -69,22 +69,22 @@ module.exports =
 
   # ==========  Start Environment Definitions  ==========
 
-  dev:
-    title: "Dev Server"
-    database: "clients"
-    table_prefix: "sticky_wp_"
-    table_exclusions : [
-      # "_wf" # Will exclude with " NOT LIKE '%_wf%' " statement
-    ]
-    user: "<%= deployconfig.dev.db_user %>"
-    pass: "<%= deployconfig.dev.db_pass %>"
-    host: "127.0.0.1"
-    url: "//clients.madebycaliper.com/stickypictures"
-    path:
-      theme   : "<%= deployconfig.dev.wp_content_path %>/themes/<%= theme_name %>/"
-      uploads : "<%= deployconfig.dev.wp_content_path %>/uploads/"
-      plugins : "<%= deployconfig.dev.wp_content_path %>/plugins/"
-    ssh_host: "serverpilot@ssh.madebycaliper.com"
+  # dev:
+  #   title: "Dev Server"
+  #   database: "clients"
+  #   table_prefix: "sticky_wp_"
+  #   table_exclusions : [
+  #     # "_wf" # Will exclude with " NOT LIKE '%_wf%' " statement
+  #   ]
+  #   user: "<%= deployconfig.dev.db_user %>"
+  #   pass: "<%= deployconfig.dev.db_pass %>"
+  #   host: "127.0.0.1"
+  #   url: "//clients.madebycaliper.com/stickypictures"
+  #   path:
+  #     theme   : "<%= deployconfig.dev.wp_content_path %>/themes/<%= theme_name %>/"
+  #     uploads : "<%= deployconfig.dev.wp_content_path %>/uploads/"
+  #     plugins : "<%= deployconfig.dev.wp_content_path %>/plugins/"
+  #   ssh_host: "serverpilot@ssh.madebycaliper.com"
 
   live:
     title: "Media Temple"
