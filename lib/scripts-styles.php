@@ -1,7 +1,7 @@
 <?php
 
 define('THEME_URL', get_bloginfo('stylesheet_directory').'/');
-define('THEME_VERSION', '2.0.0');
+define('THEME_VERSION', '2.0.1');
 
 
 function client_scripts($hook) {
@@ -28,7 +28,7 @@ function client_styles() {
 
     global $wp_styles;
     // Main Stylesheet
-    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'assets/css/stickypictures.min.css', array(), THEME_VERSION );
+    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'assets/css/stickypictures.min.css', array(), time() );
     wp_enqueue_style( THEME_PREFIX . '-theme' );
 
     wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "assets/css/ieonly.css", array( THEME_PREFIX . '-theme' )  );
