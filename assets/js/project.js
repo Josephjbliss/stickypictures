@@ -129,10 +129,6 @@ $(document).ready(function(){
   ///////////////////////////////////////
   $(window).resize(function(){
     
-    $(".no-touch .masonry-element .project-text").each(function(){
-      $(this).css("bottom", -$(this).height());
-    });
-
     //Resize contact map
     $(".contact-map iframe").width($(".contact-map").width()).height(($(".contact-map").width()*9)/16);
 

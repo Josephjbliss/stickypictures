@@ -197,8 +197,14 @@ body.single-sp_project {
 .masonry-element {
 	
   .project-text {
+    transition: transform .4s ease-out;
     color: #ffffff;
     background-color: #9d9fa2;
+    transform: translateY(100%);      
+
+    &.hover {
+      transform: translateY(0);      
+    }
 
     h3 {
       font-size: 20px;
@@ -236,6 +242,7 @@ body.single-sp_project {
 
   .touch & {
     .project-text {
+      transform: translateY(0);
       .tags {
         padding-bottom: 9px;
         margin-bottom: 0;

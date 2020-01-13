@@ -145,8 +145,13 @@ body.single-sp_project .masonry-element.video-thumb {
   height: auto;
 }
 .masonry-element .project-text {
+  transition: transform 0.4s ease-out;
   color: #ffffff;
   background-color: #9d9fa2;
+  transform: translateY(100%);
+}
+.masonry-element .project-text.hover {
+  transform: translateY(0);
 }
 .masonry-element .project-text h3 {
   font-size: 20px;
@@ -176,6 +181,9 @@ body.single-sp_project .masonry-element.video-thumb {
 }
 .no-touch .masonry-element .project-text h3:first-child {
   margin-top: 9px;
+}
+.touch .masonry-element .project-text {
+  transform: translateY(0);
 }
 .touch .masonry-element .project-text .tags {
   padding-bottom: 9px;

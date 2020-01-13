@@ -182,20 +182,9 @@ body.home .slides {
 
 .home-blurb p {
     margin:0;
+    font-family: "FranklinGothic-Condensed";
     font-size:20px;
     line-height:22px;
-}
-
-.home-blurb p.home-blurb-1 {
-    font-family: "FranklinGothic-Condensed";
-    text-transform: uppercase;
-    font-size: 20px;
-    line-height: 22px;
-}
-
-.home-blurb p.home-blurb-2 {
-    line-height: 19px;
-    font-size: 15px;
 }
 
 /* Home Project Styles */
@@ -907,9 +896,6 @@ footer {
     nav a {
         margin: 0 17px;
     }
-    .masonry-element {
-        width: 32.833%;
-    }
     .home-blurb p  {
         font-size:28px;
         line-height:30px;
@@ -1064,9 +1050,6 @@ footer {
 }
 
 @media only screen and (min-width: 1024px){
-    .masonry-element {
-        width: 24.5%;
-    }
     /* Project Styles */
     .credits .credit {
         width: 33.3333%;

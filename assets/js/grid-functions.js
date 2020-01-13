@@ -315,16 +315,13 @@ function after_image_loaded_fns( img ) {
 
   $elem.css({'height':'auto'}).addClass('lazy-loaded');
 
-  var project_text_height = $elem.find(".project-text").height();
-  $elem.find('.project-text').css( "bottom", -project_text_height );
-
   $elem.hover(function(){
     var $slide = $(this).find(".project-text");
-    $slide.animate({bottom: 0}, 400);
+    $slide.addClass('hover');
     $(this).find("img").animate({top: "-"+$slide.height()/2+"px"}, 400);
   }, function(){
     var $slide = $(this).find(".project-text");
-    $slide.animate({bottom: "-"+$slide.height()+"px"}, 400);
+    $slide.removeClass('hover');
     $(this).find("img").animate({top: 0}, 400);
   });
   
