@@ -140,7 +140,7 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
   } // end start_el()
 
   public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-    $output .= "\n";
+    $output .= "";
   }
 
 
