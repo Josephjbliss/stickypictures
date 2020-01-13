@@ -89,7 +89,7 @@ nav {
 nav a {
     color: #3a3a3c;
     text-decoration: none;
-    margin: 0 12px;
+    margin: 0 10px;
 }
 
 /* Selected States for Nav */
@@ -720,6 +720,10 @@ footer {
 @media only screen and (min-width: 414px){
     nav {
         width: auto;
+    }
+
+    nav a {
+        margin: 0 12px;
     }
 
     /* Project Page Styles */
