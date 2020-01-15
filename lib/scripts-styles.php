@@ -1,7 +1,7 @@
 <?php
 
 define('THEME_URL', get_bloginfo('stylesheet_directory').'/');
-define('THEME_VERSION', '2.0.3');
+define('THEME_VERSION', '2.0.4');
 
 
 function client_scripts($hook) {

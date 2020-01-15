@@ -68,21 +68,46 @@ get_header();
             while ( have_rows("media") ): the_row();
               $full_width = get_sub_field('full_width')? 'full-width' : '';
               $is_video = get_row_layout() === 'video';
-            ?>      
-              <div class="project-masonry-element masonry-element masonry-element-<?php echo ++$count; ?> <?php echo $full_width ?> <?php echo $is_video? 'video-thumb' : '' ?>">
-                  <?php if( $is_video ) :
-                      $image = get_sub_field('thumb');
-                      ?>
-                        <div class="vimeo-iframe">
-                            <iframe src="https://player.vimeo.com/video/<?php the_sub_field('vimeo_id') ?>?api=1" width="<?php the_sub_field('video_w') ?>" height="<?php the_sub_field('video_h') ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                        </div>
-                      <?php
-                    elseif ( get_row_layout() === 'image' ) :
-                      $image = get_sub_field('image');
-                      lazy_image( $image['url'], $image['width'], $image['height'] );
-                    endif;
-                  ?>
+              
+              if( $is_video ) :
+                $image = get_sub_field('thumb');
+                ob_start(); ?>
+                <div class="vimeo-iframe">
+                    <iframe src="https://player.vimeo.com/video/<?php the_sub_field('vimeo_id') ?>?api=1" width="<?php the_sub_field('video_w') ?>" height="<?php the_sub_field('video_h') ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                <?php
+                $masonry_elem = ob_get_contents();
+                ob_end_clean();
+              elseif ( get_row_layout() === 'image' ) :
+                $image = get_sub_field('image');
+                ob_start();
+                lazy_image( $image['url'], $image['width'], $image['height'] );
+                $masonry_elem = ob_get_contents();
+                ob_end_clean();
+              endif;
+              $classes = [
+                "masonry-element-". ++$count,
+                $full_width,
+                $is_video? 'video-thumb' : ''
+              ];
+              
+              if ( $count === 1 && $full_width === 'full-width' ) { ?>
+                <div class="project-masonry-element masonry-element <?php echo "masonry-element-". $count ?>">
+              
               </div>
+              <?php
+              $classes = [
+                "masonry-element-". ++$count,
+                $full_width,
+                $is_video? 'video-thumb' : ''
+              ];              
+                
+            }
+
+              ?>
+                <div class="project-masonry-element masonry-element <?php echo join($classes, ' ') ?>">
+                      <?php echo $masonry_elem ?>
+                </div>
             <?php endwhile; endif;
           else:
             $images = get_sub_field('images'); 
