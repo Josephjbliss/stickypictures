@@ -1,6 +1,6 @@
 {
   "name": "stickypictures",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "author": "Caliper <eli@madebycaliper.com>",
   "scripts": {
     "postinstall": "node node_modules/bower/bin/bower install"

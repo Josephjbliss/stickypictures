@@ -428,10 +428,6 @@ footer {
     background-image: url("../images/play-hover.png");
 }
 
-.video-thumb .vimeo-iframe {
-    display: none;
-}
-
 .project-hero .vimeo-iframe {
     display: block;
 }

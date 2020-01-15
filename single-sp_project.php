@@ -73,8 +73,6 @@ get_header();
                   <?php if( $is_video ) :
                       $image = get_sub_field('thumb');
                       ?>
-                        <div class="video-thumb-hover"></div>
-                        <?php lazy_image( $image['sizes']['medium_large'], $image['sizes']['medium_large-width'], $image['sizes']['medium_large-height'] ); ?>
                         <div class="vimeo-iframe">
                             <iframe src="https://player.vimeo.com/video/<?php the_sub_field('vimeo_id') ?>?api=1" width="<?php the_sub_field('video_w') ?>" height="<?php the_sub_field('video_h') ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
